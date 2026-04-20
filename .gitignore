@@ -1,0 +1,26 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+.DS_Store
+.vscode/
+.idea/
+
+# Models / data
+*.bin
+*.safetensors
+*.gguf
+data/
+models/
+checkpoints/
+runs/
+wandb/
+mlruns/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/

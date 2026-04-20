@@ -1,0 +1,10 @@
+flowchart LR
+    User([用户输入]) --> LLM[LLM 推理核心]
+    LLM -->|思考/规划| Plan[计划/草稿]
+    Plan --> Decide{需要工具?}
+    Decide -- 是 --> Tool[工具调用]
+    Tool --> Obs[观测结果]
+    Obs --> Mem[(记忆)]
+    Mem --> LLM
+    Decide -- 否 --> Out([最终回复])
+    Mem --> LLM
