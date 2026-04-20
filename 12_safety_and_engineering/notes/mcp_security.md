@@ -6,7 +6,7 @@
 
 ```mermaid
 flowchart LR
-    Client[Cursor / Claude Desktop / 你的 Agent] -->|MCP| ServerA[官方 MCP server]
+    Client[Cursor / Claude Desktop / 自研 Agent] -->|MCP| ServerA[官方 MCP server]
     Client -->|MCP| ServerB[第三方社区 server]
     Client -->|MCP| ServerC[同事分享的 server]
     ServerA --> SafeAPI
@@ -52,12 +52,12 @@ flowchart LR
 5. 有条件的话，跑 server 在容器 / chroot / firejail 沙箱里。
 6. 定期跑红队 prompt（`AgentDojo` + 自定义 IPI）回归测试。
 
-## 5. 与你部门的关联
+## 5. 发布 MCP server 的通用准则
 
-如果你部门要发布 *地图 MCP server*：
-- 一定区分只读（geocode/poi/route）与写操作（如下单/导航日志上报）。
-- 写操作 server 必须强制 HITL。
-- Tool description 经 review，避免暴露内部参数。
+- 严格区分 *只读* 与 *写操作* 工具，写操作必须强制 HITL。
+- Tool description 经 review，避免暴露内部参数 / 凭据 / 隐含指令。
+- 与外部 server 之间用 *最小权限* 的 token，定期轮换。
+- 监控并限速：异常调用频率、可疑 payload 都要告警。
 
 ## 资料
 

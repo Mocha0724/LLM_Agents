@@ -31,7 +31,7 @@ flowchart LR
 - RLVR 假设有 *客观可验证* 的 reward；这在数学/代码任务里成立，但在 *视觉/多模态/开放任务* 里不成立。
 - Argos 介于 RLVR 与 RLHF 之间：reward 既不是简单规则也不是单一 RM，而是 *组合式 agentic 评估*。
 
-## 我的批注
+## 评注
 
 - Argos 体现了 *verifier 也要 agent 化* 的趋势：reward 函数本身需要 reasoning 能力。
 - 业务联想：在地图 agent 任务中，「答案是否合理」往往要综合空间约束 + 用户偏好 + POI 数据，正适合用 agentic verifier。

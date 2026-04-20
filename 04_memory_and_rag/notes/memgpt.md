@@ -52,7 +52,7 @@ flowchart LR
 
 二者互补：Generative Agents 提供「有什么记忆」的语义模型，MemGPT 提供「怎么管」的工程模型。
 
-## 我的批注
+## 评注
 
 - 把 LLM 当 OS 是个好类比，但记得 *OS 是被人精心设计的*，让 LLM 自己当 OS kernel 风险很大；现实中往往要约束工具集合、限制写权限。
-- 对你的工作：如果要做「常驻用户偏好」，MemGPT 的 `core_memory` 设计可直接借鉴。
+- 工程落地：要实现「常驻用户偏好」类长记忆，MemGPT 的 `core_memory` 设计可直接借鉴。

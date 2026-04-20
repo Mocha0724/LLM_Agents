@@ -54,7 +54,7 @@ flowchart LR
 - 为 Agent RAG 准备「retrieval tool 描述」要写清楚 *哪种问题应该问哪种工具*，否则 LLM 乱选。
 - 必须做 trace + 评测：Agentic RAG 的失败比 Naive 隐蔽得多。
 
-## 我的批注
+## 评注
 
 - Agentic RAG 是 *RAG → Agent* 的自然延伸；2025 年起几乎所有严肃的 RAG 系统都至少部分 agentic。
 - 与定位业务的桥梁：可以把「先查 POI 索引 / 失败再查地图 API / 仍失败转人工」的工作流，建模成 Agentic RAG。

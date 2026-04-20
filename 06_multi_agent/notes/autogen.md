@@ -42,7 +42,7 @@ sequenceDiagram
 
 - 第 07 章会用 AutoGen 实现一个 web 研究 agent，与 LangGraph / LlamaIndex / DSPy 横评。
 
-## 我的批注
+## 评注
 
 - AutoGen 的 *对话隐喻* 上手快，但生产里随着 agent 增多，调试变难——我更推荐用 LangGraph 显式画图。
 - 它在 2024 还分裂成 *AG2*（社区维护）和 *AutoGen 0.4+*（重构异步版）。版本选择要看时间。

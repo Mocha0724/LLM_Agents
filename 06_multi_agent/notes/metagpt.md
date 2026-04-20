@@ -41,9 +41,9 @@ flowchart LR
 ## 与本仓库
 
 - 与 MapAgent（11 章）思路相似：层次化角色 + 明确 SOP。
-- 思考：在你的部门，「定位算法迭代」是否也可以套 MetaGPT 思想——research agent / engineer agent / eval agent 协作？
+- 思考：算法版本迭代流程（如「定位算法版本迭代」）是否也可以套 MetaGPT 的思想——research agent / engineer agent / eval agent 协作？
 
-## 我的批注
+## 评注
 
 - MetaGPT 启发了「让 agent 跑业务流程」的工业落地路径，比纯 chat 多 agent 务实得多。
 - 但要警惕：*SOP 的预设可能掩盖 LLM 能力不足*；优化 SOP ≠ 优化 LLM。

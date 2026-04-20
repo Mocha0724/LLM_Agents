@@ -48,7 +48,7 @@ flowchart LR
 - 第 06 章三角色协作 demo 已用 LangGraph。
 - 第 12 章 HITL 也会用 `interrupt` 演示。
 
-## 我的批注
+## 评注
 
 - 在所有「通用 agent 框架」里，LangGraph 是 2025-2026 工业落地最普遍的选择，稳定性 / 调试性都更好。
-- 对你写定位 agent 来说，`StateGraph + checkpointer` 几乎是必备：长任务必须能恢复。
+- 对长程任务（如定位 / 多步规划 agent），`StateGraph + checkpointer` 几乎是必备：任务必须能在中断后恢复。

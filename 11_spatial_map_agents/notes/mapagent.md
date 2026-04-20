@@ -36,8 +36,8 @@ flowchart TB
 
 构建 ~1k 题的 *MapEval* benchmark，覆盖 POI / 路径 / 行政区 / 距离 / 海拔 / 公交。结果：MapAgent > 单 agent ReAct > 纯 LLM zero-shot。
 
-## 对你部门的启发
+## 工程启发
 
-- 你部门目标是把 *定位 / 路线 / POI* 算法暴露为服务。MapAgent 的范式就是把这些服务 *再往上* 封装成 agent。
-- 实际工程：planner 用大模型（Claude/GPT），sub-agent 可以用小模型（Qwen/Llama）+ 你自家算子，省成本。
-- 未来 *MCP map server* 是大概率发生的事，提前布局。
+- 地图业务的常见目标是把 *定位 / 路线 / POI* 算法暴露为服务。MapAgent 的范式就是把这些服务 *再往上* 封装成 agent。
+- 工程上：planner 用大模型（Claude/GPT），sub-agent 可以用小模型（Qwen/Llama）+ 自家算子，能显著降低成本。
+- 未来 *MCP map server* 大概率会成为主流形态，值得提前布局。

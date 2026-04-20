@@ -44,7 +44,7 @@ flowchart LR
 - 测试覆盖不全：有些 issue 即使 fail tests 也是合法解。
 - 越被刷到饱和，越变成 *over-engineering benchmark*。
 
-## 我的批注
+## 评注
 
 - SWE-bench 是 2024-2025 *最有影响力* 的 agent benchmark，直接催生了 coding agent 商用化。
 - 2026 年看：分数高不代表「真能用」，建议结合 *自家代码库* 自建 SWE-bench-style 评测。

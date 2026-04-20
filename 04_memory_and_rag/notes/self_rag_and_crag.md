@@ -64,7 +64,7 @@ flowchart LR
 | 失败兜底 | 重检索 | Web 搜索 |
 | 与 Agentic RAG 的距离 | 中 | 近（已经有外部行动） |
 
-## 我的批注
+## 评注
 
 - 在 *闭源 API* 场景，CRAG 思路更易落地（不依赖 fine-tune）。
 - 二者都强调 *评估检索质量*，这是从 Naive RAG → Agentic RAG 的关键中间形态。

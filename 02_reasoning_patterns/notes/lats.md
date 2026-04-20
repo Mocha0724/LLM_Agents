@@ -36,7 +36,7 @@ LATS 用 UCT 选节点：
 - 调用次数巨大（MCTS rollout × 工具调用），延迟与成本极高。
 - 适合「评估代价低、决策代价高」的任务，且要严格的 budget 控制。
 
-## 我的批注
+## 评注
 
 - 类比经典 RL：LATS 之于 ReAct，犹如 AlphaGo 之于 policy network。
 - 在生产环境，LATS 适合做 *离线优化*（如自动 prompt 优化、数据生成），不适合在线服务。

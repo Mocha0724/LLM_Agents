@@ -45,7 +45,7 @@ flowchart LR
 | 聚合 | 多数投票 | LLM 综合 / 投票 |
 | 适合 | 数值类、有明确正确答案 | 开放推理 |
 
-## 我的批注
+## 评注
 
 - Multi-Agent Debate 是 *免梯度* 的「理性化」机制；适合 high-stakes 决策（如医学、法律）做 sanity check。
 - 工程注意：成本！如果不是关键节点，别动不动就 debate。

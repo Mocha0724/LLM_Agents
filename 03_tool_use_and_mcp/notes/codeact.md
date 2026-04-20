@@ -43,7 +43,7 @@ flowchart LR
 - **CodeAct** 解决「单步 action 如何表达更强」。
 - 实际系统：用 MCP 暴露工具，让 LLM 在 sandbox 里写 Python 代码并通过 MCP client 调用这些工具。
 
-## 我的批注
+## 评注
 
 - CodeAct 是「Cursor / Devin / OpenHands」类编码 agent 的精神祖先。
-- 在你的工作里，*把定位 pipeline 暴露成 Python API*（如 `pose = relocalize(image, prior)`），未来对接 LLM agent 会非常顺滑。
+- 工程实践：把传统 pipeline 封装成 *Python API*（如 `pose = relocalize(image, prior)`）后，未来对接 LLM agent 会非常顺滑。

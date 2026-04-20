@@ -35,7 +35,7 @@ DAPO 改成 **token-level**：每个 token 独立计算 advantage 与 loss，长
 - 开源框架 **veRL** 已集成 DAPO。
 - 训练脚本与 GRPO 类似，只需打开 `dapo` 配置开关。
 
-## 我的批注
+## 评注
 
 - DAPO 是 2025 上半年最 *实用* 的 GRPO 改进，建议在尝试 GRPO 时直接用 DAPO 配置启动。
 - 四个 trick 各自独立，可拆开消融实验，体现 *工程驱动算法* 的范式。

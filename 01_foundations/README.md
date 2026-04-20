@@ -88,4 +88,4 @@ Anthropic 在 *Building Effective Agents*（2024）中提出一个关键区分�
 - 你能在不看本页面的情况下，画出 LLM Agent 的内循环吗？
 - 「调一次 tool 然后总结」算 agent 吗？为什么？
 - 一个固定 5 步的 RAG pipeline 算 workflow 还是 agent？
-- 你部门现有的哪些任务更适合 workflow？哪些适合 agent？
+- 一个组织里哪些任务更适合 workflow？哪些适合 agent？

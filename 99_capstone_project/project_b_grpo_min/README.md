@@ -45,4 +45,4 @@ project_b_grpo_min/
 - 把 `reward_correct` 换成 *多步任务的最终成功* 信号（参考 SkyRL-Agent）。
 - 引入 LLM-as-Verifier（参考 Argos）做更细粒度的 reward。
 - 用 veRL 框架替换 TRL，支持更大规模 + 多机。
-- 把 reward 与你部门业务挂钩（如「路径合理度」「用户满意度模拟」），探索垂直 agent 的 RL 后训练。
+- 把 reward 与垂直业务指标挂钩（如「路径合理度」「用户满意度模拟」），探索领域 agent 的 RL 后训练。

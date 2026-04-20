@@ -50,7 +50,7 @@ flowchart LR
 
 - Coding agent 是当前 *最成熟* 的 agent 商用品类（验证容易、价值高）。
 - Agent 对 IDE 的渗透速度远超预期：Cursor 已成为 2025-2026 主流编辑器之一。
-- 你的工作里：把内部「代码 review / 故障复现 / 监控告警自动定位」抽象成 coding-agent-like 任务，能直接复用这条 stack。
+- 工程落地：把内部「代码 review / 故障复现 / 监控告警自动定位」抽象成 coding-agent-like 任务，能直接复用这条 stack。
 
 ## 论文
 

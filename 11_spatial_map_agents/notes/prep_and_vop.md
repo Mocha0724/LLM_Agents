@@ -3,7 +3,7 @@
 > **PReP**: Perceive, Reflect, Plan — 用 MLLM 做无指令的城市导航（2024）
 > **VoP**: Verbalization of Path — 用语言重建多模态城市认知地图（2024）
 
-两篇都来自 *MLLM + 城市空间* 的研究线，是与你部门最直接相关的学术工作。
+两篇都来自 *MLLM + 城市空间* 的研究线，是地图/空间智能领域中与业务最直接相关的学术工作。
 
 ## PReP：城市导航三阶段
 
@@ -44,8 +44,8 @@ flowchart LR
 2. 引入显式 *geometric anchor*（如「在第三个十字路口」）能显著提升下游导航成功率。
 3. 验证了 LLM 内部存在某种 *cognitive map*-like 表征——这与 2024 年 MIT 的 "Language Models Represent Space and Time" 互相印证。
 
-## 对你部门的启发
+## 工程启发
 
-- **POI 描述生成**：可借鉴 VoP 的「地标锚点」思路，给用户的 POI 介绍不要只说「向北 200m」而是「过两个红绿灯，星巴克斜对面」。
-- **导航话术**：PReP 的 perceive-reflect-plan 可指导你们的 *AR 导航* / *口语导航* 任务的 prompt 设计。
+- **POI 描述生成**：可借鉴 VoP 的「地标锚点」思路，POI 介绍不只说「向北 200m」，而是「过两个红绿灯，星巴克斜对面」。
+- **导航话术**：PReP 的 perceive-reflect-plan 可指导 *AR 导航* / *口语导航* 任务的 prompt 设计。
 - **多模态融合**：街景图 + GPS + IMU → 文本表征 → LLM 决策，是一条值得 PoC 的研究路径。

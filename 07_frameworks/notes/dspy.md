@@ -62,7 +62,7 @@ compiled = opt.compile(RAG(), trainset=train_data)
 - DSPy 适合 *RAG / 分类 / 抽取* 这种「输入-输出明确」的任务。
 - 对纯 chat / 高度交互的 agent 收益相对小。
 
-## 我的批注
+## 评注
 
 - 个人最看好 DSPy 的方向：*让 prompt 工程退化成训练问题*。
 - 业务联想：在地图问答 / POI 抽取这种半结构化任务里，DSPy 优化能稳定带来 5-15% 准确率提升。

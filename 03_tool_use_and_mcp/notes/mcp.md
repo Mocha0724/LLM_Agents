@@ -48,7 +48,7 @@ flowchart LR
 - `postgres`：SQL 查询。
 - `puppeteer` / `playwright`：浏览器控制。
 - `time` / `weather` / `wolfram-alpha`：基础工具。
-- 自定义：你完全可以写一个「定位算法 server」暴露 `relocalize`、`map_match` 等接口。
+- 自定义：可以写一个面向定位 / 地图等垂直领域的 server，暴露 `relocalize`、`map_match`、`geocode` 等接口。
 
 ## Python 实现要点（mcp SDK ≥1.0）
 
@@ -85,7 +85,7 @@ if __name__ == "__main__":
 - *Tool poisoning*：恶意 server 可以伪造 tool 描述诱导调用。建议只装可信 server。
 - *Capability scope*：限制 filesystem server 只能访问指定目录、network server 只能访问 allowlist。
 
-## 我的批注
+## 评注
 
 - MCP 不是「学术意义上的创新」，而是「工程意义上的胜利」：把碎片化的工具接入做成了类似 LSP 的标准。
-- 对你的部门：未来很可能内部所有算法 service 都要出一个 MCP server 形态，方便 agent 接入；先熟悉 spec 没错。
+- 趋势预判：未来内部算法 service 很可能普遍提供 MCP server 形态以便 agent 接入；提前熟悉 spec 收益较大。

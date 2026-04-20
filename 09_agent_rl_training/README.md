@@ -2,7 +2,7 @@
 
 > 学习目标：搞懂从 *RLHF → DPO → RLVR → 多轮 Agent RL* 的演进，能讲清 GRPO/DAPO 的算法形式与工程权衡，能用 `trl` 跑通最小 GRPO 实验。
 >
-> 这是本仓库最 *研究导向* 的章节，与你的算法岗背景最契合。
+> 本章是仓库中最 *研究导向* 的部分，对算法/数学背景较强的读者尤为友好。
 
 ## 1. 演进图
 
@@ -99,11 +99,11 @@ DAPO 把 Qwen2.5-32B 训到 AIME 2024 50 分，超 DeepSeek-R1-Zero。
 - **Argos (Microsoft 2025)**：多模态 *agentic verifier*，给 reward 时同时评估准确性、空间定位、推理质量。
 - **Agent RLVR**：把 RLVR 思想搬到 multi-step agent。
 
-## 3. 与你的算法背景的连接
+## 3. 与传统 RL/算法知识的衔接
 
-- *RL 基础（PPO/A2C/MDP/Actor-Critic）* → 你应该已掌握；GRPO 实质是「去 critic 化 + 组内 baseline」的 trick。
-- *Reward shaping*：与定位算法中的「损失函数设计」类比；好 reward = 好梯度。
-- *Off-policy / replay buffer*：在 SkyRL-Agent 里仍重要。
+- *RL 基础（PPO/A2C/MDP/Actor-Critic）* 是阅读本章的前置；GRPO 实质是「去 critic 化 + 组内 baseline」的工程技巧。
+- *Reward shaping* 与传统监督学习中的「损失函数设计」类比：好 reward 即好梯度。
+- *Off-policy / replay buffer* 在 SkyRL-Agent 这类多步 Agent RL 里仍然重要。
 
 ## 4. Notebook
 

@@ -39,7 +39,7 @@ RLHF 等价于：
 - **KTO** (Kahneman-Tversky Optimization)：用「单边好/坏」而非成对偏好。
 - **SimPO**：去掉 reference policy。
 
-## 我的批注
+## 评注
 
 - DPO 是「让后训练人人可玩」的关键工作；2024 年大量开源 chat 模型用它做对齐。
 - 但对 *agentic 后训练*（多步、可验证 reward），DPO 适用面较窄；要看 GRPO/RLVR 路线。

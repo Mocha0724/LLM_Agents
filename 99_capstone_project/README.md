@@ -1,6 +1,6 @@
 # 99 · Capstone · 综合项目
 
-> 把前 12 章学的全部串起来，做两个 *面试可讲、面向你部门* 的端到端项目。
+> 把前 12 章的内容串起来，做两个端到端的小项目，覆盖「业务应用」与「研究复现」两条线。
 
 ## 项目 A · 地图定位 Agent（业务向）
 
@@ -44,18 +44,10 @@ gantt
     多步任务扩展       :b4, after b3, 5d
 ```
 
-## 项目 A 面试讲法（90 秒模板）
+## 项目 A 一句话总结
 
-> "我做了一个把传统地图算子（geocode/poi/route）暴露成工具的 agent，
-> 用 LangGraph 实现 plan-execute-reflect 主循环；高风险动作走 HITL；
-> 用 Langfuse 做 trace、自建 100 题评测集回归；
-> 整个工具集还包成了 MCP server，可以在 Cursor 直接用。
-> 准确率在 mock 集上 92%，单次平均成本 0.012 美元。"
+把传统地图算子（geocode/poi/route）暴露成工具，用 LangGraph 实现 plan-execute-reflect 主循环；高风险动作走 HITL；用 Langfuse 做 trace、自建 100 题评测集回归；整套工具集再包成 MCP server，可在 Cursor 直接调用。
 
-## 项目 B 面试讲法（90 秒模板）
+## 项目 B 一句话总结
 
-> "我用 Qwen2.5-0.5B + TRL GRPO 复现 RLVR 范式：
-> 1k 道带格式约束的算术题，双 reward（答案正确 + 格式合规），
-> 训练 200 步后格式合规率从 23% 涨到 96%，答案准确率 +18 pp，
-> 验证了即使是 0.5B 小模型也能用 RLVR 显著提升约束遵循。
-> 关注下一步是上 SkyRL-Agent 做多步 tool 任务。"
+用 Qwen2.5-0.5B + TRL GRPO 复现 RLVR 范式：1k 道带格式约束的算术题，双 reward（答案正确 + 格式合规）。训练若干步后，格式合规率与答案准确率均显著提升，验证小模型同样能从可验证奖励中受益。下一步可扩展到多步 tool use 任务（接 SkyRL-Agent / veRL）。

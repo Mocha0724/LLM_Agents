@@ -49,7 +49,7 @@ flowchart LR
 - *深度研究模式*（DeepResearch）是杀手级应用：5 分钟查 50 来源 → 一份结构化报告。
 - 引发*出版业 / SEO* 大震荡：流量从搜索引擎被 agent 截胡。
 
-## 我的批注
+## 评注
 
-- 对算法岗：可以把这套架构看成 *Agentic RAG 在 web 维度的极致版*；Query decomp + 多轮 retrieval + LLM 综合的设计模式高度可借鉴。
+- 架构启发：可以把这套架构看成 *Agentic RAG 在 web 维度的极致版*；Query decomp + 多轮 retrieval + LLM 综合的设计模式高度可借鉴。
 - 业务联想：地图业务里「行程规划」、「景点比较」、「实时事件影响导航」类需求，本质就是 agentic search 在垂直领域的复刻。

@@ -1,7 +1,7 @@
 # DriveLM & Agent-Driver · 笔记
 
 > 自动驾驶里 LLM-as-agent 的两条最有代表性的工作。
-> 与你部门的关联：HD-Map / 定位 / 路径在自动驾驶 stack 里是 *基石*；agent-driver 范式可能反过来重塑 *地图数据消费方式*。
+> 与地图/定位业务的关联：HD-Map / 定位 / 路径在自动驾驶 stack 里是 *基石*；agent-driver 范式可能反过来重塑 *地图数据消费方式*。
 
 ## DriveLM（2023, OpenDriveLab）
 
@@ -48,9 +48,9 @@ flowchart TB
 2. 工作记忆是关键：LLM 上下文容易丢，必须把 perception 历史存到 memory 模块。
 3. 引入 reflection：当 planner 失败时 LLM 重新选 tool 或参数。
 
-## 与你的工作连接
+## 与地图/定位业务的概念对照
 
-| 自动驾驶里的概念 | 地图定位部门里的对应物 |
+| 自动驾驶里的概念 | 地图/定位业务里的对应物 |
 |------|--------|
 | HD-Map 查询 | POI / 路网 / 行政区查询 |
 | Perception 工具 | 定位/SLAM 算法 |
@@ -58,7 +58,7 @@ flowchart TB
 | Planner 工具 | 路径规划 |
 | Reflector | agent 的 reflexion / verifier |
 
-→ 同一套 *agent-as-cognitive-layer* 范式可以平移到 **地图业务的对话式入口**：用户用自然语言问，LLM 调你部门的算法栈完成任务。
+→ 同一套 *agent-as-cognitive-layer* 范式可以平移到 **地图业务的对话式入口**：用户用自然语言提需求，LLM 调用业务侧的算法栈完成任务。
 
 ## 关键论文
 

@@ -46,7 +46,7 @@ Action N: Finish[answer]
 - 第 03 章会把 ReAct 升级为「函数调用 + MCP」。
 - 本章 notebook 用「手撸 ReAct」对比「函数调用 ReAct」，理解二者一致性。
 
-## 我的批注
+## 评注
 
 - ReAct 是「把 reasoning 与 acting 解耦表达，再用 prompt 让它们 alternating」的优雅设计；像极了控制论里的 *观测器 + 控制器* 分离。
-- 你做定位算法时也可以借这个思路：把 *特征匹配* 看成 action，把 *置信度评估* 看成 thought，让顶层调度变得可解释。
+- 在传统几何 / 信号类 pipeline 中也可以借这个思路：把 *特征匹配 / 工具调用* 看成 action，把 *置信度评估* 看成 thought，让顶层调度更具可解释性。

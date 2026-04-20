@@ -58,5 +58,5 @@ python client.py
 
 ## 接下来
 
-- 把 `add` / `now` 替换成你自己的算法 API（如 `relocalize`、`map_match`），就得到一个「定位算法 MCP server」。
+- 把 `add` / `now` 替换成具体的业务 API（如 `relocalize`、`map_match`、`geocode` 等），就得到一个面向定位 / 地图业务的 MCP server。
 - 和第 11 章的「地图 Agent」结合，让 LLM 通过 MCP 调用真实地图 / 定位服务。

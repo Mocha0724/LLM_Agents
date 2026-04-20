@@ -1,6 +1,6 @@
 # 学习路线 ROADMAP
 
-针对「即将入职地图定位算法岗」的 8-12 周学习计划。每周 6-10 小时投入。
+LLM Agent 系统化学习的 8-12 周参考计划，建议每周 6-10 小时投入。
 
 ## 总体节奏
 
@@ -22,7 +22,7 @@ gantt
     section 研究前沿
     09 Agent RL Training    :d1, after c4, 7d
     10 Frontier 2025-2026   :d2, after d1, 5d
-    section 业务桥接
+    section 业务实践
     11 Spatial / Map        :e1, after d2, 7d
     12 Safety & Eng         :e2, after e1, 4d
     99 Capstone             :e3, after e2, 10d
@@ -55,7 +55,7 @@ gantt
 
 - 精读：Generative Agents、MemGPT、Self-RAG、Agentic RAG。
 - 实战：Naive RAG vs Agentic RAG 命中率对比。
-- 思考题：你的部门海量地图数据如何 chunk + 向量化？
+- 思考题：海量地图/POI 数据如何 chunk + 向量化？
 
 ### Week 5 — Planning（05）
 
@@ -115,10 +115,10 @@ gantt
 
 ## 自我评估 checkpoint
 
-完成本仓库后，你应当能：
+学习完本仓库后，应当能够：
 
 1. 在白板上画出「LLM Agent 内部循环」（感知 → 推理 → 工具 → 记忆 → 反思）。
 2. 解释清楚为什么「workflow ≠ agent」以及何时该用哪个。
 3. 用至少两个框架实现同一个任务，并讨论各自取舍。
 4. 看懂一篇 Agent RL 论文（如 SkyRL-Agent）的 loss、reward、infra。
-5. 设计一个面向地图定位场景的 agent demo，包括工具集合、memory 策略与评测方案。
+5. 设计一个面向地图/定位场景的 agent demo，包括工具集合、memory 策略与评测方案。

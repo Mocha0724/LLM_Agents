@@ -67,7 +67,7 @@ flowchart LR
 | A* / Dijkstra | LLM + 启发式 / LATS |
 | MPC（Model Predictive Control） | ReAct（边走边修计划） |
 
-> 你做定位/导航时熟悉的层次规划思想几乎可以一一对应到 LLM agent 规划。
+> 经典定位/导航中的层次规划思想几乎可以一一对应到 LLM agent 的规划范式。
 
 ## 思考题
 

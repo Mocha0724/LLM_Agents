@@ -57,7 +57,7 @@
 - *长程任务* 是 2025-2026 评测核心方向。
 - 把多个工具/角色串成「公司」级工作流，是衡量 agent 真实经济价值的方式。
 
-## 我的批注
+## 评注
 
 - tau-bench 揭示「一致性」远比「单次成功率」重要——客服场景失败一次就是事故。
-- TheAgentCompany 让我看到一个有趣未来：把整个 SaaS stack 拿来当 *agent gym*。在你的部门，可类比把「定位 service + 监控 dashboard + on-call 工具」拼成一个 SRE-agent gym。
+- TheAgentCompany 指向一个有趣的未来方向：把整个 SaaS stack 当作 *agent gym*。类比工业场景，可以把「线上 service + 监控 dashboard + on-call 工具」拼成一个 SRE-agent gym。

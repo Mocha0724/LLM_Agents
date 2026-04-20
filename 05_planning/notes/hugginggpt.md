@@ -38,6 +38,6 @@ flowchart LR
 - 与第 06 章「多 agent」精神接近，但 HuggingGPT 是「LLM 调用专家模型」，而 06 章 multi-agent 框架是「多个 LLM 互相协作」。
 - 与第 11 章地图 agent 精神也接近：把不同的算法服务（POI、路径、定位）想象成 *专家模型*，由 LLM 做编排。
 
-## 我的批注
+## 评注
 
 - HuggingGPT 是「Function Calling + 任务图」的早期具象化；今天若再做，会更倾向于用 MCP 暴露每个模型 API + LangGraph 编排。

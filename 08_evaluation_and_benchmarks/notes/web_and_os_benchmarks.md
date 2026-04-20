@@ -39,7 +39,7 @@
 - WebArena 已大致饱和；研究焦点转向 *long-horizon*（TheAgentCompany）与 *adversarial*（恶意网页 / prompt injection）。
 - 业务实战提示：自建 *小型 webarena* 环境是 web agent 研发的标配。
 
-## 我的批注
+## 评注
 
 - Web/OS benchmark 的真实贡献不仅是分数，而是 *提供可重复实验环境*。
-- 在你的工作里，地图/导航产品的 *自动化测试环境* 是否可以参考 WebArena 的设计？
+- 业务联想：地图/导航类产品的 *自动化测试环境* 是否可以参考 WebArena 的设计？

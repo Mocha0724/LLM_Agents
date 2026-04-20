@@ -30,7 +30,7 @@
 Toolformer 探索了「能否学会调」，而 OpenAI/Anthropic 的 Function Calling 把问题变成了「教模型按 schema 输出」。
 两条路线殊途同归，目前主流走 schema 路线（更可控），但 Toolformer 的思想在 *agentic post-training*（09 章）中复活：用执行结果作 reward 训练模型。
 
-## 我的批注
+## 评注
 
 - 把 Toolformer 看作「Tool Use 的预训练原型」非常合适。
-- 对你算法岗工作的启发：在「带置信度的混合 pipeline」中，*用下游指标做软监督* 是很可借鉴的范式。
+- 工程启发：在「带置信度的混合 pipeline」中，*用下游指标做软监督* 是很可借鉴的范式。

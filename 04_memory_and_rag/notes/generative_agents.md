@@ -33,8 +33,8 @@ flowchart TB
 - *Decay*：`recency = exp(-λ Δt)`，λ 控制遗忘节奏。
 - *Reflection trigger*：累计 importance 达阈值就触发，避免每步都反思（成本爆炸）。
 
-## 我的批注
+## 评注
 
 - 这篇是「让 agent 有人味」的奠基工作，比 ReAct 更接近「agent」的精神（连续性、自我组织）。
 - 对工业落地：完全照搬太贵。但 *importance-weighted recency* 这一招可以直接用在 ChatGPT-style 长对话记忆系统里。
-- 对你的业务：如果未来要做「驾驶/出行助手」之类有连续上下文的产品，这套机制比单纯 RAG 更合适。
+- 业务启发：「驾驶/出行助手」之类需要连续上下文的产品，这套机制比单纯 RAG 更合适。

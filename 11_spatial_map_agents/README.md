@@ -1,6 +1,6 @@
 # 11 · Spatial / Map Agents 空间与地图智能体
 
-> 学习目标：把 LLM Agent 与你即将从事的「地图定位算法」业务连接起来。理解 SOTA 空间 agent 论文，能用真实/模拟地图 API 搭一个最小 demo。
+> 学习目标：理解 SOTA 空间/地图 agent 的代表工作，掌握把传统地图/定位算子封装为 LLM 工具的工程范式，并能用真实或模拟的地图 API 搭一个最小可运行 demo。
 
 ## 1. 为什么单独一章？
 
@@ -90,6 +90,6 @@ flowchart LR
 - **第 12 章**（Safety）：地图 agent 的输入会触发真实预订/导航，必须严格 HITL。
 - **第 99 章**（Capstone）：项目 A 直接基于本章 notebook 扩展。
 
-## 7. 思考与业务桥接
+## 7. 思考与练习
 
 详见 [exercises.md](./exercises.md)。
