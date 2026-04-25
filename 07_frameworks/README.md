@@ -33,6 +33,7 @@ flowchart TB
 |------|------|------|------|
 | **LangChain** | 早期通用胶水 | Chain / Runnable | 快速 prototype，但抽象层太多 |
 | **LangGraph** | 显式状态图编排 | StateGraph + nodes + edges | 复杂、有状态、需要回溯/HITL 的 agent |
+| **中国模型 API**（见 notes） | 国产模型（DeepSeek/Qwen/GLM 等）调用方式 | OpenAI 兼容 SDK | 国内部署 / 低成本 / 评测 |
 | **LlamaIndex** | RAG/索引为中心 | Index + QueryEngine + Workflows | RAG 主线，结构化数据 |
 | **AutoGen** | 对话式多 agent | ConversableAgent + GroupChat | 角色对话场景，研究/原型 |
 | **CrewAI** | 类似 SOP 的多 agent | Crew + Task + Process | 直觉化、低代码风 |
@@ -81,6 +82,10 @@ flowchart TD
 - **LlamaIndex 高级抽象多**：`Workflows` 概念较新，文档分散；先吃透官方 quickstart。
 - **DSPy 学习曲线陡**：但一旦理解 *signature + optimizer*，prompt 工程效率指数级提升。
 - **CrewAI 隐藏成本**：默认配置下会触发大量隐式 LLM 调用，对 token 敏感场景需关闭。
+
+## 6. 实用补充：中国产模型 API
+
+[`notes/chinese_model_apis.md`](./notes/chinese_model_apis.md) 整理了 DeepSeek、Qwen、GLM、StepFun 等主流国产模型的 API 接入方式。它们大多兼容 OpenAI SDK，切换仅需改 `base_url` + `api_key`。
 
 ## 思考题
 
