@@ -63,6 +63,7 @@ flowchart LR
 **深度补充**：
 - [`notes/coding_agents_deep.md`](./notes/coding_agents_deep.md)：IDE / CLI / Cloud 三形态详细比较、日常 workflow、CI 集成、安全实践。
 - [`notes/skill_mechanism.md`](./notes/skill_mechanism.md)：Cursor Skill / Hook 等 coding agent 技能注入机制的原理与接入方式。
+- [`notes/skill_writing_guide.md`](./notes/skill_writing_guide.md)：Skill 编写实战指南，覆盖代码 review、学术代码、论文修改、办公软件、Git / DevOps 等场景的完整 SKILL.md 模板。
 
 ## 4. Long-Horizon Execution
 
