@@ -87,6 +87,8 @@ flowchart TD
 
 [`notes/chinese_model_apis.md`](./notes/chinese_model_apis.md) 整理了 DeepSeek、Qwen、GLM、StepFun 等主流国产模型的 API 接入方式。它们大多兼容 OpenAI SDK，切换仅需改 `base_url` + `api_key`。
 
+更偏向工具配置和 coding agent 实战的版本见：[第 13 章 · 中国模型 API 接入方案](../13_llm_agent_usage/notes/chinese_model_api_integration.md)。
+
 ## 思考题
 
 见 [exercises.md](./exercises.md)。

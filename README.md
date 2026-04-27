@@ -1,7 +1,7 @@
 # Agents Guide · LLM 智能体学习仓库
 
 > 一份系统化整理 LLM Agent 知识的学习仓库。
-> 内容覆盖：基础理论 → 核心范式 → 工程框架 → 评测 → Agent RL 前沿 → 空间/地图智能 → 安全与工程。
+> 内容覆盖：基础理论 → 核心范式 → 工程框架 → 评测 → Agent RL 前沿 → 空间/地图智能 → 安全与工程 → Agent 使用实战。
 
 ## 关于本仓库
 
@@ -29,7 +29,8 @@ flowchart TD
     RL --> FT["10 Frontier 2025-2026 前沿专题"]
     FT --> SP["11 Spatial/Map Agents 空间与地图"]
     SP --> SE["12 Safety & Engineering 安全与工程"]
-    SE --> CAP["99 Capstone 综合项目"]
+    SE --> USE["13 LLM Agent Usage 使用实战"]
+    USE --> CAP["99 Capstone 综合项目"]
 ```
 
 ## 章节速览
@@ -48,6 +49,7 @@ flowchart TD
 | 10 | [Frontier 2025-2026](./10_frontier_2025_2026/) | Computer Use, Coding Agent, long-horizon | 前沿调研笔记 |
 | 11 | [Spatial / Map Agents](./11_spatial_map_agents/) | MapAgent, PReP, DriveLM | 地图 API agent 实战 |
 | 12 | [Safety & Engineering](./12_safety_and_engineering/) | Prompt Injection, HITL, 可观测性 | 工程化 checklist |
+| 13 | [LLM Agent Usage](./13_llm_agent_usage/) | Coding Agent 选型、国产模型 API、Skill/OpenSkill、Hook | 实用教程与配置模板 |
 | 99 | [Capstone](./99_capstone_project/) | 综合项目 | 地图定位 Agent + GRPO 最小训练 |
 
 ## 快速开始

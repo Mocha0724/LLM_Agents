@@ -65,6 +65,8 @@ flowchart LR
 - [`notes/skill_mechanism.md`](./notes/skill_mechanism.md)：Cursor Skill / Hook 等 coding agent 技能注入机制的原理与接入方式。
 - [`notes/skill_writing_guide.md`](./notes/skill_writing_guide.md)：Skill 编写实战指南，覆盖代码 review、学术代码、论文修改、办公软件、Git / DevOps 等场景的完整 SKILL.md 模板。
 
+如果目标是直接上手使用和配置工具，优先阅读新的实用目录：[第 13 章 · LLM Agent 使用实战](../13_llm_agent_usage/)。
+
 ## 4. Long-Horizon Execution
 
 - 任务跨度从分钟级 → 小时 / 天 / 周。
