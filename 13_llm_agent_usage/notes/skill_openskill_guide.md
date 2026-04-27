@@ -347,3 +347,13 @@ description: Create or edit Word, Excel, PowerPoint, and PDF files using Python 
 4. `paper-polish`：论文/报告修改。
 5. `academic-experiment`：实验管理。
 6. `office-docs`：办公文件自动化。
+
+## 10. 社区科研 Skill 参考
+
+更完整的社区科研 Skill 仓库列表（可直接通过 `npx openskills install` 安装使用）见同目录下的 **`openskills_install_and_usage.md` 附录 B**，包括：
+
+- **综合型**：K-Dense-AI/scientific-agent-skills（133 科研 skill）、Orchestra-Research/AI-Research-SKILLs（87 个 AI 研究 skill）、LeonChaoX/qinyan-academic-skills（181 学术 skill）
+- **论文写作专项**：Imbad0202/academic-research-skills、Master-cai/Research-Paper-Writing-Skills、lishix520/academic-paper-skills
+- **实证研究**：brycewang-stanford/Awesome-Agent-Skills-for-Empirical-Research（23,000+ skills）
+
+详情点这里：[`openskills_install_and_usage.md`](./openskills_install_and_usage.md)

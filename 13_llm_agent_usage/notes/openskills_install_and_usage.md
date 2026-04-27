@@ -169,6 +169,39 @@ npx openskills sync
 
 **文档类说明**（来自官方 `README`）：`docx` / `pdf` / `pptx` / `xlsx` 中部分实现与 **Claude 产品内文档能力** 相关，**源码可见程度与许可**以仓库内 `LICENSE` 与 `THIRD_PARTY_NOTICES` 为准。
 
+# 附录 B · 社区科研 Skill 仓库推荐
+
+> 以下列出了 GitHub 上专注于 **科研 / 学术 / 论文** 的高质量 Skill 包。可直接用 `npx openskills install <来源>` 安装。
+
+## B.1 综合型科研技能库
+
+| 仓库 | 规模 | 一句话 |
+|------|------|--------|
+| **[K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills)** | 133 个 skill | 涵盖数据分析、文献综述、科学写作、生物信息、化学、临床医学等，支持 `gh skill` 一键安装。 |
+| **[LeonChaoX/qinyan-academic-skills](https://github.com/LeonChaoX/qinyan-academic-skills)** | 181 个 skill | 沁言学术科研论文 Skills——论文检索、深度分析、润色改写、引文搜索等 18 个分类，支持分类安装。 |
+| **[Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs)** | 87 个 skill | AI 研究工程技能：模型架构、分布式训练、实验管理、ML 论文写作。提供 `npx` 一键安装。 |
+| **[InternScience/Awesome-Scientific-Skills](https://github.com/InternScience/Awesome-Scientific-Skills)** | 精选合集 | 开放的科学 Skill 精选集合，按数据清洗、可视化、文献搜索等操作分类，跨 agent 平台通用。 |
+
+## B.2 论文写作专项
+
+| 仓库 | 特点 |
+|------|------|
+| **[Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills)** | 专为 Claude Code 设计，Research → Write → Review → Revise → Finalize 全流程；含 12 代理写作系统、LaTeX 强化、VLM 图表验证。 |
+| **[Master-cai/Research-Paper-Writing-Skills](https://github.com/Master-cai/Research-Paper-Writing-Skills)** | 基于彭思达教授开放笔记改编，专注 ML/CV/NLP 论文写作，提供段落优化、逻辑检查、审稿人视角自评。 |
+| **[lishix520/academic-paper-skills](https://github.com/lishix520/academic-paper-skills)** | 双 skill 框架：**Strategist**（规划）+ **Composer**（写作），含 7 维度审稿人模拟评估系统。 |
+| **[fuhaoda/stats-paper-writing-agent-skills](https://github.com/fuhaoda/stats-paper-writing-agent-skills)** | 统计学论文写作，支持 LaTeX 前言草拟、稿件审计（结构/引用/符号）、审稿回复与点对点回复信。 |
+
+## B.3 实证研究 / 跨学科
+
+| 仓库 | 规模 | 特点 |
+|------|------|------|
+| **[brycewang-stanford/Awesome-Agent-Skills-for-Empirical-Research](https://github.com/brycewang-stanford/Awesome-Agent-Skills-for-Empirical-Research)** | **119 仓库 / 23,000+ skills** | 最大实证研究 Skill 聚合库，覆盖选题、文献检索、因果推断、论文写作到审稿回复。社科/经济等，由 Stanford REAP 维护。 |
+
+## B.4 其他相关资源
+
+- **[VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills)** — 1000+ agent skills 聚合集合，兼容 Claude Code / Codex / Gemini CLI / Cursor 等。
+- **[paper-writing-agent](https://github.com/topics/paper-writing-agent)** — GitHub Topic 聚合页，罗列论文写作 agent 相关项目。
+
 ## 9. 延伸阅读
 
 - [Agent Skills 标准与规范](https://github.com/anthropics/skills)（`spec/`、`agentskills.io`）
