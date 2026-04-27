@@ -2,6 +2,14 @@
 
 > Skill 是给 agent 的「可复用工作说明书」。它不是工具调用，而是让 agent 在合适场景下读到一段专门的流程、规范、模板或领域知识。
 
+## 0. OpenSkills（CLI）安装与 `anthropics/skills` 各包说明
+
+若你要用 **`npx openskills install …` + `sync` 生成 `AGENTS.md`** 这一套跨工具工作流，请直接看专文（含 `install/sync/list/read` 与各 skill 速览表）：
+
+- **[`openskills_install_and_usage.md`](./openskills_install_and_usage.md)**
+
+下文仍保留 **手搓 `.cursor/skills`、在 Aider/Continue 中迁移** 的通用思路。
+
 ## 1. Skill 的核心思想
 
 ```mermaid

@@ -19,28 +19,35 @@ flowchart TD
     D --> E[5. 实战模板与清单]
 ```
 
+
+
 ## 3. 文件导览
 
-| 文件 | 内容 |
-|------|------|
-| [`notes/coding_agent_selection.md`](./notes/coding_agent_selection.md) | Coding Agent 选择指南：Cursor、Claude Code、Codex、Aider、OpenHands、Devin、国产工具等 |
-| [`notes/chinese_model_api_integration.md`](./notes/chinese_model_api_integration.md) | 中国模型 API 接入方案：DeepSeek / Qwen / GLM / StepFun / MiniMax 等 |
-| [`notes/skill_openskill_guide.md`](./notes/skill_openskill_guide.md) | Skill / OpenSkill 的原理、安装、编写、配置与迁移 |
-| [`notes/hooks_vs_skills.md`](./notes/hooks_vs_skills.md) | Hook、Skill、Rule、Command、MCP Tool、Function Calling 的理解与比较 |
-| [`examples/`](./examples/) | 可复制的 Skill / Hook / 配置片段 |
+
+| 文件                                                                                   | 内容                                                                     |
+| ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------- |
+| `[notes/coding_agent_selection.md](./notes/coding_agent_selection.md)`               | Coding Agent 选择指南：Cursor、Claude Code、Codex、Aider、OpenHands、Devin、国产工具等 |
+| `[notes/chinese_model_api_integration.md](./notes/chinese_model_api_integration.md)` | 中国模型 API 接入方案：DeepSeek / Qwen / GLM / StepFun / MiniMax 等              |
+| `[notes/openskills_install_and_usage.md](./notes/openskills_install_and_usage.md)`  | **OpenSkills（npm CLI）**：`npx openskills install/sync`，及 `anthropics/skills` 各子 skill 功能速览 |
+| `[notes/skill_openskill_guide.md](./notes/skill_openskill_guide.md)`                 | Skill / OpenSkill 的原理、**手写/迁移** 编写、配置与工具差异                                    |
+| `[notes/hooks_vs_skills.md](./notes/hooks_vs_skills.md)`                             | Hook、Skill、Rule、Command、MCP Tool、Function Calling 的理解与比较               |
+| `[examples/](./examples/)`                                                           | 可复制的 Skill / Hook / 配置片段                                               |
+
 
 ## 4. 快速结论
 
 ### Coding Agent 怎么选
 
-| 场景 | 推荐 |
-|------|------|
-| 日常开发、阅读项目、改中小 feature | **Cursor** |
-| 终端重度用户、脚本/后端项目、长上下文 | **Claude Code** |
-| OpenAI 生态、轻量 CLI coding | **Codex CLI** |
-| 想用国产/开源模型 + git 友好 | **Aider** |
-| 想自托管云端 agent / 做 SWE-bench 研究 | **OpenHands / SWE-agent** |
-| 想委托长任务、让 agent 自己开 PR | **Devin / 云端 coding agent** |
+
+| 场景                            | 推荐                          |
+| ----------------------------- | --------------------------- |
+| 日常开发、阅读项目、改中小 feature         | **Cursor**                  |
+| 终端重度用户、脚本/后端项目、长上下文           | **Claude Code**             |
+| OpenAI 生态、轻量 CLI coding       | **Codex CLI**               |
+| 想用国产/开源模型 + git 友好            | **Aider**                   |
+| 想自托管云端 agent / 做 SWE-bench 研究 | **OpenHands / SWE-agent**   |
+| 想委托长任务、让 agent 自己开 PR         | **Devin / 云端 coding agent** |
+
 
 ### 国内模型怎么接
 
@@ -77,3 +84,4 @@ print(resp.choices[0].message.content)
 - 第 07 章讲框架选型，本目录讲开发者日常怎么用。
 - 第 10 章讲 frontier coding agent，本目录整理成实操教程。
 - 第 12 章讲安全，本目录在每个工具使用方案里补充权限、沙箱、HITL 建议。
+
