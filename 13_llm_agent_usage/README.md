@@ -1,11 +1,11 @@
 # 13 · LLM Agent 使用实战
 
-> 本目录聚焦 **怎么选择、配置、使用 LLM Agent 工具**。前面章节偏理论、论文与框架，本目录偏实用教程：选哪个 coding agent、怎么接国内模型 API、Skill/OpenSkill 怎么写、Hook 与 Skill 有什么区别。
+> 本目录聚焦 **怎么选择、配置、使用 LLM Agent 工具**。前面章节偏理论、论文与框架，本目录偏实用教程：选哪个 coding agent、**在 Cursor 等工具里接中国 coding 模型**、Skill/OpenSkill 怎么写、Hook 与 Skill 有什么区别。
 
 ## 1. 本目录适合解决的问题
 
 - 想用 Cursor / Claude Code / Codex / Aider / OpenHands 等 coding agent，但不知道选哪个。
-- 想在 agent 工具里接入 DeepSeek、Qwen、GLM 等国产模型 API。
+- 想在 **Cursor、VS Code 插件、Aider** 等里用 **DeepSeek、Qwen、GLM** 等中国（或国内可调用）coding 模型。
 - 想理解 Skill、OpenSkill、Hook、Rule、MCP Tool 等概念的区别。
 - 想给常见工作流写可复用 skill：编码、学术代码、论文修改、Word/Excel/PPT/PDF、Git/DevOps。
 
@@ -13,7 +13,7 @@
 
 ```mermaid
 flowchart TD
-    A[1. Coding Agent 选型] --> B[2. 国产模型 API 接入]
+    A[1. Coding Agent 选型] --> B[2. 工具里接中国 coding 模型]
     B --> C[3. Skill / OpenSkill 编写与配置]
     C --> D[4. Hook vs Skill vs Rule vs Tool]
     D --> E[5. 实战模板与清单]
@@ -27,7 +27,7 @@ flowchart TD
 | 文件                                                                                   | 内容                                                                     |
 | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------- |
 | `[notes/coding_agent_selection.md](./notes/coding_agent_selection.md)`               | Coding Agent 选择指南：Cursor、Claude Code、Codex、Aider、OpenHands、Devin、国产工具等 |
-| `[notes/chinese_model_api_integration.md](./notes/chinese_model_api_integration.md)` | 中国模型 API 接入方案：DeepSeek / Qwen / GLM / StepFun / MiniMax 等              |
+| `[notes/chinese_model_api_integration.md](./notes/chinese_model_api_integration.md)` | **在 Cursor 等工具里**使用中国 coding 模型：OpenAI 兼容配法、各工具策略与排错               |
 | `[notes/openskills_install_and_usage.md](./notes/openskills_install_and_usage.md)`  | **OpenSkills（npm CLI）**：`npx openskills install/sync`，及 `anthropics/skills` 各子 skill 功能速览 |
 | `[notes/skill_openskill_guide.md](./notes/skill_openskill_guide.md)`                 | Skill / OpenSkill 的原理、**手写/迁移** 编写、配置与工具差异                                    |
 | `[notes/hooks_vs_skills.md](./notes/hooks_vs_skills.md)`                             | Hook、Skill、Rule、Command、MCP Tool、Function Calling 的理解与比较               |
@@ -49,18 +49,19 @@ flowchart TD
 | 想委托长任务、让 agent 自己开 PR         | **Devin / 云端 coding agent** |
 
 
-### 国内模型怎么接
+### 在工具里用中国 coding 模型
 
-优先选择 **OpenAI 兼容 API**。大多数国产模型可以统一这样调用：
+在 **Cursor / VS Code 插件 / Aider** 里，通常走 **OpenAI 兼容**：填好 `api_key`、`base_url`、厂商文档里的 **model  ID**（如 `deepseek-chat`）。**Claude Code / 官方 Claude 栈默认走 Anthropic**，不能简单等同为「在设置里填国产 base_url」；细节见 [`notes/chinese_model_api_integration.md`](./notes/chinese_model_api_integration.md)。
+
+用脚本自测 API 是否可用时，可以用 OpenAI SDK 统一调用：
 
 ```python
 from openai import OpenAI
 
 client = OpenAI(
     api_key="YOUR_API_KEY",
-    base_url="https://api.deepseek.com",  # 或 Qwen / GLM / StepFun 的 base_url
+    base_url="https://api.deepseek.com",
 )
-
 resp = client.chat.completions.create(
     model="deepseek-chat",
     messages=[{"role": "user", "content": "你好"}],

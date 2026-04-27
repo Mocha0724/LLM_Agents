@@ -100,6 +100,8 @@ aider --model openai/deepseek-chat
 - **长上下文** 是否足够读项目。
 - **补丁格式** 是否稳定，不要经常输出无法应用的 diff。
 
+在 **Cursor、VS Code 插件** 里怎么填 `base_url`、以及 **Claude 官方栈为何不能直接当「换国产一样」配**，见专文：[`chinese_model_api_integration.md`](./chinese_model_api_integration.md)。
+
 ### 4.3 企业 / 团队自托管
 
 推荐：
