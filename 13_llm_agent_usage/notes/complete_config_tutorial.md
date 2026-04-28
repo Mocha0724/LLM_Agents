@@ -25,60 +25,72 @@
 
 ## 附录：官方资源与文档索引
 
+ **后续内容基本是AI整理。我个人也没有各种环境各种工具都配过，不保证正确**  
+ **安装相关的操作尽量参考各个官网最新的指南** 
+
 ### 各工具官方资源
 
-| # | 工具 | 官网/下载 | 官方文档 | GitHub / 其他 |
-|---|------|-----------|----------|---------------|
-| 1 | **Claude Code** | [code.claude.com](https://code.claude.com) | [docs](https://code.claude.com/docs) | [github.com/anthropics/claude-code](https://github.com/anthropics/claude-code) |
-| 2 | **Cursor** | [cursor.com](https://cursor.com) | [docs.cursor.com](https://docs.cursor.com) | [cursor.com/shortcuts](https://cursor.com/shortcuts) |
-| 3 | **OpenCode** | [opencode-ai.github.io](https://opencode-ai.github.io) | [opencode-ai.github.io](https://opencode-ai.github.io) | [github.com/opencode-ai/opencode](https://github.com/opencode-ai/opencode) |
-| 4 | **Codex CLI** | [openai.com/index/codex-cli](https://openai.com/index/codex-cli/) | — | [github.com/openai/codex-cli](https://github.com/openai/codex-cli) |
-| 5 | **VS Code** | [code.visualstudio.com](https://code.visualstudio.com) | [code.visualstudio.com/docs](https://code.visualstudio.com/docs) | [marketplace: Claude Code](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code) |
+
+| #   | 工具              | 官网/下载                                                             | 官方文档                                                             | GitHub / 其他                                                                                           |
+| --- | --------------- | ----------------------------------------------------------------- | ---------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| 1   | **Claude Code** | [code.claude.com](https://code.claude.com)                        | [docs](https://code.claude.com/docs)                             | [github.com/anthropics/claude-code](https://github.com/anthropics/claude-code)                        |
+| 2   | **Cursor**      | [cursor.com](https://cursor.com)                                  | [docs.cursor.com](https://docs.cursor.com)                       | [cursor.com/shortcuts](https://cursor.com/shortcuts)                                                  |
+| 3   | **OpenCode**    | [opencode-ai.github.io](https://opencode-ai.github.io)            | [opencode-ai.github.io](https://opencode-ai.github.io)           | [github.com/opencode-ai/opencode](https://github.com/opencode-ai/opencode)                            |
+| 4   | **Codex CLI**   | [openai.com/index/codex-cli](https://openai.com/index/codex-cli/) | —                                                                | [github.com/openai/codex-cli](https://github.com/openai/codex-cli)                                    |
+| 5   | **VS Code**     | [code.visualstudio.com](https://code.visualstudio.com)            | [code.visualstudio.com/docs](https://code.visualstudio.com/docs) | [marketplace: Claude Code](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code) |
+
 
 ### Skills 相关资源
 
-| 资源 | 链接 |
-|------|------|
-| OpenSkills CLI（npm） | [npmjs.com/package/openskills](https://www.npmjs.com/package/openskills) |
-| OpenSkills GitHub | [github.com/suplant-inc/openskills](https://github.com/suplant-inc/openskills) |
-| Anthropic 官方 Skills 仓库 | [github.com/anthropics/skills](https://github.com/anthropics/skills) |
+
+| 资源                     | 链接                                                                             |
+| ---------------------- | ------------------------------------------------------------------------------ |
+| OpenSkills CLI（npm）    | [npmjs.com/package/openskills](https://www.npmjs.com/package/openskills)       |
+| OpenSkills GitHub      | [github.com/suplant-inc/openskills](https://github.com/suplant-inc/openskills) |
+| Anthropic 官方 Skills 仓库 | [github.com/anthropics/skills](https://github.com/anthropics/skills)           |
+
 
 ### 中国模型 API 资源
 
-| 模型厂商 | API 文档 | API Key 申请 |
-|----------|----------|-------------|
-| **DeepSeek** | [platform.deepseek.com/api-docs](https://platform.deepseek.com/api-docs) | [platform.deepseek.com/api_keys](https://platform.deepseek.com/api_keys) |
-| | Anthropic 兼容网关：[api-docs.deepseek.com/zh-cn/guides/anthropic_compatible](https://api-docs.deepseek.com/zh-cn/guides/anthropic_compatible) |
-| | OpenCode 集成说明：[api-docs.deepseek.com/zh-cn/guides/agent_integrations/opencode](https://api-docs.deepseek.com/zh-cn/guides/agent_integrations/opencode) |
-| **通义千问（Qwen）** | [help.aliyun.com/zh/model-studio](https://help.aliyun.com/zh/model-studio) | [bailian.console.aliyun.com](https://bailian.console.aliyun.com) |
-| **智谱 GLM** | [open.bigmodel.cn/dev/api](https://open.bigmodel.cn/dev/api) | [open.bigmodel.cn/usercenter/apikeys](https://open.bigmodel.cn/usercenter/apikeys) |
+
+| 模型厂商           | API 文档                                                                                                                                                 | API Key 申请                                                                         |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
+| **DeepSeek**   | [platform.deepseek.com/api-docs](https://platform.deepseek.com/api-docs)                                                                               | [platform.deepseek.com/api_keys](https://platform.deepseek.com/api_keys)           |
+|                | Anthropic 兼容网关：[api-docs.deepseek.com/zh-cn/guides/anthropic_compatible](https://api-docs.deepseek.com/zh-cn/guides/anthropic_compatible)              |                                                                                    |
+|                | OpenCode 集成说明：[api-docs.deepseek.com/zh-cn/guides/agent_integrations/opencode](https://api-docs.deepseek.com/zh-cn/guides/agent_integrations/opencode) |                                                                                    |
+| **通义千问（Qwen）** | [help.aliyun.com/zh/model-studio](https://help.aliyun.com/zh/model-studio)                                                                             | [bailian.console.aliyun.com](https://bailian.console.aliyun.com)                   |
+| **智谱 GLM**     | [open.bigmodel.cn/dev/api](https://open.bigmodel.cn/dev/api)                                                                                           | [open.bigmodel.cn/usercenter/apikeys](https://open.bigmodel.cn/usercenter/apikeys) |
+
 
 ### 通用系统工具下载
 
-| 工具 | 官方链接 |
-|------|----------|
-| **Node.js**（所有工具的前置） | [nodejs.org/zh-cn/download](https://nodejs.org/zh-cn/download/) |
-| **Git**（版本控制、Skills 安装依赖） | [git-scm.com/downloads](https://git-scm.com/downloads) |
-| **Homebrew**（macOS 包管理器） | [brew.sh](https://brew.sh) |
-| **nvm**（macOS/Linux Node 版本管理） | [github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm) |
-| **nvm-windows**（Windows Node 版本管理） | [github.com/coreybutler/nvm-windows](https://github.com/coreybutler/nvm-windows) |
-| **Windows Terminal**（推荐终端） | [apps.microsoft.com/detail/9n0dx20hk701](https://apps.microsoft.com/detail/9n0dx20hk701) |
-| **PowerShell 7+**（Windows 推荐） | [github.com/PowerShell/PowerShell/releases](https://github.com/PowerShell/PowerShell/releases) |
+
+| 工具                                 | 官方链接                                                                                           |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------- |
+| **Node.js**（所有工具的前置）               | [nodejs.org/zh-cn/download](https://nodejs.org/zh-cn/download/)                                |
+| **Git**（版本控制、Skills 安装依赖）          | [git-scm.com/downloads](https://git-scm.com/downloads)                                         |
+| **Homebrew**（macOS 包管理器）           | [brew.sh](https://brew.sh)                                                                     |
+| **nvm**（macOS/Linux Node 版本管理）     | [github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm)                                         |
+| **nvm-windows**（Windows Node 版本管理） | [github.com/coreybutler/nvm-windows](https://github.com/coreybutler/nvm-windows)               |
+| **Windows Terminal**（推荐终端）         | [apps.microsoft.com/detail/9n0dx20hk701](https://apps.microsoft.com/detail/9n0dx20hk701)       |
+| **PowerShell 7+**（Windows 推荐）      | [github.com/PowerShell/PowerShell/releases](https://github.com/PowerShell/PowerShell/releases) |
+
 
 ### 系统差异快速参考
 
-| 概念 | macOS | Linux | Windows |
-|------|-------|-------|---------|
-| 终端 | Terminal.app / iTerm2 | 系统终端 / Konsole / Gnome Terminal | PowerShell 7+ / Windows Terminal |
-| 包管理器 | Homebrew (`brew`) | apt (Debian) / dnf (Fedora) / pacman (Arch) | winget / Chocolatey / Scoop |
-| 环境变量 | `export VAR=value` | `export VAR=value` | `$env:VAR="value"` (PowerShell) |
-| 配置文件 | `~/.zshrc` / `~/.bashrc` | `~/.bashrc` / `~/.zshrc` / `~/.profile` | 系统环境变量 / `$PROFILE` |
-| 全局 npm 路径 | `/usr/local/lib/node_modules` 或 `~/.npm-global` | 同 macOS | `%APPDATA%\npm\node_modules` |
-| PATH 查看 | `echo $PATH` | `echo $PATH` | `$env:Path` |
-| Node.js 推荐安装 | brew / nvm / 官网 .pkg | nvm / apt / 官网 .tar.xz | nvm-windows / 官网 .msi |
+
+| 概念           | macOS                                           | Linux                                       | Windows                          |
+| ------------ | ----------------------------------------------- | ------------------------------------------- | -------------------------------- |
+| 终端           | Terminal.app / iTerm2                           | 系统终端 / Konsole / Gnome Terminal             | PowerShell 7+ / Windows Terminal |
+| 包管理器         | Homebrew (`brew`)                               | apt (Debian) / dnf (Fedora) / pacman (Arch) | winget / Chocolatey / Scoop      |
+| 环境变量         | `export VAR=value`                              | `export VAR=value`                          | `$env:VAR="value"` (PowerShell)  |
+| 配置文件         | `~/.zshrc` / `~/.bashrc`                        | `~/.bashrc` / `~/.zshrc` / `~/.profile`     | 系统环境变量 / `$PROFILE`              |
+| 全局 npm 路径    | `/usr/local/lib/node_modules` 或 `~/.npm-global` | 同 macOS                                     | `%APPDATA%\npm\node_modules`     |
+| PATH 查看      | `echo $PATH`                                    | `echo $PATH`                                | `$env:Path`                      |
+| Node.js 推荐安装 | brew / nvm / 官网 .pkg                            | nvm / apt / 官网 .tar.xz                      | nvm-windows / 官网 .msi            |
+
 
 ---
-
 
 ## 1. Claude Code 安装配置
 
@@ -90,13 +102,16 @@ Claude Code 是 Anthropic 官方的 **CLI 原生 Coding Agent**，直接在终�
 
 #### 前置条件
 
-| 系统 | 前置要求 |
-|------|----------|
-| macOS | macOS 12+；Node.js ≥ 18；Git（Xcode Command Line Tools） |
-| Linux | Node.js ≥ 18；Git；glibc 2.28+ |
+
+| 系统      | 前置要求                                                                                 |
+| ------- | ------------------------------------------------------------------------------------ |
+| macOS   | macOS 12+；Node.js ≥ 18；Git（Xcode Command Line Tools）                                 |
+| Linux   | Node.js ≥ 18；Git；glibc 2.28+                                                         |
 | Windows | Windows 10+；Node.js ≥ 18；**Git for Windows**（[下载](https://git-scm.com/download/win)） |
 
+
 > **安装 Node.js**：从 [nodejs.org](https://nodejs.org/zh-cn/download/) 下载 LTS 版本，或通过包管理器安装：
+>
 > - macOS: `brew install node`
 > - Linux: `curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - && sudo apt-get install -y nodejs`
 > - Windows: 从官网下载 `.msi` 安装包
@@ -144,14 +159,16 @@ claude --version
 
 #### 官方资源
 
-| 资源 | 链接 |
-|------|------|
-| 官方文档 | [code.claude.com/docs](https://code.claude.com/docs) |
-| 下载/安装指南 | [code.claude.com/docs/en/vs-code](https://code.claude.com/docs/en/vs-code) |
-| GitHub 仓库 | [github.com/anthropics/claude-code](https://github.com/anthropics/claude-code) |
-| 设置参考 | [code.claude.com/en/settings](https://code.claude.com/en/settings) |
 
-### 1.3 首次配置
+| 资源        | 链接                                                                             |
+| --------- | ------------------------------------------------------------------------------ |
+| 官方文档      | [code.claude.com/docs](https://code.claude.com/docs)                           |
+| 下载/安装指南   | [code.claude.com/docs/en/vs-code](https://code.claude.com/docs/en/vs-code)     |
+| GitHub 仓库 | [github.com/anthropics/claude-code](https://github.com/anthropics/claude-code) |
+| 设置参考      | [code.claude.com/en/settings](https://code.claude.com/en/settings)             |
+
+
+### 1.3 首次配置（如果要接入国产模型，跳过这一步）
 
 ```bash
 # 登录你的 Anthropic 账号
@@ -211,9 +228,9 @@ claude --help   # 查看全部选项
 
 ---
 
-## 2. Cursor 安装配置
+## 2. Cursor 安装配置（Cursor可以使用IDE风格的界面，也可以使用Agent风格）
 
-### 2.1 简介
+## 2.1 简介
 
 Cursor 是基于 VS Code 的 **IDE 形态 Coding Agent**，原生支持 AI 对话、代码补全、内联编辑。适合日常开发和阅读项目。
 
@@ -221,22 +238,26 @@ Cursor 是基于 VS Code 的 **IDE 形态 Coding Agent**，原生支持 AI 对�
 
 #### 前置条件
 
-| 系统 | 前置要求 |
-|------|----------|
-| macOS | macOS 11+（Big Sur+）；Intel 或 Apple Silicon |
-| Windows | Windows 10 20H2+；64-bit |
-| Linux | Ubuntu 20.04+ / Fedora 38+ / 其他主流发行版；x86_64 或 ARM64 |
+
+| 系统      | 前置要求                                                |
+| ------- | --------------------------------------------------- |
+| macOS   | macOS 11+（Big Sur+）；Intel 或 Apple Silicon           |
+| Windows | Windows 10 20H2+；64-bit                             |
+| Linux   | Ubuntu 20.04+ / Fedora 38+ / 其他主流发行版；x86_64 或 ARM64 |
+
 
 #### 下载安装
 
 从 [cursor.com](https://cursor.com) 下载对应系统的桌面版安装包：
 
-| 系统 | 安装包类型 | 安装方式 |
-|------|-----------|----------|
-| **macOS (Intel)** | `.dmg` | 下载后拖入 Applications 文件夹 |
-| **macOS (Apple Silicon)** | `.dmg`（arm64） | 同上，推荐 Apple Silicon 版本 |
-| **Windows** | `.exe` 安装包 | 双击运行，按向导安装 |
-| **Linux** | `.AppImage` / `.deb` / `.rpm` | 参见下方 Linux 说明 |
+
+| 系统                        | 安装包类型                         | 安装方式                   |
+| ------------------------- | ----------------------------- | ---------------------- |
+| **macOS (Intel)**         | `.dmg`                        | 下载后拖入 Applications 文件夹 |
+| **macOS (Apple Silicon)** | `.dmg`（arm64）                 | 同上，推荐 Apple Silicon 版本 |
+| **Windows**               | `.exe` 安装包                    | 双击运行，按向导安装             |
+| **Linux**                 | `.AppImage` / `.deb` / `.rpm` | 参见下方 Linux 说明          |
+
 
 #### macOS 安装
 
@@ -288,13 +309,15 @@ cursor .
 
 #### 官方资源
 
-| 资源 | 链接 |
-|------|------|
-| 官网下载 | [cursor.com](https://cursor.com) |
-| 官方文档 | [docs.cursor.com](https://docs.cursor.com) |
-| 快捷键指南 | [cursor.com/shortcuts](https://cursor.com/shortcuts) |
+
+| 资源             | 链接                                                       |
+| -------------- | -------------------------------------------------------- |
+| 官网下载           | [cursor.com](https://cursor.com)                         |
+| 官方文档           | [docs.cursor.com](https://docs.cursor.com)               |
+| 快捷键指南          | [cursor.com/shortcuts](https://cursor.com/shortcuts)     |
 | Marketplace 插件 | [cursor.com/marketplace](https://cursor.com/marketplace) |
-| 更新日志 | [cursor.com/changelog](https://cursor.com/changelog) |
+| 更新日志           | [cursor.com/changelog](https://cursor.com/changelog)     |
+
 
 ### 2.3 关键设置
 
@@ -355,17 +378,19 @@ glob: "**/*.py"
 
 ### 3.1 简介
 
-**OpenCode** 是一个开源的 AI 编程助手，支持终端和网页两种运行形式。它原生支持多模型供应商切换，对 DeepSeek 等国产模型有良好的开箱体验。
+**OpenCode** 是一个开源的 AI 编程助手，支持终端和网页两种运行形式。它原生支持多模型供应商切换，对 DeepSeek 等国产模型有良好的开箱体验。（仿Claude Code的）
 
 ### 3.2 安装
 
 #### 前置条件
 
-| 系统 | 前置要求 |
-|------|----------|
-| macOS | macOS 11+；Node.js ≥ 18 |
-| Linux | 任意主流发行版；Node.js ≥ 18 |
+
+| 系统      | 前置要求                     |
+| ------- | ------------------------ |
+| macOS   | macOS 11+；Node.js ≥ 18   |
+| Linux   | 任意主流发行版；Node.js ≥ 18     |
 | Windows | Windows 10+；Node.js ≥ 18 |
+
 
 **版本要求**：OpenCode ≥ **v1.14.24**（建议升级到最新版本）
 
@@ -413,13 +438,16 @@ OpenCode 不强制登录，首次启动后通过互动界面配置模型供应�
 
 #### 官方资源
 
-| 资源 | 链接 |
-|------|------|
-| GitHub 仓库 | [github.com/opencode-ai/opencode](https://github.com/opencode-ai/opencode) |
-| 官方文档 | [opencode-ai.github.io](https://opencode-ai.github.io) |
+
+| 资源            | 链接                                                                                                                                       |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| GitHub 仓库     | [github.com/opencode-ai/opencode](https://github.com/opencode-ai/opencode)                                                               |
+| 官方文档          | [opencode-ai.github.io](https://opencode-ai.github.io)                                                                                   |
 | DeepSeek 集成说明 | [api-docs.deepseek.com/zh-cn/guides/agent_integrations/opencode](https://api-docs.deepseek.com/zh-cn/guides/agent_integrations/opencode) |
 
+
 **环境要求**：
+
 - **OpenCode 版本 ≥ v1.14.24**（建议升级到最新版本以避免兼容性问题）
 - Node.js 18+
 
@@ -451,12 +479,14 @@ opencode
 
 ### 3.5 常用命令
 
-| 命令 | 作用 |
-|------|------|
+
+| 命令         | 作用         |
+| ---------- | ---------- |
 | `/connect` | 连接/切换模型供应商 |
-| `/model` | 查看或切换当前模型 |
-| `/clear` | 清除当前会话 |
-| `/help` | 查看帮助 |
+| `/model`   | 查看或切换当前模型  |
+| `/clear`   | 清除当前会话     |
+| `/help`    | 查看帮助       |
+
 
 ---
 
@@ -470,11 +500,13 @@ Codex CLI 是 OpenAI 官方的 **CLI Coding Agent**，依托 OpenAI 模型（GPT
 
 #### 前置条件
 
-| 系统 | 前置要求 |
-|------|----------|
-| macOS | macOS 12+；Node.js ≥ 18；Git |
-| Linux | 任意主流发行版；Node.js ≥ 18；Git |
+
+| 系统      | 前置要求                                     |
+| ------- | ---------------------------------------- |
+| macOS   | macOS 12+；Node.js ≥ 18；Git               |
+| Linux   | 任意主流发行版；Node.js ≥ 18；Git                 |
 | Windows | Windows 10+；Node.js ≥ 18；Git for Windows |
+
 
 #### 方式一：通过 npm 安装（推荐）
 
@@ -530,10 +562,12 @@ npm install -g .
 
 #### 官方资源
 
-| 资源 | 链接 |
-|------|------|
+
+| 资源        | 链接                                                                 |
+| --------- | ------------------------------------------------------------------ |
 | GitHub 仓库 | [github.com/openai/codex-cli](https://github.com/openai/codex-cli) |
-| 官方文档 | [openai.com/index/codex-cli](https://openai.com/index/codex-cli/) |
+| 官方文档      | [openai.com/index/codex-cli](https://openai.com/index/codex-cli/)  |
+
 
 ### 4.3 首次配置
 
@@ -571,6 +605,7 @@ codex -m o3-mini "优化这个函数的性能"
 ### 5.1 简介
 
 相比于 CLI 模式（Claude Code 终端版），插件模式更适合：
+
 - 希望可视化查看和审阅代码变更的用户
 - 习惯 IDE 内对话而非终端交互的用户
 - 需要多任务并行会话的场景
@@ -579,12 +614,14 @@ codex -m o3-mini "优化这个函数的性能"
 
 #### 前置条件
 
-| 系统 | 前置要求 |
-|------|----------|
-| 全部 | VS Code **≥ 1.98+**（查看版本：`code --version` 或 VS Code → 关于） |
-| macOS | Node.js ≥ 18（插件内部依赖 Claude Code CLI） |
-| Linux | Node.js ≥ 18 |
-| Windows | Node.js ≥ 18 |
+
+| 系统      | 前置要求                                                      |
+| ------- | --------------------------------------------------------- |
+| 全部      | VS Code **≥ 1.98+**（查看版本：`code --version` 或 VS Code → 关于） |
+| macOS   | Node.js ≥ 18（插件内部依赖 Claude Code CLI）                      |
+| Linux   | Node.js ≥ 18                                              |
+| Windows | Node.js ≥ 18                                              |
+
 
 > **VS Code 下载**：[code.visualstudio.com](https://code.visualstudio.com/) 选择对应系统版本。
 
@@ -593,8 +630,8 @@ codex -m o3-mini "优化这个函数的性能"
 **方法一：VS Code 扩展市场安装（推荐）**
 
 1. 打开 VS Code → 快捷键打开扩展面板
-   - macOS: `Cmd+Shift+X`
-   - Windows/Linux: `Ctrl+Shift+X`
+  - macOS: `Cmd+Shift+X`
+  - Windows/Linux: `Ctrl+Shift+X`
 2. 搜索 **"Claude Code"**
 3. 找到 "Claude Code for VS Code"（发布者为 Anthropic），点击「安装」
 4. 安装完成后侧边栏出现 Claude Code 图标
@@ -628,6 +665,7 @@ claude plugin add claude-code-vscode
 #### 验证安装
 
 安装后如果 Spark 图标未显示，执行：
+
 ```bash
 # 命令面板 → Developer: Reload Window
 # macOS: Cmd+Shift+P
@@ -636,24 +674,28 @@ claude plugin add claude-code-vscode
 
 #### 官方资源
 
-| 资源 | 链接 |
-|------|------|
-| VS Code 插件市场 | [marketplace.visualstudio.com/items?itemName=anthropic.claude-code-vscode](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code-vscode) |
-| Claude Code 整体文档 | [code.claude.com/docs](https://code.claude.com/docs) |
-| VS Code 官方下载 | [code.visualstudio.com](https://code.visualstudio.com) |
-| 设置参考 | [code.claude.com/en/settings](https://code.claude.com/en/settings) |
+
+| 资源               | 链接                                                                                                                                                           |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| VS Code 插件市场     | [marketplace.visualstudio.com/items?itemName=anthropic.claude-code-vscode](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code-vscode) |
+| Claude Code 整体文档 | [code.claude.com/docs](https://code.claude.com/docs)                                                                                                         |
+| VS Code 官方下载     | [code.visualstudio.com](https://code.visualstudio.com)                                                                                                       |
+| 设置参考             | [code.claude.com/en/settings](https://code.claude.com/en/settings)                                                                                           |
+
 
 ### 5.3 启动方式
 
 安装并登录后，有 5 种方式打开 Claude Code：
 
-| 方式 | 操作 | 适用场景 |
-|------|------|----------|
-| **编辑器工具栏 ✦** | 打开任意文件后，点击右上角的 Spark 图标 | 最快捷的方式 |
-| **活动栏** | 点击左侧边栏的 Spark 图标 | 始终可见 |
-| **状态栏** | 点击右下角的 "✱ Claude Code" 文字 | 即使没有打开文件也能用 |
-| **命令面板** | `Cmd+Shift+P`（Mac）或 `Ctrl+Shift+P`（Win）→ 搜索 "Claude Code" | 偏好键盘操作的用户 |
-| **快捷键** | `Cmd+Esc`（Mac）或 `Ctrl+Esc`（Win）切换焦点到 Claude 输入框 | 快速切换编辑器和 Claude |
+
+| 方式           | 操作                                                        | 适用场景            |
+| ------------ | --------------------------------------------------------- | --------------- |
+| **编辑器工具栏 ✦** | 打开任意文件后，点击右上角的 Spark 图标                                   | 最快捷的方式          |
+| **活动栏**      | 点击左侧边栏的 Spark 图标                                          | 始终可见            |
+| **状态栏**      | 点击右下角的 "✱ Claude Code" 文字                                 | 即使没有打开文件也能用     |
+| **命令面板**     | `Cmd+Shift+P`（Mac）或 `Ctrl+Shift+P`（Win）→ 搜索 "Claude Code" | 偏好键盘操作的用户       |
+| **快捷键**      | `Cmd+Esc`（Mac）或 `Ctrl+Esc`（Win）切换焦点到 Claude 输入框           | 快速切换编辑器和 Claude |
+
 
 ### 5.4 首次登录
 
@@ -691,6 +733,7 @@ claude plugin add claude-code-vscode
 #### 审阅变更（Diff 视图）
 
 当 Claude 修改文件时，会显示**左右对比 Diff 视图**，你可以：
+
 - **Accept** — 接受修改
 - **Reject** — 拒绝修改
 - **直接编辑 Diff** — 在 Diff 视图中手动修改后再接受
@@ -716,14 +759,16 @@ claude plugin add claude-code-vscode
 
 在输入框中输入 `/` 调出命令菜单：
 
-| 命令 | 用途 |
-|------|------|
-| `/model` | 切换模型（Claude Sonnet / Opus 等） |
-| `/compact` | 手动压缩上下文 |
-| `/usage` | 查看用量统计 |
-| `/mcp` | 管理 MCP 服务连接 |
-| `/plugins` | 管理插件界面 |
-| `/remote-control` | 启动远程控制会话 |
+
+| 命令                | 用途                           |
+| ----------------- | ---------------------------- |
+| `/model`          | 切换模型（Claude Sonnet / Opus 等） |
+| `/compact`        | 手动压缩上下文                      |
+| `/usage`          | 查看用量统计                       |
+| `/mcp`            | 管理 MCP 服务连接                  |
+| `/plugins`        | 管理插件界面                       |
+| `/remote-control` | 启动远程控制会话                     |
+
 
 ### 5.7 设置与配置
 
@@ -731,15 +776,17 @@ claude plugin add claude-code-vscode
 
 打开 VS Code 设置（`Cmd+,` / `Ctrl+,`）→ Extensions → Claude Code：
 
-| 设置 | 默认值 | 说明 |
-|------|--------|------|
-| `useTerminal` | `false` | 切换到终端模式（非图形面板） |
-| `initialPermissionMode` | `default` | 默认权限模式：`default` / `plan` / `acceptEdits` / `bypassPermissions` |
-| `preferredLocation` | `panel` | Claude 打开位置：`sidebar`（右侧）/ `panel`（新标签） |
-| `autosave` | `true` | 自动保存文件 |
-| `enableNewConversationShortcut` | `false` | 启用 `Cmd/Ctrl+N` 快捷键开新会话 |
-| `respectGitIgnore` | `true` | 遵守 .gitignore 规则 |
-| `environmentVariables` | `[]` | 为 Claude 进程设置额外的环境变量 |
+
+| 设置                              | 默认值       | 说明                                                              |
+| ------------------------------- | --------- | --------------------------------------------------------------- |
+| `useTerminal`                   | `false`   | 切换到终端模式（非图形面板）                                                  |
+| `initialPermissionMode`         | `default` | 默认权限模式：`default` / `plan` / `acceptEdits` / `bypassPermissions` |
+| `preferredLocation`             | `panel`   | Claude 打开位置：`sidebar`（右侧）/ `panel`（新标签）                         |
+| `autosave`                      | `true`    | 自动保存文件                                                          |
+| `enableNewConversationShortcut` | `false`   | 启用 `Cmd/Ctrl+N` 快捷键开新会话                                         |
+| `respectGitIgnore`              | `true`    | 遵守 .gitignore 规则                                                |
+| `environmentVariables`          | `[]`      | 为 Claude 进程设置额外的环境变量                                            |
+
 
 #### 全局 Claude Code 设置
 
@@ -774,6 +821,7 @@ VS Code 插件内置了图形化的插件管理界面：
 ```
 
 插件管理界面支持：
+
 - **安装/卸载插件** — 搜索并安装社区或官方插件
 - **管理插件源（Marketplaces）** — 添加 GitHub 仓库、URL 或本地路径作为来源
 - **安装范围选择** — 用户级（所有项目）、项目级（共享给团队）、本地（仅当前仓库）
@@ -792,34 +840,39 @@ Claude 可以打开新标签、读取页面内容、检查控制台错误。
 
 ### 5.10 快捷键速查
 
-| 快捷键（Mac） | 快捷键（Windows） | 作用 |
-|-------------|------------------|------|
-| `Cmd+Esc` | `Ctrl+Esc` | 在编辑器和 Claude 之间切换焦点 |
-| `Cmd+Shift+Esc` | `Ctrl+Shift+Esc` | 在新标签中打开 Claude |
-| `Option+K` | `Alt+K` | 插入 @ 引用当前文件和选中行 |
-| `Cmd+N` | `Ctrl+N` | 新对话（需启用设置） |
-| `Shift+Enter` | `Shift+Enter` | 输入框换行（不发消息） |
-| `Cmd+Shift+P` | `Ctrl+Shift+P` | 打开命令面板 → 搜索 Claude Code |
+
+| 快捷键（Mac）        | 快捷键（Windows）     | 作用                      |
+| --------------- | ---------------- | ----------------------- |
+| `Cmd+Esc`       | `Ctrl+Esc`       | 在编辑器和 Claude 之间切换焦点     |
+| `Cmd+Shift+Esc` | `Ctrl+Shift+Esc` | 在新标签中打开 Claude          |
+| `Option+K`      | `Alt+K`          | 插入 @ 引用当前文件和选中行         |
+| `Cmd+N`         | `Ctrl+N`         | 新对话（需启用设置）              |
+| `Shift+Enter`   | `Shift+Enter`    | 输入框换行（不发消息）             |
+| `Cmd+Shift+P`   | `Ctrl+Shift+P`   | 打开命令面板 → 搜索 Claude Code |
+
 
 ### 5.11 VS Code 插件 vs CLI 终端模式
 
-| 能力 | VS Code 插件（图形面板） | CLI 终端模式 |
-|------|------------------------|-------------|
-| Diff 审阅视图 | ✅ 原生支持 | ✅ 集成 IDE 时支持 |
-| @ 引用文件和行 | ✅ | ✅ |
-| 多标签会话 | ✅ | ❌ |
-| 插件管理界面 | ✅（图形化） | ✅（`/plugin` 命令） |
-| 全部 Slash Commands | 子集 | 完整 |
-| MCP 管理 | 部分（可用 `/mcp`） | 完整 |
-| `!` Bash 快捷执行 | ❌ | ✅ |
-| Tab 自动补全 | ❌ | ✅ |
-| 对话历史 | ✅ | ✅ |
+
+| 能力                | VS Code 插件（图形面板） | CLI 终端模式        |
+| ----------------- | ---------------- | --------------- |
+| Diff 审阅视图         | ✅ 原生支持           | ✅ 集成 IDE 时支持    |
+| @ 引用文件和行          | ✅                | ✅               |
+| 多标签会话             | ✅                | ❌               |
+| 插件管理界面            | ✅（图形化）           | ✅（`/plugin` 命令） |
+| 全部 Slash Commands | 子集               | 完整              |
+| MCP 管理            | 部分（可用 `/mcp`）    | 完整              |
+| `!` Bash 快捷执行     | ❌                | ✅               |
+| Tab 自动补全          | ❌                | ✅               |
+| 对话历史              | ✅                | ✅               |
+
 
 如果某个功能只在 CLI 中可用，只需在 VS Code 集成终端中运行 `claude` 即可使用。
 
 ### 5.12 macOS / Windows 差异
 
 插件在 macOS 和 Windows 上**功能完全一致**，差异仅在快捷键：
+
 - macOS 使用 `Cmd`、`Option` 键
 - Windows 使用 `Ctrl`、`Alt` 键
 
@@ -836,7 +889,7 @@ Claude 可以打开新标签、读取页面内容、检查控制台错误。
 
 ## 6. 以 DeepSeek 为例替换 API
 
-> 根据 DeepSeek 官方文档（https://api-docs.deepseek.com/zh-cn/guides/agent_integrations），DeepSeek 同时提供 **OpenAI 兼容** 和 **Anthropic 兼容** 两种 API 网关，分别适用于不同的工具。
+> 根据 DeepSeek 官方文档（[https://api-docs.deepseek.com/zh-cn/guides/agent_integrations），DeepSeek](https://api-docs.deepseek.com/zh-cn/guides/agent_integrations），DeepSeek) 同时提供 **OpenAI 兼容** 和 **Anthropic 兼容** 两种 API 网关，分别适用于不同的工具。
 >
 > 本文覆盖主流工具：**Claude Code**（Anthropic 兼容）、**Cursor**（OpenAI 兼容）、**Aider**（OpenAI 兼容）、**OpenCode**（原生支持），以及 **SSH 连接远程服务器** 的场景，并区分 **macOS / Linux / Windows** 三种系统。
 
@@ -910,12 +963,14 @@ claude
 
 #### 步骤 2：添加自定义模型
 
-| 字段 | 填写内容 |
-|------|----------|
-| **API Provider** | 选择 **OpenAI** 或自定义 |
-| **Base URL** | `https://api.deepseek.com` |
-| **API Key** | 你的 DeepSeek API Key |
-| **Model ID** | `deepseek-chat`（通用对话）或 `deepseek-reasoner`（推理） |
+
+| 字段               | 填写内容                                           |
+| ---------------- | ---------------------------------------------- |
+| **API Provider** | 选择 **OpenAI** 或自定义                             |
+| **Base URL**     | `https://api.deepseek.com`                     |
+| **API Key**      | 你的 DeepSeek API Key                            |
+| **Model ID**     | `deepseek-chat`（通用对话）或 `deepseek-reasoner`（推理） |
+
 
 #### 步骤 3：启用模型
 
@@ -929,12 +984,14 @@ claude
 
 #### Cursor 各模式的兼容性
 
-| 模式 | 替换效果 |
-|------|----------|
-| **Chat** (`Cmd+L` / `Ctrl+L`) | 正常使用自定义模型 |
-| **Composer** (`Cmd+I` / `Ctrl+I`) | 正常使用自定义模型 |
-| **Tab Autocomplete** | 可能不支持第三方模型，仍走 Cursor 自带 |
-| **Ctrl+K 内联编辑** | 正常使用自定义模型 |
+
+| 模式                                | 替换效果                    |
+| --------------------------------- | ----------------------- |
+| **Chat** (`Cmd+L` / `Ctrl+L`)     | 正常使用自定义模型               |
+| **Composer** (`Cmd+I` / `Ctrl+I`) | 正常使用自定义模型               |
+| **Tab Autocomplete**              | 可能不支持第三方模型，仍走 Cursor 自带 |
+| **Ctrl+K 内联编辑**                   | 正常使用自定义模型               |
+
 
 ### 6.4 在 OpenCode 中使用 DeepSeek（原生支持）
 
@@ -1046,13 +1103,14 @@ opencode
 
 ### 6.8 常用国产模型兼容地址速查
 
-| 厂商 | API 类型 | Base URL | 推荐模型 ID |
-|------|----------|----------|-------------|
-| **DeepSeek** | OpenAI 兼容 | `https://api.deepseek.com` | `deepseek-chat`, `deepseek-reasoner` |
-| **DeepSeek** | Anthropic 兼容 | `https://api.deepseek.com/anthropic` | `deepseek-v4-pro`, `deepseek-v4-flash` |
-| **阿里通义 Qwen** | OpenAI 兼容 | `https://dashscope.aliyuncs.com/compatible-mode/v1` | `qwen-max`, `qwen-coder-plus` |
-| **智谱 GLM** | OpenAI 兼容 | `https://open.bigmodel.cn/api/paas/v4` | `glm-4-plus`, `glm-4-flash` |
-| **阶跃星辰 StepFun** | OpenAI 兼容 | `https://api.stepfun.com/v1` | `step-2-16k` |
+
+| 厂商               | API 类型       | Base URL                                            | 推荐模型 ID                                |
+| ---------------- | ------------ | --------------------------------------------------- | -------------------------------------- |
+| **DeepSeek**     | OpenAI 兼容    | `https://api.deepseek.com`                          | `deepseek-chat`, `deepseek-reasoner`   |
+| **DeepSeek**     | Anthropic 兼容 | `https://api.deepseek.com/anthropic`                | `deepseek-v4-pro`, `deepseek-v4-flash` |
+| **阿里通义 Qwen**    | OpenAI 兼容    | `https://dashscope.aliyuncs.com/compatible-mode/v1` | `qwen-max`, `qwen-coder-plus`          |
+| **智谱 GLM**       | OpenAI 兼容    | `https://open.bigmodel.cn/api/paas/v4`              | `glm-4-plus`, `glm-4-flash`            |
+| **阶跃星辰 StepFun** | OpenAI 兼容    | `https://api.stepfun.com/v1`                        | `step-2-16k`                           |
 
 
 ---
@@ -1067,12 +1125,14 @@ opencode
 
 #### 前置条件
 
-| 系统 | 前置要求 |
-|------|----------|
-| 全部 | Node.js **≥ 20.6**；Git |
-| macOS | 推荐通过 Homebrew 或 nvm 安装 Node.js |
-| Linux | 推荐通过 nvm 或包管理器安装 Node.js |
+
+| 系统      | 前置要求                              |
+| ------- | --------------------------------- |
+| 全部      | Node.js **≥ 20.6**；Git            |
+| macOS   | 推荐通过 Homebrew 或 nvm 安装 Node.js    |
+| Linux   | 推荐通过 nvm 或包管理器安装 Node.js          |
 | Windows | 推荐通过 nvm-windows 或官方安装包安装 Node.js |
+
 
 #### 安装命令
 
@@ -1113,11 +1173,13 @@ openskills --help
 
 #### 官方资源
 
-| 资源 | 链接 |
-|------|------|
-| npm 包地址 | [npmjs.com/package/openskills](https://www.npmjs.com/package/openskills) |
-| GitHub 仓库 | [github.com/suplant-inc/openskills](https://github.com/suplant-inc/openskills) |
-| Anthropic 官方技能仓库 | [github.com/anthropics/skills](https://github.com/anthropics/skills) |
+
+| 资源               | 链接                                                                             |
+| ---------------- | ------------------------------------------------------------------------------ |
+| npm 包地址          | [npmjs.com/package/openskills](https://www.npmjs.com/package/openskills)       |
+| GitHub 仓库        | [github.com/suplant-inc/openskills](https://github.com/suplant-inc/openskills) |
+| Anthropic 官方技能仓库 | [github.com/anthropics/skills](https://github.com/anthropics/skills)           |
+
 
 ### 7.3 安装 anthropics/skills 全部技能
 
@@ -1525,6 +1587,5 @@ npx openskills install ./literature-tracker
 | **脚本放 scripts/**       | 复杂逻辑不要让 agent 现场写，预置为可执行脚本         |
 | **数据 schema 另放**       | 数据结构定义放在 templates/ 中，SKILL.md 里引用 |
 | **写负面约束**              | 明确"不要做什么"，比只写"要做什么"更有效             |
-
 
 

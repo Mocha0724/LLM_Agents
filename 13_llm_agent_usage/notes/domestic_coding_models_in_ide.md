@@ -8,12 +8,14 @@
 
 ## 1. 为什么要接「中国 coding 模型」
 
-| 动机 | 说明 |
-|------|------|
-| **成本** | 同等工作量，部分国产模型比海外旗舰便宜一个数量级 |
-| **网络** | 国内线路访问国内 API 时延往往更低 |
-| **中文与业务注释** | 对中文需求描述、国内框架栈更稳一些（非绝对） |
-| **合规与账号** | 企业采购、发票、数据驻留时选国内云更常见 |
+
+| 动机          | 说明                       |
+| ----------- | ------------------------ |
+| **成本**      | 同等工作量，部分国产模型比海外旗舰便宜一个数量级 |
+| **网络**      | 国内线路访问国内 API 时延往往更低      |
+| **中文与业务注释** | 对中文需求描述、国内框架栈更稳一些（非绝对）   |
+| **合规与账号**   | 企业采购、发票、数据驻留时选国内云更常见     |
+
 
 **代价**：各工具对「自定义模型」的 **Tab 补全 / Chat / Agent(Composer) / 工具调用** 支持不一致，需要**实测**。
 
@@ -21,14 +23,16 @@
 
 ## 2. 适合「写代码」的国产/国内可调用模型（速查）
 
-| 厂商 | 常用 coding/通用模型名 | OpenAI 兼容 `base_url`（示例） |
-|------|------------------------|-------------------------------|
-| **DeepSeek** | `deepseek-chat`（对话/代码）、`deepseek-reasoner`（推理） | `https://api.deepseek.com` |
-| **DeepSeek**（Anthropic 兼容） | `deepseek-v4-pro`、`deepseek-v4-flash` | `https://api.deepseek.com/anthropic` |
-| **阿里通义** | `qwen-coder-plus`、`qwen2.5-coder-32b-instruct`、`qwen-max` | `https://dashscope.aliyuncs.com/compatible-mode/v1` |
-| **智谱** | `glm-4-plus`、`glm-4-air`、`glm-4-flash` | `https://open.bigmodel.cn/api/paas/v4` |
-| **阶跃 StepFun** | `step-2-16k` / `step-1-360-chat` 等 | `https://api.stepfun.com/v1` |
-| **MiniMax** | 以官方模型列表为准 | `https://api.minimax.chat/v1` |
+
+| 厂商                         | 常用 coding/通用模型名                                           | OpenAI 兼容 `base_url`（示例）                            |
+| -------------------------- | --------------------------------------------------------- | --------------------------------------------------- |
+| **DeepSeek**               | `deepseek-chat`（对话/代码）、`deepseek-reasoner`（推理）            | `https://api.deepseek.com`                          |
+| **DeepSeek**（Anthropic 兼容） | `deepseek-v4-pro`、`deepseek-v4-flash`                     | `https://api.deepseek.com/anthropic`                |
+| **阿里通义**                   | `qwen-coder-plus`、`qwen2.5-coder-32b-instruct`、`qwen-max` | `https://dashscope.aliyuncs.com/compatible-mode/v1` |
+| **智谱**                     | `glm-4-plus`、`glm-4-air`、`glm-4-flash`                    | `https://open.bigmodel.cn/api/paas/v4`              |
+| **阶跃 StepFun**             | `step-2-16k` / `step-1-360-chat` 等                        | `https://api.stepfun.com/v1`                        |
+| **MiniMax**                | 以官方模型列表为准                                                 | `https://api.minimax.chat/v1`                       |
+
 
 ---
 
@@ -36,7 +40,7 @@
 
 > DeepSeek 官方提供了 **Anthropic 兼容 API**，Claude Code 可以通过环境变量直接使用 DeepSeek 模型，无需通过第三方中转。
 >
-> 参考官方文档：https://api-docs.deepseek.com/zh-cn/guides/agent_integrations/claude_code
+> 参考官方文档：[https://api-docs.deepseek.com/zh-cn/guides/agent_integrations/claude_code](https://api-docs.deepseek.com/zh-cn/guides/agent_integrations/claude_code)
 
 ### 3.1 前置条件
 
@@ -123,27 +127,31 @@ claude
 
 ### 3.6 环境变量说明
 
-| 环境变量 | 作用 | 推荐值 |
-|----------|------|--------|
-| `ANTHROPIC_BASE_URL` | API 端点地址 | `https://api.deepseek.com/anthropic` |
-| `ANTHROPIC_AUTH_TOKEN` | API 认证 Token | 你的 DeepSeek API Key |
-| `ANTHROPIC_MODEL` | 主模型 | `deepseek-v4-pro` |
-| `ANTHROPIC_DEFAULT_OPUS_MODEL` | 最优模型（规划/执行） | `deepseek-v4-pro` |
-| `ANTHROPIC_DEFAULT_SONNET_MODEL` | 平衡模型（执行/验证） | `deepseek-v4-pro` |
-| `ANTHROPIC_DEFAULT_HAIKU_MODEL` | 轻量模型（快速任务） | `deepseek-v4-flash` |
-| `CLAUDE_CODE_SUBAGENT_MODEL` | 子代理模型 | `deepseek-v4-flash` |
-| `CLAUDE_CODE_EFFORT_LEVEL` | 推理努力级别 | `max` |
+
+| 环境变量                             | 作用           | 推荐值                                  |
+| -------------------------------- | ------------ | ------------------------------------ |
+| `ANTHROPIC_BASE_URL`             | API 端点地址     | `https://api.deepseek.com/anthropic` |
+| `ANTHROPIC_AUTH_TOKEN`           | API 认证 Token | 你的 DeepSeek API Key                  |
+| `ANTHROPIC_MODEL`                | 主模型          | `deepseek-v4-pro`                    |
+| `ANTHROPIC_DEFAULT_OPUS_MODEL`   | 最优模型（规划/执行）  | `deepseek-v4-pro`                    |
+| `ANTHROPIC_DEFAULT_SONNET_MODEL` | 平衡模型（执行/验证）  | `deepseek-v4-pro`                    |
+| `ANTHROPIC_DEFAULT_HAIKU_MODEL`  | 轻量模型（快速任务）   | `deepseek-v4-flash`                  |
+| `CLAUDE_CODE_SUBAGENT_MODEL`     | 子代理模型        | `deepseek-v4-flash`                  |
+| `CLAUDE_CODE_EFFORT_LEVEL`       | 推理努力级别       | `max`                                |
+
 
 > **注意**：`deepseek-v4-pro` 和 `deepseek-v4-flash` 是 DeepSeek Anthropic 兼容网关下的模型 ID，与 OpenAI 兼容端点的 `deepseek-chat` / `deepseek-reasoner` 不同。请以 DeepSeek 官方文档为准。
 
 ### 3.7 排错
 
-| 问题 | 检查点 |
-|------|--------|
-| `claude` 报连接错误 | 确认 `ANTHROPIC_BASE_URL` 拼写正确，末尾无 `/` |
-| 认证失败 401 | 确认 `ANTHROPIC_AUTH_TOKEN` 是有效 DeepSeek Key |
-| 模型不存在 | 确认 DeepSeek 官方文档中 Anthropic 兼容的模型 ID 列表 |
-| Windows 下变量不生效 | 使用 `$env:` 前缀设置，或重启终端 |
+
+| 问题             | 检查点                                        |
+| -------------- | ------------------------------------------ |
+| `claude` 报连接错误 | 确认 `ANTHROPIC_BASE_URL` 拼写正确，末尾无 `/`       |
+| 认证失败 401       | 确认 `ANTHROPIC_AUTH_TOKEN` 是有效 DeepSeek Key |
+| 模型不存在          | 确认 DeepSeek 官方文档中 Anthropic 兼容的模型 ID 列表    |
+| Windows 下变量不生效 | 使用 `$env:` 前缀设置，或重启终端                      |
+
 
 ---
 
@@ -161,11 +169,13 @@ claude
 
 ### 4.2 能用在哪些能力上（务必实测）
 
-| 模式 | 替换效果 |
-|------|----------|
-| **Chat** (`Cmd+L`) | 一般最容易成功 |
-| **Composer** (`Cmd+I`) | 随版本与策略变化，**以你当前版本为准** |
-| **Tab 补全** | 可能单独用一套模型，不一定跟 Chat 用同一个自定义端点 |
+
+| 模式                     | 替换效果                          |
+| ---------------------- | ----------------------------- |
+| **Chat** (`Cmd+L`)     | 一般最容易成功                       |
+| **Composer** (`Cmd+I`) | 随版本与策略变化，**以你当前版本为准**         |
+| **Tab 补全**             | 可能单独用一套模型，不一定跟 Chat 用同一个自定义端点 |
+
 
 ### 4.3 与 Anthropic 官方额度的关系
 
@@ -174,6 +184,7 @@ claude
 ### 4.4 macOS / Windows 差异
 
 Cursor 是跨平台桌面应用，**设置界面在 macOS 和 Windows 上完全一致**（UI 位置相同）。唯一的差异是：
+
 - **macOS**：快捷键使用 `Cmd`（如 `Cmd+I`、`Cmd+L`）
 - **Windows**：快捷键使用 `Ctrl`（如 `Ctrl+I`、`Ctrl+L`）
 
@@ -215,7 +226,7 @@ aider --model openai/deepseek-chat
 
 **OpenCode** 是一个开源的 AI 编程助手，支持终端和网页两种运行形式。它原生支持多模型供应商切换，对 DeepSeek 等国产模型有良好的开箱体验。
 
-> 参考官方文档：https://api-docs.deepseek.com/zh-cn/guides/agent_integrations/opencode
+> 参考官方文档：[https://api-docs.deepseek.com/zh-cn/guides/agent_integrations/opencode](https://api-docs.deepseek.com/zh-cn/guides/agent_integrations/opencode)
 
 ### 7.2 安装
 
@@ -243,6 +254,7 @@ opencode --version
 ```
 
 **环境要求**：
+
 - **OpenCode 版本 ≥ v1.14.24**（建议升级到最新版本以避免兼容性问题）
 - Node.js 18+
 
@@ -270,24 +282,25 @@ OpenCode 的 `/connect` 命令支持多种供应商，包括 Qwen、GLM 等。�
 
 ### 7.5 macOS / Windows 差异
 
-| 维度 | macOS | Windows |
-|------|-------|---------|
+
+| 维度   | macOS                           | Windows                           |
+| ---- | ------------------------------- | --------------------------------- |
 | 安装方式 | `brew install opencode` 或 `npm` | `npm install -g @opencode-ai/cli` |
-| 终端 | Terminal / iTerm2 | PowerShell / CMD |
-| 使用方式 | 完全相同 — OpenCode 是跨平台 CLI 工具 |
+| 终端   | Terminal / iTerm2               | PowerShell / CMD                  |
+| 使用方式 | 完全相同 — OpenCode 是跨平台 CLI 工具     |                                   |
+
 
 ### 7.6 SSH 连接 Linux 服务器场景
 
 如果你通过 SSH 连接到远程 Linux 服务器：
 
 1. **远程服务器安装 OpenCode**：
-   ```bash
+  ```bash
    # 在远程 Linux 服务器上
    npm install -g @opencode-ai/cli
-   ```
-
+  ```
 2. **在 SSH 会话中配置**：
-   ```bash
+  ```bash
    # 通过 SSH 连接到远程
    ssh user@remote-server
 
@@ -295,8 +308,7 @@ OpenCode 的 `/connect` 命令支持多种供应商，包括 Qwen、GLM 等。�
    cd /path/to/project
    opencode
    # 输入 /connect → 选择 deepseek
-   ```
-
+  ```
 3. **网络注意**：确保远程服务器能访问 DeepSeek API（`https://api.deepseek.com`）。如果服务器在内网（无公网访问），需要配置代理或使用内部 API 网关。
 
 ---
@@ -310,12 +322,14 @@ OpenCode 的 `/connect` 命令支持多种供应商，包括 Qwen、GLM 等。�
 
 ## 9. 接进来以后仍要自测的 4 件事
 
-| 项目 | 为什么重要 |
-|------|------------|
-| **模型 ID 与 base_url 完全正确** | 少 `/v1`、多拼路径是高频错误 |
-| **长上下文** | coding 要读多文件，窗口不够会乱编 |
-| **Function calling / 工具** | agent 多步任务依赖；国产模型与版本差异大 |
-| **流式输出** | 有的工具默认开 stream，有的模型要关 stream 才稳定 |
+
+| 项目                        | 为什么重要                            |
+| ------------------------- | -------------------------------- |
+| **模型 ID 与 base_url 完全正确** | 少 `/v1`、多拼路径是高频错误                |
+| **长上下文**                  | coding 要读多文件，窗口不够会乱编             |
+| **Function calling / 工具** | agent 多步任务依赖；国产模型与版本差异大          |
+| **流式输出**                  | 有的工具默认开 stream，有的模型要关 stream 才稳定 |
+
 
 **最小工具调用自测**（先在你本机用任意 OpenAI 兼容脚本跑通，再进 IDE）：
 
@@ -342,11 +356,13 @@ print(r.choices[0].message.content)
 
 ### 10.1 场景判断
 
-| 你的情况 | 推荐方式 |
-|----------|----------|
-| 本地 Cursor + 远程服务器代码 | Cursor Remote SSH（模型配置在本地） |
+
+| 你的情况                   | 推荐方式                                    |
+| ---------------------- | --------------------------------------- |
+| 本地 Cursor + 远程服务器代码    | Cursor Remote SSH（模型配置在本地）              |
 | 本地终端 SSH 到服务器，用 CLI 工具 | 在远程服务器安装 Claude Code / OpenCode / Aider |
-| 纯远程开发（服务器是主力机） | 直接在服务器上安装 CLI 工具 |
+| 纯远程开发（服务器是主力机）         | 直接在服务器上安装 CLI 工具                        |
+
 
 ### 10.2 Cursor Remote SSH 方式
 
@@ -380,6 +396,7 @@ npm install -g @opencode-ai/cli
 ```
 
 **网络注意事项**：
+
 - 确保远程服务器能访问 DeepSeek API
 - 如果服务器在内网，需要配置 HTTP 代理：
   ```bash
@@ -389,12 +406,14 @@ npm install -g @opencode-ai/cli
 
 ### 10.4 Windows SSH 客户端推荐
 
-| 工具 | 特点 |
-|------|------|
-| **Windows Terminal** | 微软官方，支持多标签页，推荐 |
-| **PowerShell 7+** | 内置 SSH 客户端 |
-| **WSL 2** | 在 Windows 上运行 Linux 子系统，体验与 Linux 一致 |
-| **VS Code Remote SSH** | 与 Cursor Remote SSH 同一技术，纯 GUI 操作 |
+
+| 工具                     | 特点                                   |
+| ---------------------- | ------------------------------------ |
+| **Windows Terminal**   | 微软官方，支持多标签页，推荐                       |
+| **PowerShell 7+**      | 内置 SSH 客户端                           |
+| **WSL 2**              | 在 Windows 上运行 Linux 子系统，体验与 Linux 一致 |
+| **VS Code Remote SSH** | 与 Cursor Remote SSH 同一技术，纯 GUI 操作    |
+
 
 ---
 
@@ -405,3 +424,4 @@ npm install -g @opencode-ai/cli
 3. **工具调用时灵时不灵**：换模型/降任务复杂度/减少并行工具数；仍不行就用「人审 diff + 单步跑命令」的 workflow。
 4. **迷信「某某-pro」非官方名**：**以云控制台/文档里的 `model` 为准**。
 5. **Claude Code 配了 DeepSeek 但启动报错**：确认所有 8 个环境变量都设置正确，特别是 `ANTHROPIC_BASE_URL` 末尾不能有空格或斜杠。
+
