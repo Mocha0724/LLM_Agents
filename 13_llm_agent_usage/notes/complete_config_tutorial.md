@@ -10,11 +10,12 @@
 2. [Cursor 安装配置](#2-cursor-安装配置)
 3. [OpenCode 安装配置](#3-opencode-安装配置)
 4. [Codex CLI 安装配置](#4-codex-cli-安装配置)
-5. [以 DeepSeek 为例替换 API](#5-以-deepseek-为例替换-api)
-6. [OpenSkill + anthropics/skills 安装配置](#6-openskill--anthropicsskills-安装配置)
-7. [Skills 使用方式](#7-skills-使用方式)
-8. [案例：学术 Skill 安装和使用](#8-案例学术-skill-安装和使用)
-9. [案例：自定义 literature-tracker Skill](#9-案例自定义-literature-tracker-skill)
+5. [VS Code 中 Claude Code 插件](#5-vs-code-中-claude-code-插件)
+6. [以 DeepSeek 为例替换 API](#6-以-deepseek-为例替换-api)
+7. [OpenSkill + anthropics/skills 安装配置](#7-openskill--anthropicsskills-安装配置)
+8. [Skills 使用方式](#8-skills-使用方式)
+9. [案例：学术 Skill 安装和使用](#9-案例学术-skill-安装和使用)
+10. [案例：自定义 literature-tracker Skill](#10-案例自定义-literature-tracker-skill)
 
 ---
 
@@ -245,11 +246,11 @@ opencode
 
 ## 4. Codex CLI 安装配置
 
-### 3.1 简介
+### 4.1 简介
 
 Codex CLI 是 OpenAI 官方的 **CLI Coding Agent**，依托 OpenAI 模型（GPT-4o / o 系列），轻量、支持 sandbox 执行。
 
-### 3.2 安装
+### 4.2 安装
 
 ```bash
 # 克隆仓库
@@ -263,7 +264,7 @@ npm install -g .
 npx @openai/codex --help
 ```
 
-### 3.3 首次配置
+### 4.3 首次配置
 
 ```bash
 # 设置 API Key
@@ -273,7 +274,7 @@ export OPENAI_API_KEY="sk-xxx"
 codex --version
 ```
 
-### 3.4 基本使用
+### 4.4 基本使用
 
 ```bash
 # 交互模式
@@ -286,7 +287,7 @@ codex "创建一个 Python 脚本，读取 CSV 并生成数据摘要"
 codex -m o3-mini "优化这个函数的性能"
 ```
 
-### 3.5 特性
+### 4.5 特性
 
 - **自动沙箱**：生成的代码在隔离环境执行，安全可控
 - **看板模式**：`codex --ui` 启动图形界面
@@ -294,19 +295,251 @@ codex -m o3-mini "优化这个函数的性能"
 
 ---
 
-## 5. 以 DeepSeek 为例替换 API
+## 5. VS Code 中 Claude Code 插件
+
+### 5.1 简介
+
+相比于 CLI 模式（Claude Code 终端版），插件模式更适合：
+- 希望可视化查看和审阅代码变更的用户
+- 习惯 IDE 内对话而非终端交互的用户
+- 需要多任务并行会话的场景
+
+### 5.2 安装
+
+#### 前置条件
+
+- VS Code 版本 **1.98.0 或更高**
+- 一个 Anthropic 账号（首次打开时登录）
+
+#### 安装步骤
+
+**方法一：直接从 Marketplace 安装（推荐）**
+
+```bash
+# 在 VS Code 中按以下快捷键后搜索 "Claude Code"
+# macOS: Cmd+Shift+X
+# Windows/Linux: Ctrl+Shift+X
+
+# 找到 Anthropic 官方发布的 "Claude Code" 插件 → Install
+```
+
+**方法二：通过点击链接安装**
+
+访问 [VS Code Marketplace - Claude Code](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code) 点击 Install。
+
+#### 验证安装
+
+安装后如果 Spark 图标未显示，执行：
+```bash
+# 命令面板 → Developer: Reload Window
+# macOS: Cmd+Shift+P
+# Windows/Linux: Ctrl+Shift+P
+```
+
+### 5.3 启动方式
+
+安装并登录后，有 5 种方式打开 Claude Code：
+
+| 方式 | 操作 | 适用场景 |
+|------|------|----------|
+| **编辑器工具栏 ✦** | 打开任意文件后，点击右上角的 Spark 图标 | 最快捷的方式 |
+| **活动栏** | 点击左侧边栏的 Spark 图标 | 始终可见 |
+| **状态栏** | 点击右下角的 "✱ Claude Code" 文字 | 即使没有打开文件也能用 |
+| **命令面板** | `Cmd+Shift+P`（Mac）或 `Ctrl+Shift+P`（Win）→ 搜索 "Claude Code" | 偏好键盘操作的用户 |
+| **快捷键** | `Cmd+Esc`（Mac）或 `Ctrl+Esc`（Win）切换焦点到 Claude 输入框 | 快速切换编辑器和 Claude |
+
+### 5.4 首次登录
+
+1. 首次打开面板会显示登录页面，点击 **Sign in** 并在浏览器中完成认证
+2. 如果使用 CLI 已登录过，可直接在终端用 `code .` 启动 VS Code 以继承环境变量
+3. 登录后会出现「Learn Claude Code」引导清单，可以逐一学习或关闭
+
+### 5.5 核心功能
+
+#### 对话交互
+
+直接在面板中输入自然语言，Claude 会根据上下文分析或修改代码：
+
+```
+解释一下这个函数的逻辑
+给这段代码加错误处理
+帮我重构这个模块
+```
+
+#### @ 引用文件和文件夹
+
+在输入框中使用 `@` 引用上下文：
+
+```
+解释 @auth.js 的逻辑
+@src/components/ 里有哪些组件？
+检查 @app.ts#5-10 这段代码
+```
+
+- `@文件名` — 引用单个文件
+- `@目录名/` — 引用整个目录（带斜杠表示目录）
+- `@文件名#行号` — 引用具体行范围（自动插入选中代码）
+- `@terminal:终端名` — 引用终端输出（无需复制粘贴）
+
+#### 审阅变更（Diff 视图）
+
+当 Claude 修改文件时，会显示**左右对比 Diff 视图**，你可以：
+- **Accept** — 接受修改
+- **Reject** — 拒绝修改
+- **直接编辑 Diff** — 在 Diff 视图中手动修改后再接受
+
+#### Plan 模式
+
+点击输入框底部的权限模式，切换到 **Plan** 模式：
+
+1. Claude 先生成完整的执行计划（Markdown 文档）
+2. 你可以添加内联评论反馈
+3. 审批通过后 Claude 才开始执行
+4. 适合复杂功能开发、需要提前 review 的场景
+
+#### 多标签会话
+
+支持同时运行多个对话：
+
+- 命令面板 → `Open in New Tab`（`Cmd+Shift+Esc` / `Ctrl+Shift+Esc`）开新会话
+- 每个会话独立维护上下文和历史
+- 支持拖拽面板到侧边栏、编辑区或新窗口
+
+### 5.6 Slash Commands（命令菜单）
+
+在输入框中输入 `/` 调出命令菜单：
+
+| 命令 | 用途 |
+|------|------|
+| `/model` | 切换模型（Claude Sonnet / Opus 等） |
+| `/compact` | 手动压缩上下文 |
+| `/usage` | 查看用量统计 |
+| `/mcp` | 管理 MCP 服务连接 |
+| `/plugins` | 管理插件界面 |
+| `/remote-control` | 启动远程控制会话 |
+
+### 5.7 设置与配置
+
+#### VS Code 扩展设置
+
+打开 VS Code 设置（`Cmd+,` / `Ctrl+,`）→ Extensions → Claude Code：
+
+| 设置 | 默认值 | 说明 |
+|------|--------|------|
+| `useTerminal` | `false` | 切换到终端模式（非图形面板） |
+| `initialPermissionMode` | `default` | 默认权限模式：`default` / `plan` / `acceptEdits` / `bypassPermissions` |
+| `preferredLocation` | `panel` | Claude 打开位置：`sidebar`（右侧）/ `panel`（新标签） |
+| `autosave` | `true` | 自动保存文件 |
+| `enableNewConversationShortcut` | `false` | 启用 `Cmd/Ctrl+N` 快捷键开新会话 |
+| `respectGitIgnore` | `true` | 遵守 .gitignore 规则 |
+| `environmentVariables` | `[]` | 为 Claude 进程设置额外的环境变量 |
+
+#### 全局 Claude Code 设置
+
+`~/.claude/settings.json` 在插件和 CLI 间共享：
+
+```json
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": ["Bash(git*)"],
+    "deny": ["Read(.env)"]
+  },
+  "hooks": {
+    "subagentStop": [
+      {
+        "command": "echo 'done'",
+        "matcher": "done",
+        "timeout": 30
+      }
+    ]
+  }
+}
+```
+
+### 5.8 插件管理
+
+VS Code 插件内置了图形化的插件管理界面：
+
+```bash
+# 在输入框中输入
+/plugins
+```
+
+插件管理界面支持：
+- **安装/卸载插件** — 搜索并安装社区或官方插件
+- **管理插件源（Marketplaces）** — 添加 GitHub 仓库、URL 或本地路径作为来源
+- **安装范围选择** — 用户级（所有项目）、项目级（共享给团队）、本地（仅当前仓库）
+
+### 5.9 Chrome 浏览器集成
+
+可以连接 Chrome 浏览器测试 Web 应用：
+
+```bash
+# 需要先安装 Chrome 扩展 "Claude in Chrome"
+# 在 VS Code 中输入
+@browser go to localhost:3000 and check console for errors
+```
+
+Claude 可以打开新标签、读取页面内容、检查控制台错误。
+
+### 5.10 快捷键速查
+
+| 快捷键（Mac） | 快捷键（Windows） | 作用 |
+|-------------|------------------|------|
+| `Cmd+Esc` | `Ctrl+Esc` | 在编辑器和 Claude 之间切换焦点 |
+| `Cmd+Shift+Esc` | `Ctrl+Shift+Esc` | 在新标签中打开 Claude |
+| `Option+K` | `Alt+K` | 插入 @ 引用当前文件和选中行 |
+| `Cmd+N` | `Ctrl+N` | 新对话（需启用设置） |
+| `Shift+Enter` | `Shift+Enter` | 输入框换行（不发消息） |
+| `Cmd+Shift+P` | `Ctrl+Shift+P` | 打开命令面板 → 搜索 Claude Code |
+
+### 5.11 VS Code 插件 vs CLI 终端模式
+
+| 能力 | VS Code 插件（图形面板） | CLI 终端模式 |
+|------|------------------------|-------------|
+| Diff 审阅视图 | ✅ 原生支持 | ✅ 集成 IDE 时支持 |
+| @ 引用文件和行 | ✅ | ✅ |
+| 多标签会话 | ✅ | ❌ |
+| 插件管理界面 | ✅（图形化） | ✅（`/plugin` 命令） |
+| 全部 Slash Commands | 子集 | 完整 |
+| MCP 管理 | 部分（可用 `/mcp`） | 完整 |
+| `!` Bash 快捷执行 | ❌ | ✅ |
+| Tab 自动补全 | ❌ | ✅ |
+| 对话历史 | ✅ | ✅ |
+
+如果某个功能只在 CLI 中可用，只需在 VS Code 集成终端中运行 `claude` 即可使用。
+
+### 5.12 macOS / Windows 差异
+
+插件在 macOS 和 Windows 上**功能完全一致**，差异仅在快捷键：
+- macOS 使用 `Cmd`、`Option` 键
+- Windows 使用 `Ctrl`、`Alt` 键
+
+### 5.13 SSH 连接远程开发
+
+如果你通过 VS Code Remote SSH 连接到远程 Linux 服务器：
+
+1. VS Code 需要安装 Remote SSH 扩展
+2. Claude Code 插件配置在**本地**，远程服务器无需额外设置
+3. 代码编辑、文件操作都在本地的 VS Code 中完成
+4. 快捷键设置与本地开发完全一致
+
+---
+
+## 6. 以 DeepSeek 为例替换 API
 
 > 根据 DeepSeek 官方文档（https://api-docs.deepseek.com/zh-cn/guides/agent_integrations），DeepSeek 同时提供 **OpenAI 兼容** 和 **Anthropic 兼容** 两种 API 网关，分别适用于不同的工具。
 >
 > 本文覆盖主流工具：**Claude Code**（Anthropic 兼容）、**Cursor**（OpenAI 兼容）、**Aider**（OpenAI 兼容）、**OpenCode**（原生支持），以及 **SSH 连接远程服务器** 的场景，并区分 **macOS / Linux / Windows** 三种系统。
 
-### 5.1 获取 DeepSeek API Key
+### 6.1 获取 DeepSeek API Key
 
 1. 访问 [platform.deepseek.com](https://platform.deepseek.com) 注册
 2. 在 API Keys 页面创建新 Key
 3. 充值（DeepSeek 价格极低，¥1 可用很久）
 
-### 5.2 在 Claude Code 中使用 DeepSeek（Anthropic 兼容）
+### 6.2 在 Claude Code 中使用 DeepSeek（Anthropic 兼容）
 
 > DeepSeek 官方提供 `https://api.deepseek.com/anthropic` 作为 Anthropic 兼容 API 网关，Claude Code 可通过环境变量直接接入。
 
@@ -362,7 +595,7 @@ cd /path/to/my-project
 claude
 ```
 
-### 5.3 在 Cursor 中替换为 DeepSeek
+### 6.3 在 Cursor 中替换为 DeepSeek
 
 #### 步骤 1：打开模型设置
 
@@ -396,7 +629,7 @@ claude
 | **Tab Autocomplete** | 可能不支持第三方模型，仍走 Cursor 自带 |
 | **Ctrl+K 内联编辑** | 正常使用自定义模型 |
 
-### 5.4 在 OpenCode 中使用 DeepSeek（原生支持）
+### 6.4 在 OpenCode 中使用 DeepSeek（原生支持）
 
 OpenCode 原生支持 DeepSeek 模型供应商，无需手动配置 base_url：
 
@@ -415,7 +648,7 @@ opencode
 
 详情见第 3 章「OpenCode 安装配置」。
 
-### 5.5 在 Aider 中替换为 DeepSeek
+### 6.5 在 Aider 中替换为 DeepSeek
 
 ```bash
 # 用 DeepSeek 启动 Aider
@@ -428,7 +661,7 @@ aider --model openai/deepseek-chat \
   --openai-api-base "https://api.deepseek.com"
 ```
 
-### 5.6 快速测试 API 是否可用
+### 6.6 快速测试 API 是否可用
 
 ```bash
 # macOS / Linux
@@ -446,7 +679,7 @@ $body = '{"model":"deepseek-chat","messages":[{"role":"user","content":"Hello"}]
 Invoke-RestMethod -Uri "https://api.deepseek.com/chat/completions" -Method Post -Headers $headers -Body $body
 ```
 
-### 5.7 SSH 连接远程 Linux 服务器的场景
+### 6.7 SSH 连接远程 Linux 服务器的场景
 
 #### 场景一：本地 Cursor + 远程服务器代码
 
@@ -504,7 +737,7 @@ opencode
   ```
 - 如果使用 Cursor Remote SSH，**只有本地机器需要能访问 API**，远程服务器不需要
 
-### 5.8 常用国产模型兼容地址速查
+### 6.8 常用国产模型兼容地址速查
 
 | 厂商 | API 类型 | Base URL | 推荐模型 ID |
 |------|----------|----------|-------------|
@@ -517,13 +750,13 @@ opencode
 
 ---
 
-## 6. OpenSkill + anthropics/skills 安装配置
+## 7. OpenSkill + anthropics/skills 安装配置
 
-### 6.1 简介
+### 7.1 简介
 
 **OpenSkills CLI**（`npx openskills`）是从 GitHub 仓库自动安装和管理 Skill 的工具，最重要的来源是 Anthropic 官方技能仓库 `anthropics/skills`。
 
-### 6.2 安装 OpenSkills CLI
+### 7.2 安装 OpenSkills CLI
 
 ```bash
 # 方法一：直接使用 npx（无需安装，推荐）
@@ -536,7 +769,7 @@ openskills --help
 
 环境要求：**Node.js ≥ 20.6**、Git。
 
-### 6.3 安装 anthropics/skills 全部技能
+### 7.3 安装 anthropics/skills 全部技能
 
 ```bash
 # 安装到当前项目（推荐，Skill 会放在 .claude/skills/ 或 .agent/skills/）
@@ -547,7 +780,7 @@ npx openskills install anthropics/skills
 npx openskills install anthropics/skills --global
 ```
 
-### 5.4 只安装部分技能
+### 7.4 只安装部分技能
 
 OpenSkills 目前不支持按需选择子目录，但可以装完再删：
 
@@ -562,7 +795,7 @@ rm -rf .claude/skills/algorithmic-art
 npx openskills sync
 ```
 
-### 6.5 生成 AGENTS.md
+### 7.5 生成 AGENTS.md
 
 ```bash
 # 生成项目 AGENTS.md（汇总所有已安装 skill）
@@ -574,7 +807,7 @@ npx openskills sync -o SKILLS_INDEX.md
 
 `AGENTS.md` 的作用是让 agent（或你在 Cursor 里 @ 它）知道当前项目装了哪些 skill、每个 skill 做什么用的。
 
-### 6.6 管理已安装的技能
+### 7.6 管理已安装的技能
 
 ```bash
 # 列出已安装
@@ -593,7 +826,7 @@ npx openskills remove pdf
 npx openskills manage
 ```
 
-### 6.7 多项目共享全局技能
+### 7.7 多项目共享全局技能
 
 在多个项目中想用同一套 skill：
 
@@ -606,7 +839,7 @@ cd project-a
 npx openskills sync --global
 ```
 
-### 6.8 安装后的目录结构
+### 7.8 安装后的目录结构
 
 ```
 your-project/
@@ -622,9 +855,9 @@ your-project/
 
 ---
 
-## 7. Skills 使用方式
+## 8. Skills 使用方式
 
-### 7.1 在 Cursor 中使用 Skill
+### 8.1 在 Cursor 中使用 Skill
 
 Cursor 通过 **Composer / Chat 对话** 触发 Skill。有两种触发方式：
 
@@ -651,7 +884,7 @@ description: "Create, merge, extract text/tables from PDFs. Use when user asks: 
 
 或直接 `@` 指定文件：在 Composer 中输入 `@.claude/skills/pdf/SKILL.md`。
 
-### 6.2 在 Claude Code 中使用 Skill
+### 8.2 在 Claude Code 中使用 Skill
 
 ```bash
 # 方法一：依赖自动匹配（description 中的提示词）
@@ -661,7 +894,7 @@ claude "处理这个 PDF 文件"
 claude -r AGENTS.md "请按照汇总的技能列表处理"
 ```
 
-### 6.3 在 Aider 中使用 Skill
+### 8.3 在 Aider 中使用 Skill
 
 Aider 没有原生 Skill 机制，但可以用 `--read` 预加载：
 
@@ -673,7 +906,7 @@ aider --read .claude/skills/pdf/SKILL.md "处理这个 PDF"
 npx openskills read pdf | aider --read - "处理"
 ```
 
-### 6.4 Skill 覆盖的场景速览（anthropics/skills）
+### 8.4 Skill 覆盖的场景速览（anthropics/skills）
 
 
 | Skill             | 核心用途                                 |
@@ -694,13 +927,13 @@ npx openskills read pdf | aider --read - "处理"
 
 ---
 
-## 8. 案例：学术 Skill 安装和使用
+## 9. 案例：学术 Skill 安装和使用
 
-### 8.1 场景
+### 9.1 场景
 
 你需要一个能帮你在 **Claude Code / Cursor** 中辅助论文写作、文献调研、审稿回复的学术助手 Skill。
 
-### 7.2 安装 academic-research-skills
+### 9.2 安装 academic-research-skills
 
 ```bash
 # 从 GitHub 安装社区学术 Skill 包
@@ -730,7 +963,7 @@ cp -r academic-research-skills/* .claude/skills/
     └── SKILL.md
 ```
 
-### 7.3 在 Cursor 中使用学术 Skill
+### 9.3 在 Cursor 中使用学术 Skill
 
 安装后，直接在 Cursor 中输入：
 
@@ -746,13 +979,13 @@ Agent 会自动匹配 `description` 中的关键词，按照 SKILL.md 中定义�
 4. 趋势分析
 5. 输出结构化报告
 
-### 7.4 在 Claude Code 中使用
+### 9.4 在 Claude Code 中使用
 
 ```bash
 claude "使用 paper-writing skill 帮我润色这段论文摘要：[粘贴摘要]"
 ```
 
-### 7.5 其他推荐的学术 Skill 仓库
+### 9.5 其他推荐的学术 Skill 仓库
 
 
 | 仓库                                         | 安装方式                                                              | 适用场景                               |
@@ -763,7 +996,7 @@ claude "使用 paper-writing skill 帮我润色这段论文摘要：[粘贴摘�
 | `Orchestra-Research/AI-Research-SKILLs`    | `npx openskills install Orchestra-Research/AI-Research-SKILLs`    | AI 研究 87 工程 skill（实验管理、ML 论文写作）    |
 
 
-### 7.6 学术 Skill 的典型使用提示词
+### 9.6 学术 Skill 的典型使用提示词
 
 ```
 # 文献调研
@@ -781,13 +1014,13 @@ claude "使用 paper-writing skill 帮我润色这段论文摘要：[粘贴摘�
 
 ---
 
-## 9. 案例：自定义 literature-tracker Skill
+## 10. 案例：自定义 literature-tracker Skill
 
-### 9.1 场景
+### 10.1 场景
 
 你希望有一个 **文献追踪 Skill**，能自动搜索指定领域的最新论文、分析趋势并生成结构化报告。以下参考 `/Users/joeyzhang/workspace/Agent_Sample/.cursor/skills/literature-tracker/` 的完整实现。
 
-### 8.2 Skill 目录结构
+### 10.2 Skill 目录结构
 
 ```
 literature-tracker/
@@ -800,7 +1033,7 @@ literature-tracker/
     └── test_data.json           # 示例数据
 ```
 
-### 8.3 SKILL.md 核心内容
+### 10.3 SKILL.md 核心内容
 
 ```markdown
 ---
@@ -853,7 +1086,7 @@ python scripts/generate_report.py \
 
 ```
 
-### 8.4 安装自定义 Skill
+### 10.4 安装自定义 Skill
 
 ```bash
 # 方法一：直接放入 Cursor 项目 skill 目录
@@ -866,7 +1099,7 @@ mkdir -p .cursor/skills/literature-tracker/templates
 npx openskills install /path/to/literature-tracker
 ```
 
-### 8.5 在 Cursor 中使用
+### 10.5 在 Cursor 中使用
 
 安装后，在 Cursor 中直接输入：
 
@@ -882,7 +1115,7 @@ Agent 自动执行：
 4. 分析趋势
 5. 调用 `scripts/generate_report.py` 生成 PDF
 
-### 8.6 进阶：配合 Cursor Hooks 实现自动化
+### 10.6 进阶：配合 Cursor Hooks 实现自动化
 
 你还可以添加 Hooks，让文献追踪在 Agent 对话结束后自动触发：
 
@@ -907,7 +1140,7 @@ Agent 自动执行：
 
 详情参考 `Agent_Sample` 目录下的完整实现。
 
-### 8.7 写成 OpenSkill 格式（通用）
+### 10.7 写成 OpenSkill 格式（通用）
 
 如果你想把这个 skill 分享给团队或发布到 GitHub，保持标准格式：
 
@@ -931,7 +1164,7 @@ npx openskills install your-org/your-skills-repo
 npx openskills install ./literature-tracker
 ```
 
-### 8.8 自定义 Skill 的最佳实践
+### 10.8 自定义 Skill 的最佳实践
 
 
 | 要点                     | 说明                                 |
