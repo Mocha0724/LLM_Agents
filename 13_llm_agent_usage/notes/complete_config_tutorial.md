@@ -16,9 +16,69 @@
 8. [Skills 使用方式](#8-skills-使用方式)
 9. [案例：学术 Skill 安装和使用](#9-案例学术-skill-安装和使用)
 10. [案例：自定义 literature-tracker Skill](#10-案例自定义-literature-tracker-skill)
-11. [附录：官方资源与文档索引](#附录官方资源与文档索引)
 
 ---
+
+> **快速参考**：[官方资源与文档索引](#附录官方资源与文档索引) — 所有工具的官网、文档、GitHub 链接汇总，以及系统差异速查表。
+
+---
+
+## 附录：官方资源与文档索引
+
+### 各工具官方资源
+
+| # | 工具 | 官网/下载 | 官方文档 | GitHub / 其他 |
+|---|------|-----------|----------|---------------|
+| 1 | **Claude Code** | [code.claude.com](https://code.claude.com) | [docs](https://code.claude.com/docs) | [github.com/anthropics/claude-code](https://github.com/anthropics/claude-code) |
+| 2 | **Cursor** | [cursor.com](https://cursor.com) | [docs.cursor.com](https://docs.cursor.com) | [cursor.com/shortcuts](https://cursor.com/shortcuts) |
+| 3 | **OpenCode** | [opencode-ai.github.io](https://opencode-ai.github.io) | [opencode-ai.github.io](https://opencode-ai.github.io) | [github.com/opencode-ai/opencode](https://github.com/opencode-ai/opencode) |
+| 4 | **Codex CLI** | [openai.com/index/codex-cli](https://openai.com/index/codex-cli/) | — | [github.com/openai/codex-cli](https://github.com/openai/codex-cli) |
+| 5 | **VS Code** | [code.visualstudio.com](https://code.visualstudio.com) | [code.visualstudio.com/docs](https://code.visualstudio.com/docs) | [marketplace: Claude Code](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code) |
+
+### Skills 相关资源
+
+| 资源 | 链接 |
+|------|------|
+| OpenSkills CLI（npm） | [npmjs.com/package/openskills](https://www.npmjs.com/package/openskills) |
+| OpenSkills GitHub | [github.com/suplant-inc/openskills](https://github.com/suplant-inc/openskills) |
+| Anthropic 官方 Skills 仓库 | [github.com/anthropics/skills](https://github.com/anthropics/skills) |
+
+### 中国模型 API 资源
+
+| 模型厂商 | API 文档 | API Key 申请 |
+|----------|----------|-------------|
+| **DeepSeek** | [platform.deepseek.com/api-docs](https://platform.deepseek.com/api-docs) | [platform.deepseek.com/api_keys](https://platform.deepseek.com/api_keys) |
+| | Anthropic 兼容网关：[api-docs.deepseek.com/zh-cn/guides/anthropic_compatible](https://api-docs.deepseek.com/zh-cn/guides/anthropic_compatible) |
+| | OpenCode 集成说明：[api-docs.deepseek.com/zh-cn/guides/agent_integrations/opencode](https://api-docs.deepseek.com/zh-cn/guides/agent_integrations/opencode) |
+| **通义千问（Qwen）** | [help.aliyun.com/zh/model-studio](https://help.aliyun.com/zh/model-studio) | [bailian.console.aliyun.com](https://bailian.console.aliyun.com) |
+| **智谱 GLM** | [open.bigmodel.cn/dev/api](https://open.bigmodel.cn/dev/api) | [open.bigmodel.cn/usercenter/apikeys](https://open.bigmodel.cn/usercenter/apikeys) |
+
+### 通用系统工具下载
+
+| 工具 | 官方链接 |
+|------|----------|
+| **Node.js**（所有工具的前置） | [nodejs.org/zh-cn/download](https://nodejs.org/zh-cn/download/) |
+| **Git**（版本控制、Skills 安装依赖） | [git-scm.com/downloads](https://git-scm.com/downloads) |
+| **Homebrew**（macOS 包管理器） | [brew.sh](https://brew.sh) |
+| **nvm**（macOS/Linux Node 版本管理） | [github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm) |
+| **nvm-windows**（Windows Node 版本管理） | [github.com/coreybutler/nvm-windows](https://github.com/coreybutler/nvm-windows) |
+| **Windows Terminal**（推荐终端） | [apps.microsoft.com/detail/9n0dx20hk701](https://apps.microsoft.com/detail/9n0dx20hk701) |
+| **PowerShell 7+**（Windows 推荐） | [github.com/PowerShell/PowerShell/releases](https://github.com/PowerShell/PowerShell/releases) |
+
+### 系统差异快速参考
+
+| 概念 | macOS | Linux | Windows |
+|------|-------|-------|---------|
+| 终端 | Terminal.app / iTerm2 | 系统终端 / Konsole / Gnome Terminal | PowerShell 7+ / Windows Terminal |
+| 包管理器 | Homebrew (`brew`) | apt (Debian) / dnf (Fedora) / pacman (Arch) | winget / Chocolatey / Scoop |
+| 环境变量 | `export VAR=value` | `export VAR=value` | `$env:VAR="value"` (PowerShell) |
+| 配置文件 | `~/.zshrc` / `~/.bashrc` | `~/.bashrc` / `~/.zshrc` / `~/.profile` | 系统环境变量 / `$PROFILE` |
+| 全局 npm 路径 | `/usr/local/lib/node_modules` 或 `~/.npm-global` | 同 macOS | `%APPDATA%\npm\node_modules` |
+| PATH 查看 | `echo $PATH` | `echo $PATH` | `$env:Path` |
+| Node.js 推荐安装 | brew / nvm / 官网 .pkg | nvm / apt / 官网 .tar.xz | nvm-windows / 官网 .msi |
+
+---
+
 
 ## 1. Claude Code 安装配置
 
@@ -1468,58 +1528,3 @@ npx openskills install ./literature-tracker
 
 
 
----
-
-## 附录：官方资源与文档索引
-
-### 各工具官方资源
-
-| # | 工具 | 官网/下载 | 官方文档 | GitHub / 其他 |
-|---|------|-----------|----------|---------------|
-| 1 | **Claude Code** | [code.claude.com](https://code.claude.com) | [docs](https://code.claude.com/docs) | [github.com/anthropics/claude-code](https://github.com/anthropics/claude-code) |
-| 2 | **Cursor** | [cursor.com](https://cursor.com) | [docs.cursor.com](https://docs.cursor.com) | [cursor.com/shortcuts](https://cursor.com/shortcuts) |
-| 3 | **OpenCode** | [opencode-ai.github.io](https://opencode-ai.github.io) | [opencode-ai.github.io](https://opencode-ai.github.io) | [github.com/opencode-ai/opencode](https://github.com/opencode-ai/opencode) |
-| 4 | **Codex CLI** | [openai.com/index/codex-cli](https://openai.com/index/codex-cli/) | — | [github.com/openai/codex-cli](https://github.com/openai/codex-cli) |
-| 5 | **VS Code** | [code.visualstudio.com](https://code.visualstudio.com) | [code.visualstudio.com/docs](https://code.visualstudio.com/docs) | [marketplace: Claude Code](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code) |
-
-### Skills 相关资源
-
-| 资源 | 链接 |
-|------|------|
-| OpenSkills CLI（npm） | [npmjs.com/package/openskills](https://www.npmjs.com/package/openskills) |
-| OpenSkills GitHub | [github.com/suplant-inc/openskills](https://github.com/suplant-inc/openskills) |
-| Anthropic 官方 Skills 仓库 | [github.com/anthropics/skills](https://github.com/anthropics/skills) |
-
-### 中国模型 API 资源
-
-| 模型厂商 | API 文档 | API Key 申请 |
-|----------|----------|-------------|
-| **DeepSeek** | [platform.deepseek.com/api-docs](https://platform.deepseek.com/api-docs) | [platform.deepseek.com/api_keys](https://platform.deepseek.com/api_keys) |
-| | Anthropic 兼容网关：[api-docs.deepseek.com/zh-cn/guides/anthropic_compatible](https://api-docs.deepseek.com/zh-cn/guides/anthropic_compatible) |
-| | OpenCode 集成说明：[api-docs.deepseek.com/zh-cn/guides/agent_integrations/opencode](https://api-docs.deepseek.com/zh-cn/guides/agent_integrations/opencode) |
-| **通义千问（Qwen）** | [help.aliyun.com/zh/model-studio](https://help.aliyun.com/zh/model-studio) | [bailian.console.aliyun.com](https://bailian.console.aliyun.com) |
-| **智谱 GLM** | [open.bigmodel.cn/dev/api](https://open.bigmodel.cn/dev/api) | [open.bigmodel.cn/usercenter/apikeys](https://open.bigmodel.cn/usercenter/apikeys) |
-
-### 通用系统工具下载
-
-| 工具 | 官方链接 |
-|------|----------|
-| **Node.js**（所有工具的前置） | [nodejs.org/zh-cn/download](https://nodejs.org/zh-cn/download/) |
-| **Git**（版本控制、Skills 安装依赖） | [git-scm.com/downloads](https://git-scm.com/downloads) |
-| **Homebrew**（macOS 包管理器） | [brew.sh](https://brew.sh) |
-| **nvm**（macOS/Linux Node 版本管理） | [github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm) |
-| **nvm-windows**（Windows Node 版本管理） | [github.com/coreybutler/nvm-windows](https://github.com/coreybutler/nvm-windows) |
-| **Windows Terminal**（推荐终端） | [apps.microsoft.com/detail/9n0dx20hk701](https://apps.microsoft.com/detail/9n0dx20hk701) |
-| **PowerShell 7+**（Windows 推荐） | [github.com/PowerShell/PowerShell/releases](https://github.com/PowerShell/PowerShell/releases) |
-
-### 系统差异快速参考
-
-| 概念 | macOS | Linux | Windows |
-|------|-------|-------|---------|
-| 终端 | Terminal.app / iTerm2 | 系统终端 / Konsole / Gnome Terminal | PowerShell 7+ / Windows Terminal |
-| 包管理器 | Homebrew (`brew`) | apt (Debian) / dnf (Fedora) / pacman (Arch) | winget / Chocolatey / Scoop |
-| 环境变量 | `export VAR=value` | `export VAR=value` | `$env:VAR="value"` (PowerShell) |
-| 配置文件 | `~/.zshrc` / `~/.bashrc` | `~/.bashrc` / `~/.zshrc` / `~/.profile` | 系统环境变量 / `$PROFILE` |
-| 全局 npm 路径 | `/usr/local/lib/node_modules` 或 `~/.npm-global` | 同 macOS | `%APPDATA%\npm\node_modules` |
-| PATH 查看 | `echo $PATH` | `echo $PATH` | `$env:Path` |
-| Node.js 推荐安装 | brew / nvm / 官网 .pkg | nvm / apt / 官网 .tar.xz | nvm-windows / 官网 .msi |
