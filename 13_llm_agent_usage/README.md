@@ -9,6 +9,12 @@
 - 想理解 Skill、OpenSkill、Hook、Rule、MCP Tool 等概念的区别。
 - 想给常见工作流写可复用 skill：编码、学术代码、论文修改、Word/Excel/PPT/PDF、Git/DevOps。
 
+注：主体内容AI整理，不能保证信息最新。建议安装相关的具体操作，参考各官网的指南。
+
+complete_config_[tutorial.md](http://tutorial.md)开头有相关的官网链接（也可以直接搜，小红书等途径也可能有指南）
+
+也建议在遇到各种配置问题时，可以直接借助于AI进行解决
+
 ## 2. 内容分层与阅读顺序
 
 第 13 章的内容按「选型 → 工具集成 → Skill 体系 → 实战案例」四层组织：
@@ -28,17 +34,21 @@ flowchart TD
     D --> E1[`examples/literature-tracker/`]
 ```
 
+
+
 ## 3. 文件导览
 
-| 分层 | 文件 | 内容 |
-|------|------|------|
-| **选型与安装** | `notes/complete_config_tutorial.md` | 完整安装配置教程：工具安装 → API 替换 → Skills 配置 → 案例，零基础到上手 |
-| | `notes/coding_agent_selection.md` | Coding Agent 选择指南：Cursor、Claude Code、Codex、Aider、国产工具等 |
-| **工具集成** | `notes/domestic_coding_models_in_ide.md` | 在 IDE / CLI 工具里接入中国 coding 模型（含 Mac/Win/Linux 及 SSH 场景） |
-| | `notes/tool_plugins_and_extensions.md` | Agent 插件/扩展/Slash Commands 使用指南：GSD 详细教程、Cursor Marketplace |
-| **Skill 体系** | `notes/skills_complete_guide.md` | **Skill 完全指南**：OpenSkills CLI 安装 → 原理 → 手写 → 模板 → 社区科研资源 |
-| | `notes/hooks_vs_skills.md` | Hook、Skill、Rule、Command、MCP Tool 的概念辨析 |
-| **实战案例** | `examples/literature-tracker/` | **📁 可查案例**：完整的文献追踪 Skill（SKILL.md + 脚本 + 模板） |
+
+| 分层           | 文件                                       | 内容                                                          |
+| ------------ | ---------------------------------------- | ----------------------------------------------------------- |
+| **选型与安装**    | `notes/complete_config_tutorial.md`      | 完整安装配置教程：工具安装 → API 替换 → Skills 配置 → 案例，零基础到上手              |
+|              | `notes/coding_agent_selection.md`        | Coding Agent 选择指南：Cursor、Claude Code、Codex、Aider、国产工具等      |
+| **工具集成**     | `notes/domestic_coding_models_in_ide.md` | 在 IDE / CLI 工具里接入中国 coding 模型（含 Mac/Win/Linux 及 SSH 场景）     |
+|              | `notes/tool_plugins_and_extensions.md`   | Agent 插件/扩展/Slash Commands 使用指南：GSD 详细教程、Cursor Marketplace |
+| **Skill 体系** | `notes/skills_complete_guide.md`         | **Skill 完全指南**：OpenSkills CLI 安装 → 原理 → 手写 → 模板 → 社区科研资源    |
+|              | `notes/hooks_vs_skills.md`               | Hook、Skill、Rule、Command、MCP Tool 的概念辨析                      |
+| **实战案例**     | `examples/literature-tracker/`           | **📁 可查案例**：完整的文献追踪 Skill（SKILL.md + 脚本 + 模板）               |
+
 
 > **推荐阅读**：先读 `complete_config_tutorial.md`（零基础到上手），再按需查阅分层中的其他文件。
 
@@ -46,14 +56,16 @@ flowchart TD
 
 ### Coding Agent 怎么选
 
-| 场景 | 推荐 |
-|------|------|
-| 日常开发、阅读项目、改中小 feature | **Cursor** |
-| 终端重度用户、脚本/后端项目、长上下文 | **Claude Code** |
-| OpenAI 生态、轻量 CLI coding | **Codex CLI** |
-| 想用国产/开源模型 + git 友好 | **Aider** |
-| 想自托管云端 agent / 做 SWE-bench 研究 | **OpenHands / SWE-agent** |
-| 想委托长任务、让 agent 自己开 PR | **Devin / 云端 coding agent** |
+
+| 场景                            | 推荐                          |
+| ----------------------------- | --------------------------- |
+| 日常开发、阅读项目、改中小 feature         | **Cursor**                  |
+| 终端重度用户、脚本/后端项目、长上下文           | **Claude Code**             |
+| OpenAI 生态、轻量 CLI coding       | **Codex CLI**               |
+| 想用国产/开源模型 + git 友好            | **Aider**                   |
+| 想自托管云端 agent / 做 SWE-bench 研究 | **OpenHands / SWE-agent**   |
+| 想委托长任务、让 agent 自己开 PR         | **Devin / 云端 coding agent** |
+
 
 ### 在工具里用中国 coding 模型
 
@@ -91,3 +103,4 @@ print(resp.choices[0].message.content)
 - 第 07 章讲框架选型，本目录讲开发者日常怎么用。
 - 第 10 章讲 frontier coding agent，本目录整理成实操教程。
 - 第 12 章讲安全，本目录在每个工具使用方案里补充权限、沙箱、HITL 建议。
+

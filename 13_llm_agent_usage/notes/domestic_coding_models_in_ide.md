@@ -42,6 +42,10 @@
 >
 > 参考官方文档：[https://api-docs.deepseek.com/zh-cn/guides/agent_integrations/claude_code](https://api-docs.deepseek.com/zh-cn/guides/agent_integrations/claude_code)
 
+
+
+同样注意，尽量参考官网的最新指南，这里的不一定准确。
+
 ### 3.1 前置条件
 
 - 安装 [Node.js](https://nodejs.org/zh-cn/download/) **18+**

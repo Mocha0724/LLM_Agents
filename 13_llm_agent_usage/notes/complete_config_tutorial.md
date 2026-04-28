@@ -1432,6 +1432,14 @@ claude "使用 paper-writing skill 帮我润色这段论文摘要：[粘贴摘�
 
 你希望有一个 **文献追踪 Skill**，能自动搜索指定领域的最新论文、分析趋势并生成结构化报告。以下参考本仓库 `[examples/literature-tracker/](../examples/literature-tracker/)` 的完整实现（该 skill 已复制到仓库中）。
 
+
+
+实际的建立过程。就是利用Anthrophic的官方skill。利用Skill-Creator这个skill，直接向其描述上述的场景，agent可以自己建立这个skill。
+
+在自己有个性化需求时，都可以参照这个工作流程，建立自己的skill。尽量不要自己手写skill，因为skill比较需要结构化。
+
+下文是形成的skill的结果的简单介绍。
+
 ### 10.2 Skill 目录结构
 
 ```
