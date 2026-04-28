@@ -32,9 +32,10 @@ flowchart TD
 | `[notes/openskills_install_and_usage.md](./notes/openskills_install_and_usage.md)`   | **OpenSkills（npm CLI）**：`npx openskills install/sync`，及 `anthropics/skills` 各子 skill 功能速览 |
 | `[notes/skill_openskill_guide.md](./notes/skill_openskill_guide.md)`                 | Skill / OpenSkill 的原理、**手写/迁移** 编写、配置与工具差异                                                |
 | `[notes/hooks_vs_skills.md](./notes/hooks_vs_skills.md)`                             | Hook、Skill、Rule、Command、MCP Tool、Function Calling 的理解与比较                                  |
+| `[notes/tool_plugins_and_extensions.md](./notes/tool_plugins_and_extensions.md)`     | **Agent 插件/扩展/Slash Commands 使用指南**：GSD 详细教程、Cursor Marketplace、Claude Code 插件体系       |
 | `[examples/](./examples/)`                                                           | 可复制的 Skill / Hook / 配置片段                                                                  |
 
-> **推荐阅读顺序**：先读 `complete_config_tutorial.md`（零基础到上手），按需查阅其他专项文档。
+> **推荐阅读顺序**：先读 `complete_config_tutorial.md`（零基础到上手），再读 `tool_plugins_and_extensions.md`（插件扩展），最后按需查阅其他专项文档。
 
 
 ## 4. 快速结论
