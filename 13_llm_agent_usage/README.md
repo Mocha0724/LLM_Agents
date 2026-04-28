@@ -28,7 +28,7 @@ flowchart TD
 | ------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- |
 | `[notes/complete_config_tutorial.md](./notes/complete_config_tutorial.md)`           | **📘 完整安装配置教程（本文）**：工具安装 → API 替换 → Skills 配置 → 案例，零基础到上手                     |
 | `[notes/coding_agent_selection.md](./notes/coding_agent_selection.md)`               | Coding Agent 选择指南：Cursor、Claude Code、Codex、Aider、OpenHands、Devin、国产工具等                    |
-| `[notes/domestic_coding_models_in_ide.md](./notes/domestic_coding_models_in_ide.md)` | **在 IDE / CLI 工具里**接入中国 coding 模型：Cursor / VS Code / Aider / 工具策略与排错                            |
+| `[notes/domestic_coding_models_in_ide.md](./notes/domestic_coding_models_in_ide.md)` | **在 IDE / CLI 工具里**接入中国 coding 模型：Cursor / Claude Code(DeepSeek Anthropic兼容) / OpenCode / Aider，含 Mac/Win/Linux 及 SSH 场景 |
 | `[notes/openskills_install_and_usage.md](./notes/openskills_install_and_usage.md)`   | **OpenSkills（npm CLI）**：`npx openskills install/sync`，及 `anthropics/skills` 各子 skill 功能速览 |
 | `[notes/skill_openskill_guide.md](./notes/skill_openskill_guide.md)`                 | Skill / OpenSkill 的原理、**手写/迁移** 编写、配置与工具差异                                                |
 | `[notes/hooks_vs_skills.md](./notes/hooks_vs_skills.md)`                             | Hook、Skill、Rule、Command、MCP Tool、Function Calling 的理解与比较                                  |
@@ -55,7 +55,7 @@ flowchart TD
 
 ### 在工具里用中国 coding 模型
 
-在 **Cursor / VS Code 插件 / Aider** 里，通常走 **OpenAI 兼容**：填好 `api_key`、`base_url`、厂商文档里的 **model ID**（如 `deepseek-chat`）。**Claude Code / 官方 Claude 栈默认走 Anthropic**，不能简单等同为「在设置里填国产 base_url」；细节见 [`notes/domestic_coding_models_in_ide.md`](./notes/domestic_coding_models_in_ide.md)。
+在 **Cursor / VS Code 插件 / Aider / OpenCode** 里，通常走 **OpenAI 兼容**：填好 `api_key`、`base_url`、厂商文档里的 **model ID**（如 `deepseek-chat`）。**Claude Code 现已可通过 DeepSeek 官方 Anthropic 兼容 API 接入**，见 [`notes/domestic_coding_models_in_ide.md`](./notes/domestic_coding_models_in_ide.md)。
 
 用脚本自测 API 是否可用时，可以用 OpenAI SDK 统一调用：
 

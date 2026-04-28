@@ -8,12 +8,13 @@
 
 1. [Claude Code 安装配置](#1-claude-code-安装配置)
 2. [Cursor 安装配置](#2-cursor-安装配置)
-3. [Codex CLI 安装配置](#3-codex-cli-安装配置)
-4. [以 DeepSeek 为例替换 API](#4-以-deepseek-为例替换-api)
-5. [OpenSkill + anthropics/skills 安装配置](#5-openskill--anthropicsskills-安装配置)
-6. [Skills 使用方式](#6-skills-使用方式)
-7. [案例：学术 Skill 安装和使用](#7-案例学术-skill-安装和使用)
-8. [案例：自定义 literature-tracker Skill](#8-案例自定义-literature-tracker-skill)
+3. [OpenCode 安装配置](#3-opencode-安装配置)
+4. [Codex CLI 安装配置](#4-codex-cli-安装配置)
+5. [以 DeepSeek 为例替换 API](#5-以-deepseek-为例替换-api)
+6. [OpenSkill + anthropics/skills 安装配置](#6-openskill--anthropicsskills-安装配置)
+7. [Skills 使用方式](#7-skills-使用方式)
+8. [案例：学术 Skill 安装和使用](#8-案例学术-skill-安装和使用)
+9. [案例：自定义 literature-tracker Skill](#9-案例自定义-literature-tracker-skill)
 
 ---
 
@@ -60,11 +61,13 @@ cat bug_report.txt | claude
 
 ### 1.5 关键配置文件
 
-| 文件 | 作用 | 位置 |
-|------|------|------|
-| `CLAUDE.md` | 项目级长期指令（行为规则、编码规范） | 项目根目录 |
-| `.claude/skills/` | Skill 目录 | 项目根目录下 |
-| `.claude/hooks/` | 事件钩子（自动脚本） | 项目根目录下 |
+
+| 文件                | 作用                 | 位置     |
+| ----------------- | ------------------ | ------ |
+| `CLAUDE.md`       | 项目级长期指令（行为规则、编码规范） | 项目根目录  |
+| `.claude/skills/` | Skill 目录           | 项目根目录下 |
+| `.claude/hooks/`  | 事件钩子（自动脚本）         | 项目根目录下 |
+
 
 创建 `CLAUDE.md` 示例：
 
@@ -109,12 +112,14 @@ Cursor 是基于 VS Code 的 **IDE 形态 Coding Agent**，原生支持 AI 对�
 
 打开 **Cursor → Settings → Features** 或 `Cmd+Shift+P` 搜索 "Cursor Settings"：
 
-| 功能 | 说明 | 默认 |
-|------|------|------|
-| **Composer** | 多文件编辑对话（`Cmd+I`） | 开启 |
-| **Chat** | 单文件/代码块对话（`Cmd+L`） | 开启 |
-| **Inline Edit** | 行内代码编辑（`Cmd+K`） | 开启 |
-| **Tab Autocomplete** | AI 代码补全 | 开启 |
+
+| 功能                   | 说明                 | 默认  |
+| -------------------- | ------------------ | --- |
+| **Composer**         | 多文件编辑对话（`Cmd+I`）   | 开启  |
+| **Chat**             | 单文件/代码块对话（`Cmd+L`） | 开启  |
+| **Inline Edit**      | 行内代码编辑（`Cmd+K`）    | 开启  |
+| **Tab Autocomplete** | AI 代码补全            | 开启  |
+
 
 #### 2.3.2 配置目录
 
@@ -131,12 +136,14 @@ Cursor 是基于 VS Code 的 **IDE 形态 Coding Agent**，原生支持 AI 对�
 
 ### 2.4 基本使用快捷键
 
-| 快捷键 | 功能 |
-|--------|------|
-| `Cmd+I` | 打开 Composer（多文件编辑） |
-| `Cmd+L` | 打开 Chat（对话） |
-| `Cmd+K` | 行内编辑（选中代码后按） |
-| `Cmd+Shift+L` | 在 Chat 中添加当前文件上下文 |
+
+| 快捷键           | 功能                 |
+| ------------- | ------------------ |
+| `Cmd+I`       | 打开 Composer（多文件编辑） |
+| `Cmd+L`       | 打开 Chat（对话）        |
+| `Cmd+K`       | 行内编辑（选中代码后按）       |
+| `Cmd+Shift+L` | 在 Chat 中添加当前文件上下文  |
+
 
 ### 2.5 Rules 配置（.mdc 文件）
 
@@ -154,7 +161,89 @@ glob: "**/*.py"
 
 ---
 
-## 3. Codex CLI 安装配置
+## 3. OpenCode 安装配置
+
+### 3.1 简介
+
+**OpenCode** 是一个开源的 AI 编程助手，支持终端和网页两种运行形式。它原生支持多模型供应商切换，对 DeepSeek 等国产模型有良好的开箱体验。
+
+### 3.2 安装
+
+#### macOS
+
+```bash
+# 推荐使用 Homebrew
+brew install opencode
+
+# 或使用 npm
+npm install -g @opencode-ai/cli
+
+# 验证
+opencode --version
+```
+
+#### Linux
+
+```bash
+# 使用 npm
+npm install -g @opencode-ai/cli
+
+# 验证
+opencode --version
+```
+
+#### Windows
+
+```bash
+# 使用 npm（Windows 推荐在 PowerShell 或 CMD 中执行）
+npm install -g @opencode-ai/cli
+
+# 验证
+opencode --version
+```
+
+**环境要求**：
+- **OpenCode 版本 ≥ v1.14.24**（建议升级到最新版本以避免兼容性问题）
+- Node.js 18+
+
+### 3.3 配置 DeepSeek 模型
+
+第一步：启动 OpenCode
+
+```bash
+cd /path/to/my-project
+opencode
+```
+
+第二步：在互动界面中配置
+
+1. 在输入框中输入 `/connect`
+2. 选择 `deepseek` 供应商
+3. 填入你的 [DeepSeek API Key](https://platform.deepseek.com/api_keys)
+4. 选择 `DeepSeek-V4-Pro` 模型
+
+### 3.4 验证
+
+配置成功后，在 OpenCode 中输入一个问题测试：
+
+```
+解释当前项目的目录结构
+```
+
+如果回复正常，说明配置成功。
+
+### 3.5 常用命令
+
+| 命令 | 作用 |
+|------|------|
+| `/connect` | 连接/切换模型供应商 |
+| `/model` | 查看或切换当前模型 |
+| `/clear` | 清除当前会话 |
+| `/help` | 查看帮助 |
+
+---
+
+## 4. Codex CLI 安装配置
 
 ### 3.1 简介
 
@@ -205,19 +294,75 @@ codex -m o3-mini "优化这个函数的性能"
 
 ---
 
-## 4. 以 DeepSeek 为例替换 API
+## 5. 以 DeepSeek 为例替换 API
 
-> 在 Claude Code / Claude 官方栈中**不能**直接替换 base_url 换成国产模型，因为 Claude 官方客户端走 Anthropic 专有协议。
+> 根据 DeepSeek 官方文档（https://api-docs.deepseek.com/zh-cn/guides/agent_integrations），DeepSeek 同时提供 **OpenAI 兼容** 和 **Anthropic 兼容** 两种 API 网关，分别适用于不同的工具。
 >
-> 以下的替换方案适用于 **Cursor、Aider、VS Code 插件、Continue** 等支持 OpenAI 兼容端点的工具。
+> 本文覆盖主流工具：**Claude Code**（Anthropic 兼容）、**Cursor**（OpenAI 兼容）、**Aider**（OpenAI 兼容）、**OpenCode**（原生支持），以及 **SSH 连接远程服务器** 的场景，并区分 **macOS / Linux / Windows** 三种系统。
 
-### 4.1 获取 DeepSeek API Key
+### 5.1 获取 DeepSeek API Key
 
 1. 访问 [platform.deepseek.com](https://platform.deepseek.com) 注册
 2. 在 API Keys 页面创建新 Key
 3. 充值（DeepSeek 价格极低，¥1 可用很久）
 
-### 4.2 在 Cursor 中替换为 DeepSeek
+### 5.2 在 Claude Code 中使用 DeepSeek（Anthropic 兼容）
+
+> DeepSeek 官方提供 `https://api.deepseek.com/anthropic` 作为 Anthropic 兼容 API 网关，Claude Code 可通过环境变量直接接入。
+
+#### macOS / Linux
+
+```bash
+export ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic
+export ANTHROPIC_AUTH_TOKEN="<你的 DeepSeek API Key>"
+export ANTHROPIC_MODEL=deepseek-v4-pro
+export ANTHROPIC_DEFAULT_OPUS_MODEL=deepseek-v4-pro
+export ANTHROPIC_DEFAULT_SONNET_MODEL=deepseek-v4-pro
+export ANTHROPIC_DEFAULT_HAIKU_MODEL=deepseek-v4-flash
+export CLAUDE_CODE_SUBAGENT_MODEL=deepseek-v4-flash
+export CLAUDE_CODE_EFFORT_LEVEL=max
+```
+
+#### Windows（PowerShell）
+
+```powershell
+$env:ANTHROPIC_BASE_URL="https://api.deepseek.com/anthropic"
+$env:ANTHROPIC_AUTH_TOKEN="<你的 DeepSeek API Key>"
+$env:ANTHROPIC_MODEL="deepseek-v4-pro"
+$env:ANTHROPIC_DEFAULT_OPUS_MODEL="deepseek-v4-pro"
+$env:ANTHROPIC_DEFAULT_SONNET_MODEL="deepseek-v4-pro"
+$env:ANTHROPIC_DEFAULT_HAIKU_MODEL="deepseek-v4-flash"
+$env:CLAUDE_CODE_SUBAGENT_MODEL="deepseek-v4-flash"
+$env:CLAUDE_CODE_EFFORT_LEVEL="max"
+```
+
+#### 持久化配置
+
+```bash
+# macOS / Linux（zsh）—— 写入 ~/.zshrc
+echo 'export ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic' >> ~/.zshrc
+echo 'export ANTHROPIC_AUTH_TOKEN="sk-xxxx"' >> ~/.zshrc
+# ...（其余变量同理）
+
+# 然后重新加载
+source ~/.zshrc
+```
+
+```powershell
+# Windows（PowerShell）—— 写入 $PROFILE
+Add-Content $PROFILE '$env:ANTHROPIC_BASE_URL="https://api.deepseek.com/anthropic"'
+# 重新加载
+. $PROFILE
+```
+
+#### 使用
+
+```bash
+cd /path/to/my-project
+claude
+```
+
+### 5.3 在 Cursor 中替换为 DeepSeek
 
 #### 步骤 1：打开模型设置
 
@@ -240,18 +385,37 @@ codex -m o3-mini "优化这个函数的性能"
 
 在 Chat 中发送一条消息，如果回复正常，说明配置成功。
 
-### 4.3 Cursor 中 Composr 和 Chat 的区别
+> **注意**：Cursor 配置在 macOS 和 Windows 上 UI 完全相同，只有快捷键差异（macOS 用 `Cmd`，Windows 用 `Ctrl`）。
+
+#### Cursor 各模式的兼容性
 
 | 模式 | 替换效果 |
 |------|----------|
-| **Chat** (`Cmd+L`) | 正常使用自定义模型 |
-| **Composer** (`Cmd+I`) | 正常使用自定义模型 |
+| **Chat** (`Cmd+L` / `Ctrl+L`) | 正常使用自定义模型 |
+| **Composer** (`Cmd+I` / `Ctrl+I`) | 正常使用自定义模型 |
 | **Tab Autocomplete** | 可能不支持第三方模型，仍走 Cursor 自带 |
 | **Ctrl+K 内联编辑** | 正常使用自定义模型 |
 
-> DeepSeek 在代码补全（Tab）场景体验可能不如专用补全模型，这是正常现象。
+### 5.4 在 OpenCode 中使用 DeepSeek（原生支持）
 
-### 4.4 在 Aider 中替换为 DeepSeek
+OpenCode 原生支持 DeepSeek 模型供应商，无需手动配置 base_url：
+
+```bash
+# 启动 OpenCode
+cd /path/to/my-project
+opencode
+
+# 在互动界面中输入
+/connect
+
+# 选择 deepseek 供应商
+# 填入 API Key
+# 选择 DeepSeek-V4-Pro 模型
+```
+
+详情见第 3 章「OpenCode 安装配置」。
+
+### 5.5 在 Aider 中替换为 DeepSeek
 
 ```bash
 # 用 DeepSeek 启动 Aider
@@ -264,56 +428,102 @@ aider --model openai/deepseek-chat \
   --openai-api-base "https://api.deepseek.com"
 ```
 
-### 4.5 在 VS Code Continue 插件中替换
-
-`.continuerc.json` 中配置：
-
-```json
-{
-  "models": [
-    {
-      "title": "DeepSeek",
-      "provider": "openai",
-      "model": "deepseek-chat",
-      "apiKey": "YOUR_DEEPSEEK_API_KEY",
-      "apiBase": "https://api.deepseek.com/v1"
-    }
-  ]
-}
-```
-
-### 4.6 快速测试 API 是否可用
+### 5.6 快速测试 API 是否可用
 
 ```bash
-# 使用 curl
+# macOS / Linux
 curl https://api.deepseek.com/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $DEEPSEEK_API_KEY" \
-  -d '{
-    "model": "deepseek-chat",
-    "messages": [{"role": "user", "content": "Hello"}]
-  }'
+  -d '{"model": "deepseek-chat", "messages": [{"role": "user", "content": "Hello"}]}'
+
+# Windows（PowerShell）
+$headers = @{
+    "Content-Type" = "application/json"
+    "Authorization" = "Bearer $env:DEEPSEEK_API_KEY"
+}
+$body = '{"model":"deepseek-chat","messages":[{"role":"user","content":"Hello"}]}'
+Invoke-RestMethod -Uri "https://api.deepseek.com/chat/completions" -Method Post -Headers $headers -Body $body
 ```
 
-### 4.7 常用国产模型兼容地址速查
+### 5.7 SSH 连接远程 Linux 服务器的场景
 
-| 厂商 | Base URL | 推荐 Coding 模型 ID |
-|------|----------|---------------------|
-| **DeepSeek** | `https://api.deepseek.com` | `deepseek-chat`, `deepseek-reasoner` |
-| **阿里通义 Qwen** | `https://dashscope.aliyuncs.com/compatible-mode/v1` | `qwen-max`, `qwen-coder-plus` |
-| **智谱 GLM** | `https://open.bigmodel.cn/api/paas/v4` | `glm-4-plus`, `glm-4-flash` |
-| **阶跃星辰 StepFun** | `https://api.stepfun.com/v1` | `step-2-16k` |
-| **昆仑万维 Skywork** | `https://api.skywork.com/v1` | `skywork-lite` |
+#### 场景一：本地 Cursor + 远程服务器代码
+
+**推荐方式**：Cursor 的 Remote SSH 功能
+
+1. 本地安装 Cursor（模型配置在本地完成）
+2. 安装 Remote SSH 扩展
+3. 通过 `Cmd+Shift+P` 或 `Ctrl+Shift+P` → `Remote-SSH: Connect to Host` 连接
+4. **模型 API 配置在本地**，远程服务器无需任何 API 配置
+
+#### 场景二：在远程服务器直接使用 CLI 工具
+
+```bash
+# SSH 连接到远程 Linux 服务器
+ssh user@remote-server
+
+# 安装 Node.js（如果还没有）
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# 安装 Claude Code
+npm install -g @anthropic-ai/claude-code
+
+# 设置 DeepSeek 环境变量
+export ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic
+export ANTHROPIC_AUTH_TOKEN=sk-xxxxxxxxxx
+export ANTHROPIC_MODEL=deepseek-v4-pro
+
+# 启动
+claude
+```
+
+#### 场景三：通过 SSH 使用 OpenCode
+
+```bash
+# SSH 到远程服务器
+ssh user@remote-server
+
+# 安装 OpenCode
+npm install -g @opencode-ai/cli
+
+# 启动并配置
+cd /path/to/project
+opencode
+# 输入 /connect → 选择 deepseek
+```
+
+#### SSH 场景的网络注意事项
+
+- 确保远程服务器能访问 API 端点（`api.deepseek.com`）
+- 如果服务器在内网无法直连外网，需要配置 HTTP 代理：
+  ```bash
+  export HTTP_PROXY=http://proxy-server:port
+  export HTTPS_PROXY=http://proxy-server:port
+  ```
+- 如果使用 Cursor Remote SSH，**只有本地机器需要能访问 API**，远程服务器不需要
+
+### 5.8 常用国产模型兼容地址速查
+
+| 厂商 | API 类型 | Base URL | 推荐模型 ID |
+|------|----------|----------|-------------|
+| **DeepSeek** | OpenAI 兼容 | `https://api.deepseek.com` | `deepseek-chat`, `deepseek-reasoner` |
+| **DeepSeek** | Anthropic 兼容 | `https://api.deepseek.com/anthropic` | `deepseek-v4-pro`, `deepseek-v4-flash` |
+| **阿里通义 Qwen** | OpenAI 兼容 | `https://dashscope.aliyuncs.com/compatible-mode/v1` | `qwen-max`, `qwen-coder-plus` |
+| **智谱 GLM** | OpenAI 兼容 | `https://open.bigmodel.cn/api/paas/v4` | `glm-4-plus`, `glm-4-flash` |
+| **阶跃星辰 StepFun** | OpenAI 兼容 | `https://api.stepfun.com/v1` | `step-2-16k` |
+
 
 ---
 
-## 5. OpenSkill + anthropics/skills 安装配置
+## 6. OpenSkill + anthropics/skills 安装配置
 
-### 5.1 简介
+### 6.1 简介
 
 **OpenSkills CLI**（`npx openskills`）是从 GitHub 仓库自动安装和管理 Skill 的工具，最重要的来源是 Anthropic 官方技能仓库 `anthropics/skills`。
 
-### 5.2 安装 OpenSkills CLI
+### 6.2 安装 OpenSkills CLI
 
 ```bash
 # 方法一：直接使用 npx（无需安装，推荐）
@@ -326,7 +536,7 @@ openskills --help
 
 环境要求：**Node.js ≥ 20.6**、Git。
 
-### 5.3 安装 anthropics/skills 全部技能
+### 6.3 安装 anthropics/skills 全部技能
 
 ```bash
 # 安装到当前项目（推荐，Skill 会放在 .claude/skills/ 或 .agent/skills/）
@@ -352,7 +562,7 @@ rm -rf .claude/skills/algorithmic-art
 npx openskills sync
 ```
 
-### 5.5 生成 AGENTS.md
+### 6.5 生成 AGENTS.md
 
 ```bash
 # 生成项目 AGENTS.md（汇总所有已安装 skill）
@@ -364,7 +574,7 @@ npx openskills sync -o SKILLS_INDEX.md
 
 `AGENTS.md` 的作用是让 agent（或你在 Cursor 里 @ 它）知道当前项目装了哪些 skill、每个 skill 做什么用的。
 
-### 5.6 管理已安装的技能
+### 6.6 管理已安装的技能
 
 ```bash
 # 列出已安装
@@ -383,7 +593,7 @@ npx openskills remove pdf
 npx openskills manage
 ```
 
-### 5.7 多项目共享全局技能
+### 6.7 多项目共享全局技能
 
 在多个项目中想用同一套 skill：
 
@@ -396,7 +606,7 @@ cd project-a
 npx openskills sync --global
 ```
 
-### 5.8 安装后的目录结构
+### 6.8 安装后的目录结构
 
 ```
 your-project/
@@ -412,9 +622,9 @@ your-project/
 
 ---
 
-## 6. Skills 使用方式
+## 7. Skills 使用方式
 
-### 6.1 在 Cursor 中使用 Skill
+### 7.1 在 Cursor 中使用 Skill
 
 Cursor 通过 **Composer / Chat 对话** 触发 Skill。有两种触发方式：
 
@@ -465,26 +675,28 @@ npx openskills read pdf | aider --read - "处理"
 
 ### 6.4 Skill 覆盖的场景速览（anthropics/skills）
 
-| Skill | 核心用途 |
-|-------|----------|
-| `pdf` | PDF 读、拆、合、表格提取、OCR |
-| `docx` | Word 文档创建、排版、目录、页眉页脚 |
-| `pptx` | PowerPoint 创建、编辑、版式 |
-| `xlsx` | 电子表格公式、图表、数据清洗 |
-| `canvas-design` | 静态视觉设计（海报、信息图） |
-| `frontend-design` | 前端界面设计（产品级 UI） |
-| `claude-api` | Claude/Anthropic API 开发（SDK、缓存、工具调用） |
-| `mcp-builder` | MCP Server 开发指南 |
-| `webapp-testing` | Playwright Web 测试 |
-| `skill-creator` | 创建和优化 Agent Skill 本身 |
-| `doc-coauthoring` | 文档协作编写工作流 |
-| `internal-comms` | 内部沟通文案（状态汇报等） |
+
+| Skill             | 核心用途                                 |
+| ----------------- | ------------------------------------ |
+| `pdf`             | PDF 读、拆、合、表格提取、OCR                   |
+| `docx`            | Word 文档创建、排版、目录、页眉页脚                 |
+| `pptx`            | PowerPoint 创建、编辑、版式                  |
+| `xlsx`            | 电子表格公式、图表、数据清洗                       |
+| `canvas-design`   | 静态视觉设计（海报、信息图）                       |
+| `frontend-design` | 前端界面设计（产品级 UI）                       |
+| `claude-api`      | Claude/Anthropic API 开发（SDK、缓存、工具调用） |
+| `mcp-builder`     | MCP Server 开发指南                      |
+| `webapp-testing`  | Playwright Web 测试                    |
+| `skill-creator`   | 创建和优化 Agent Skill 本身                 |
+| `doc-coauthoring` | 文档协作编写工作流                            |
+| `internal-comms`  | 内部沟通文案（状态汇报等）                        |
+
 
 ---
 
-## 7. 案例：学术 Skill 安装和使用
+## 8. 案例：学术 Skill 安装和使用
 
-### 7.1 场景
+### 8.1 场景
 
 你需要一个能帮你在 **Claude Code / Cursor** 中辅助论文写作、文献调研、审稿回复的学术助手 Skill。
 
@@ -527,6 +739,7 @@ cp -r academic-research-skills/* .claude/skills/
 ```
 
 Agent 会自动匹配 `description` 中的关键词，按照 SKILL.md 中定义的分阶段流程执行：
+
 1. 解析需求
 2. 多轮搜索（arXiv → 会议 → 补充）
 3. 信息提取与验证
@@ -541,12 +754,14 @@ claude "使用 paper-writing skill 帮我润色这段论文摘要：[粘贴摘�
 
 ### 7.5 其他推荐的学术 Skill 仓库
 
-| 仓库 | 安装方式 | 适用场景 |
-|------|----------|----------|
-| `Master-cai/Research-Paper-Writing-Skills` | `npx openskills install Master-cai/Research-Paper-Writing-Skills` | ML/CV/NLP 论文段落优化、逻辑检查、审稿人自评 |
-| `K-Dense-AI/scientific-agent-skills` | `npx openskills install K-Dense-AI/scientific-agent-skills` | 跨学科 133 科研 skill（数据分析、文献综述、科学写作） |
-| `LeonChaoX/qinyan-academic-skills` | `npx openskills install LeonChaoX/qinyan-academic-skills` | 181 学术 skill，18 分类（论文检索、科学写作、生物信息） |
-| `Orchestra-Research/AI-Research-SKILLs` | `npx openskills install Orchestra-Research/AI-Research-SKILLs` | AI 研究 87 工程 skill（实验管理、ML 论文写作） |
+
+| 仓库                                         | 安装方式                                                              | 适用场景                               |
+| ------------------------------------------ | ----------------------------------------------------------------- | ---------------------------------- |
+| `Master-cai/Research-Paper-Writing-Skills` | `npx openskills install Master-cai/Research-Paper-Writing-Skills` | ML/CV/NLP 论文段落优化、逻辑检查、审稿人自评        |
+| `K-Dense-AI/scientific-agent-skills`       | `npx openskills install K-Dense-AI/scientific-agent-skills`       | 跨学科 133 科研 skill（数据分析、文献综述、科学写作）   |
+| `LeonChaoX/qinyan-academic-skills`         | `npx openskills install LeonChaoX/qinyan-academic-skills`         | 181 学术 skill，18 分类（论文检索、科学写作、生物信息） |
+| `Orchestra-Research/AI-Research-SKILLs`    | `npx openskills install Orchestra-Research/AI-Research-SKILLs`    | AI 研究 87 工程 skill（实验管理、ML 论文写作）    |
+
 
 ### 7.6 学术 Skill 的典型使用提示词
 
@@ -566,9 +781,9 @@ claude "使用 paper-writing skill 帮我润色这段论文摘要：[粘贴摘�
 
 ---
 
-## 8. 案例：自定义 literature-tracker Skill
+## 9. 案例：自定义 literature-tracker Skill
 
-### 8.1 场景
+### 9.1 场景
 
 你希望有一个 **文献追踪 Skill**，能自动搜索指定领域的最新论文、分析趋势并生成结构化报告。以下参考 `/Users/joeyzhang/workspace/Agent_Sample/.cursor/skills/literature-tracker/` 的完整实现。
 
@@ -600,8 +815,10 @@ paper survey, 文献报告, research monitoring, frontier tracking"
 
 ## 快速开始
 ```
+
 追踪上周[研究主题]的文献进展
 为我生成一篇关于[主题]的近两周文献报告
+
 ```
 
 ## 工作流程
@@ -631,7 +848,9 @@ python scripts/generate_report.py \
 ```
 
 ## JSON 数据格式
+
 参见 templates/report_data_schema.md。
+
 ```
 
 ### 8.4 安装自定义 Skill
@@ -656,6 +875,7 @@ npx openskills install /path/to/literature-tracker
 ```
 
 Agent 自动执行：
+
 1. 使用 `literature-tracker` skill 的流程
 2. 用 WebSearch 搜索 arXiv 和会议论文
 3. 提取结构化信息
@@ -713,11 +933,14 @@ npx openskills install ./literature-tracker
 
 ### 8.8 自定义 Skill 的最佳实践
 
-| 要点 | 说明 |
-|------|------|
-| **description 写清楚触发词** | 中英文都要覆盖，包含各种可能的问法 |
-| **流程拆成阶段** | 让 agent 一步步执行，不容易遗漏关键步骤 |
-| **提供快速开始模板** | 用户看到直接可以复制的提示词，降低使用门槛 |
-| **脚本放 scripts/** | 复杂逻辑不要让 agent 现场写，预置为可执行脚本 |
-| **数据 schema 另放** | 数据结构定义放在 templates/ 中，SKILL.md 里引用 |
-| **写负面约束** | 明确"不要做什么"，比只写"要做什么"更有效 |
+
+| 要点                     | 说明                                 |
+| ---------------------- | ---------------------------------- |
+| **description 写清楚触发词** | 中英文都要覆盖，包含各种可能的问法                  |
+| **流程拆成阶段**             | 让 agent 一步步执行，不容易遗漏关键步骤            |
+| **提供快速开始模板**           | 用户看到直接可以复制的提示词，降低使用门槛              |
+| **脚本放 scripts/**       | 复杂逻辑不要让 agent 现场写，预置为可执行脚本         |
+| **数据 schema 另放**       | 数据结构定义放在 templates/ 中，SKILL.md 里引用 |
+| **写负面约束**              | 明确"不要做什么"，比只写"要做什么"更有效             |
+
+
