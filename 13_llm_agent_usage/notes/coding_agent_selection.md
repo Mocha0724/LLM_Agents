@@ -30,19 +30,23 @@ flowchart TB
     end
 ```
 
+
+
 ## 2. 主流工具对比
 
-| 工具 | 形态 | 适合场景 | 优点 | 主要限制 |
-|------|------|----------|------|----------|
-| **Cursor** | IDE | 日常开发、读项目、跨文件修改 | 上手快、上下文感知好、diff 可控、生态活跃 | 依赖 Cursor IDE；自定义模型/工具能力受版本影响 |
-| **Claude Code** | CLI | 后端/脚本/复杂项目、长上下文任务 | 终端体验强、上下文长、适合自动跑测试和修复 | 依赖 Anthropic 账号；国内网络可能不稳定 |
-| **Codex CLI** | CLI | OpenAI 生态、轻量 coding agent | 与 OpenAI 模型适配好，命令行轻量 | 工具生态与长期记忆不如 IDE agent |
-| **Aider** | CLI | git 驱动开发、自定义模型、低成本 | 支持多模型后端，git 集成强，可接国产模型 | UI 原始，需要会用命令行 |
-| **OpenHands** | 本地/云端 | 自托管 agent、研究 SWE-bench | 开源、可控、可替换模型 | 部署和调试成本高 |
-| **SWE-agent** | 研究框架 | 论文复现、benchmark、自动修 bug | ACI 清晰，适合研究自动软件工程 | 不适合日常交互开发 |
-| **Devin** | 云端自治 | 长任务外包、从 issue 到 PR | 自带云端环境，自治程度高 | 成本高、透明度/可控性较弱 |
-| **Windsurf / Cascade** | IDE | 类 Cursor 的日常开发 | IDE 集成自然，项目索引好 | 生态规模、模型可选项依赖版本 |
-| **通义灵码 / Trae / 国产 IDE Agent** | IDE | 国内网络环境、中文场景、国产模型 | 网络低延迟、中文文档适配好 | 对复杂 agent workflow、工具调用能力需实测 |
+
+| 工具                             | 形态    | 适合场景                      | 优点                      | 主要限制                          |
+| ------------------------------ | ----- | ------------------------- | ----------------------- | ----------------------------- |
+| **Cursor**                     | IDE   | 日常开发、读项目、跨文件修改            | 上手快、上下文感知好、diff 可控、生态活跃 | 依赖 Cursor IDE；自定义模型/工具能力受版本影响 |
+| **Claude Code**                | CLI   | 后端/脚本/复杂项目、长上下文任务         | 终端体验强、上下文长、适合自动跑测试和修复   | 依赖 Anthropic 账号；国内网络可能不稳定     |
+| **Codex CLI**                  | CLI   | OpenAI 生态、轻量 coding agent | 与 OpenAI 模型适配好，命令行轻量    | 工具生态与长期记忆不如 IDE agent         |
+| **Aider**                      | CLI   | git 驱动开发、自定义模型、低成本        | 支持多模型后端，git 集成强，可接国产模型  | UI 原始，需要会用命令行                 |
+| **OpenHands**                  | 本地/云端 | 自托管 agent、研究 SWE-bench    | 开源、可控、可替换模型             | 部署和调试成本高                      |
+| **SWE-agent**                  | 研究框架  | 论文复现、benchmark、自动修 bug    | ACI 清晰，适合研究自动软件工程       | 不适合日常交互开发                     |
+| **Devin**                      | 云端自治  | 长任务外包、从 issue 到 PR        | 自带云端环境，自治程度高            | 成本高、透明度/可控性较弱                 |
+| **Windsurf / Cascade**         | IDE   | 类 Cursor 的日常开发            | IDE 集成自然，项目索引好          | 生态规模、模型可选项依赖版本                |
+| **通义灵码 / Trae / 国产 IDE Agent** | IDE   | 国内网络环境、中文场景、国产模型          | 网络低延迟、中文文档适配好           | 对复杂 agent workflow、工具调用能力需实测  |
+
 
 ## 3. 选择决策树
 
@@ -60,6 +64,8 @@ flowchart TD
     Q5 -- 是 --> Cloud[Devin / OpenHands]
     Q5 -- 否 --> Cursor2[Cursor 或 IDE Agent]
 ```
+
+
 
 ## 4. 典型使用组合
 
@@ -100,7 +106,7 @@ aider --model openai/deepseek-chat
 - **长上下文** 是否足够读项目。
 - **补丁格式** 是否稳定，不要经常输出无法应用的 diff。
 
-在 **Cursor、VS Code 插件** 里怎么填 `base_url`、以及 **Claude 官方栈为何不能直接当「换国产一样」配**，见专文：[`domestic_coding_models_in_ide.md`](./domestic_coding_models_in_ide.md)。
+在 **Cursor、VS Code 插件** 里怎么填 `base_url`、以及 **Claude 官方栈为何不能直接当「换国产一样」配**，见专文：`[domestic_coding_models_in_ide.md](./domestic_coding_models_in_ide.md)`。
 
 ### 4.3 企业 / 团队自托管
 
@@ -123,6 +129,8 @@ flowchart LR
     MCP --> Docs[内部文档]
     MCP --> Obs[日志/监控]
 ```
+
+
 
 ## 5. Coding Agent 的能力边界
 
@@ -156,3 +164,4 @@ flowchart LR
 2. 用 Claude Code / Aider 修一个 lint 错误，并观察它的 shell 命令。
 3. 用 DeepSeek + Aider 完成一次小重构，对比 Claude/GPT 的 patch 质量。
 4. 用 OpenHands 跑一个小 issue，观察它的 long-horizon 行为。
+

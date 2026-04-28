@@ -19,14 +19,16 @@
 
 Claude Code 的扩展能力由以下组件构成：
 
-| 组件 | 作用 | 触发方式 |
-|------|------|----------|
-| **Skills** | 封装领域知识和工作流说明书 | AI 自动匹配 或 手动引用 |
-| **Slash Commands** | 快捷执行预定义工作流 | 用户输入 `/command` |
-| **Hooks** | 事件前后自动执行脚本 | 事件触发（subagentStop 等） |
-| **MCP Servers** | 连接外部数据源/工具 | AI 自动调用 |
-| **Subagents** | 独立上下文的专家代理 | AI 自动委托 |
-| **Plugins** | 打包以上组件的完整扩展 | `/plugin install` |
+
+| 组件                 | 作用            | 触发方式                 |
+| ------------------ | ------------- | -------------------- |
+| **Skills**         | 封装领域知识和工作流说明书 | AI 自动匹配 或 手动引用       |
+| **Slash Commands** | 快捷执行预定义工作流    | 用户输入 `/command`      |
+| **Hooks**          | 事件前后自动执行脚本    | 事件触发（subagentStop 等） |
+| **MCP Servers**    | 连接外部数据源/工具    | AI 自动调用              |
+| **Subagents**      | 独立上下文的专家代理    | AI 自动委托              |
+| **Plugins**        | 打包以上组件的完整扩展   | `/plugin install`    |
+
 
 ### 1.2 Skills（技能）
 
@@ -88,23 +90,25 @@ Slash Commands 是 Claude Code 的快捷操作，输入 `/` 前缀触发。
 
 #### 内置 Slash Commands
 
-| 命令 | 用途 |
-|------|------|
-| `/help` | 显示帮助 |
-| `/clear` | 清除当前会话上下文 |
-| `/cost` | 查看当前会话的 token 用量和费用 |
-| `/status` | 查看当前状态 |
-| `/review` | 对当前分支进行代码审查 |
-| `/compress` | 压缩上下文以节省 token |
-| `/doctor` | 诊断并修复配置问题 |
-| `/init` | 在当前目录初始化 CLAUDE.md |
-| `/add` | 将文件添加到上下文 |
-| `/drop` | 从上下文移除文件 |
-| `/plan` | 使用规划模式 |
-| `/act` | 切换到执行模式 |
-| `/branch` | 创建并切换到新分支 |
-| `/rewind` | 回退到之前的对话状态 |
-| `/search` | 搜索整个代码库 |
+
+| 命令          | 用途                  |
+| ----------- | ------------------- |
+| `/help`     | 显示帮助                |
+| `/clear`    | 清除当前会话上下文           |
+| `/cost`     | 查看当前会话的 token 用量和费用 |
+| `/status`   | 查看当前状态              |
+| `/review`   | 对当前分支进行代码审查         |
+| `/compress` | 压缩上下文以节省 token      |
+| `/doctor`   | 诊断并修复配置问题           |
+| `/init`     | 在当前目录初始化 CLAUDE.md  |
+| `/add`      | 将文件添加到上下文           |
+| `/drop`     | 从上下文移除文件            |
+| `/plan`     | 使用规划模式              |
+| `/act`      | 切换到执行模式             |
+| `/branch`   | 创建并切换到新分支           |
+| `/rewind`   | 回退到之前的对话状态          |
+| `/search`   | 搜索整个代码库             |
+
 
 #### 自定义 Slash Commands
 
@@ -142,13 +146,15 @@ Claude Code v2.1.88+ 推出了插件系统，使用 `/plugin` 管理。
 
 ### 1.5 推荐插件列表
 
-| 名称 | 用途 | 安装 |
-|------|------|------|
-| **Get Shit Done (GSD)** | 规格驱动开发系统，上下文工程，多代理编排 | `npx get-shit-done-cc@latest` |
-| **anthropics/skills** | Anthropic 官方 17 个 Office/Scientific Skills | `npx openskills install anthropics/skills` |
-| **scientific-agent-skills** | 133 个跨学科科研 Skill | `npx openskills install K-Dense-AI/scientific-agent-skills` |
-| **academic-research-skills** | 论文全流程：调研→写作→审稿→发表 | `npx openskills install Imbad0202/academic-research-skills` |
-| **cline/tasks** | 任务系统增强 | `/plugin install tasks` |
+
+| 名称                           | 用途                                         | 安装                                                          |
+| ---------------------------- | ------------------------------------------ | ----------------------------------------------------------- |
+| **Get Shit Done (GSD)**      | 规格驱动开发系统，上下文工程，多代理编排                       | `npx get-shit-done-cc@latest`                               |
+| **anthropics/skills**        | Anthropic 官方 17 个 Office/Scientific Skills | `npx openskills install anthropics/skills`                  |
+| **scientific-agent-skills**  | 133 个跨学科科研 Skill                           | `npx openskills install K-Dense-AI/scientific-agent-skills` |
+| **academic-research-skills** | 论文全流程：调研→写作→审稿→发表                          | `npx openskills install Imbad0202/academic-research-skills` |
+| **cline/tasks**              | 任务系统增强                                     | `/plugin install tasks`                                     |
+
 
 ---
 
@@ -195,17 +201,19 @@ Cursor 支持通过 MCP 协议连接任意外部工具。在 `.cursor/mcp.json` 
 
 ### 2.3 热门插件
 
-| 插件 | 用途 | 效果 |
-|------|------|------|
-| **Datadog** | 监控和告警查询 | AI 可以直接查询服务指标和错误日志 |
-| **Linear** | 项目管理 | AI 可以创建/更新/查询 Issue |
-| **GitHub** | PR/Issue 管理 | AI 可以创建 PR、回复 Issue 评论 |
-| **Slack** | 团队沟通 | AI 可以发送消息、搜索聊天记录 |
-| **Stripe** | 支付系统 | AI 可以查询账单、管理订阅 |
-| **AWS** | 云资源管理 | AI 可以操作 S3 / Lambda / ECS |
-| **Figma** | 设计稿 | AI 可以读取设计组件和样式 |
-| **PostgreSQL** | 数据库 | AI 可以直接查询数据库 |
-| **Sentry** | 错误追踪 | AI 可以查看和分析错误堆栈 |
+
+| 插件             | 用途          | 效果                        |
+| -------------- | ----------- | ------------------------- |
+| **Datadog**    | 监控和告警查询     | AI 可以直接查询服务指标和错误日志        |
+| **Linear**     | 项目管理        | AI 可以创建/更新/查询 Issue       |
+| **GitHub**     | PR/Issue 管理 | AI 可以创建 PR、回复 Issue 评论    |
+| **Slack**      | 团队沟通        | AI 可以发送消息、搜索聊天记录          |
+| **Stripe**     | 支付系统        | AI 可以查询账单、管理订阅            |
+| **AWS**        | 云资源管理       | AI 可以操作 S3 / Lambda / ECS |
+| **Figma**      | 设计稿         | AI 可以读取设计组件和样式            |
+| **PostgreSQL** | 数据库         | AI 可以直接查询数据库              |
+| **Sentry**     | 错误追踪        | AI 可以查看和分析错误堆栈            |
+
 
 ### 2.4 在 Cursor 中使用插件
 
@@ -219,12 +227,14 @@ Cursor 支持通过 MCP 协议连接任意外部工具。在 `.cursor/mcp.json` 
 
 ### 2.5 Cursor 的 Rules + Hooks + Skills
 
-| 机制 | 位置 | 用途 |
-|------|------|------|
-| **Rules (.mdc)** | `.cursor/rules/*.mdc` | 永久生效的行为约束和编码规范 |
-| **Hooks** | `.cursor/hooks.json` | 事件驱动的自动脚本 |
-| **Skills** | `.cursor/skills/<name>/SKILL.md` | 按需加载的工作流说明书 |
-| **Cursorrules** | `.cursorrules`（旧） | 项目级规则（已被 rules/ 替代） |
+
+| 机制               | 位置                               | 用途                  |
+| ---------------- | -------------------------------- | ------------------- |
+| **Rules (.mdc)** | `.cursor/rules/*.mdc`            | 永久生效的行为约束和编码规范      |
+| **Hooks**        | `.cursor/hooks.json`             | 事件驱动的自动脚本           |
+| **Skills**       | `.cursor/skills/<name>/SKILL.md` | 按需加载的工作流说明书         |
+| **Cursorrules**  | `.cursorrules`（旧）                | 项目级规则（已被 rules/ 替代） |
+
 
 Hooks 配置示例（`hooks.json`）：
 
@@ -245,13 +255,15 @@ Hooks 配置示例（`hooks.json`）：
 
 ### 2.6 Cursor 内置命令
 
-| 快捷键/命令 | 用途 |
-|-------------|------|
-| `Cmd+I` | Composer：多文件编辑对话 |
-| `Cmd+L` | Chat：代码对话 |
-| `Cmd+K` | Inline Edit：选中代码行内编辑 |
-| `Cmd+Shift+L` | 将当前文件加入 Chat 上下文 |
+
+| 快捷键/命令        | 用途                   |
+| ------------- | -------------------- |
+| `Cmd+I`       | Composer：多文件编辑对话     |
+| `Cmd+L`       | Chat：代码对话            |
+| `Cmd+K`       | Inline Edit：选中代码行内编辑 |
+| `Cmd+Shift+L` | 将当前文件加入 Chat 上下文     |
 | `Cmd+Shift+I` | 打开 Composer Agent 模式 |
+
 
 ---
 
@@ -320,6 +332,7 @@ npx get-shit-done-cc@latest
 ```
 
 安装器会引导你选择：
+
 1. **运行时**：Claude Code、Cursor、Codex、Gemini CLI、OpenCode、Copilot、Windsurf 等（支持 12+ 运行时）
 2. **安装位置**：全局（所有项目）或本地（仅当前项目）
 
@@ -344,11 +357,13 @@ npx get-shit-done-cc --all --global
 
 #### 验证安装
 
-| 运行时 | 验证命令 |
-|--------|----------|
+
+| 运行时                            | 验证命令        |
+| ------------------------------ | ----------- |
 | Claude Code / Gemini / Copilot | `/gsd-help` |
-| Cursor（终端内） | `/gsd-help` |
-| Codex | `$gsd-help` |
+| Cursor（终端内）                    | `/gsd-help` |
+| Codex                          | `$gsd-help` |
+
 
 #### 推荐：跳过权限确认
 
@@ -391,6 +406,7 @@ GSD 的核心是 **讨论 → 规划 → 执行 → 验证** 的循环。
 ```
 
 系统会：
+
 1. **提问**：直到彻底理解你的想法（目标、约束、技术偏好）
 2. **研究**：拉起并行代理调研领域知识
 3. **需求梳理**：提取 v1/v2/scope out
@@ -447,6 +463,7 @@ Model    Model)          API     API)           UI)
 ```
 
 人工用户验收测试（UAT），系统会：
+
 1. 提取可测试的交付项
 2. 逐项带你验证
 3. 自动诊断失败并生成修复计划
@@ -474,6 +491,7 @@ Model    Model)          API     API)           UI)
 ```
 
 参数组合：
+
 ```
 /gsd-quick --discuss     # 先讨论再执行
 /gsd-quick --research    # 先调研再执行
@@ -485,60 +503,72 @@ Model    Model)          API     API)           UI)
 
 #### 核心工作流
 
-| 命令 | 作用 |
-|------|------|
-| `/gsd-new-project` | 完整初始化项目 |
-| `/gsd-map-codebase` | 分析现有代码库 |
+
+| 命令                       | 作用       |
+| ------------------------ | -------- |
+| `/gsd-new-project`       | 完整初始化项目  |
+| `/gsd-map-codebase`      | 分析现有代码库  |
 | `/gsd-discuss-phase [N]` | 讨论阶段实现决策 |
-| `/gsd-plan-phase [N]` | 研究和规划 |
-| `/gsd-execute-phase [N]` | 并行执行计划 |
-| `/gsd-verify-work [N]` | 用户验收测试 |
-| `/gsd-ship [N]` | 创建 PR |
-| `/gsd-next` | 自动推进下一步 |
-| `/gsd-quick` | 快速执行临时任务 |
+| `/gsd-plan-phase [N]`    | 研究和规划    |
+| `/gsd-execute-phase [N]` | 并行执行计划   |
+| `/gsd-verify-work [N]`   | 用户验收测试   |
+| `/gsd-ship [N]`          | 创建 PR    |
+| `/gsd-next`              | 自动推进下一步  |
+| `/gsd-quick`             | 快速执行临时任务 |
+
 
 #### 阶段管理
 
-| 命令 | 作用 |
-|------|------|
-| `/gsd-add-phase` | 追加阶段 |
+
+| 命令                      | 作用     |
+| ----------------------- | ------ |
+| `/gsd-add-phase`        | 追加阶段   |
 | `/gsd-insert-phase [N]` | 插入紧急工作 |
 | `/gsd-remove-phase [N]` | 删除未来阶段 |
-| `/gsd-progress` | 查看当前进度 |
+| `/gsd-progress`         | 查看当前进度 |
+
 
 #### 里程碑管理
 
-| 命令 | 作用 |
-|------|------|
+
+| 命令                        | 作用          |
+| ------------------------- | ----------- |
 | `/gsd-complete-milestone` | 归档里程碑并打 tag |
-| `/gsd-new-milestone` | 开始下一版本 |
-| `/gsd-audit-milestone` | 验证里程碑完成度 |
+| `/gsd-new-milestone`      | 开始下一版本      |
+| `/gsd-audit-milestone`    | 验证里程碑完成度    |
+
 
 #### 会话管理
 
-| 命令 | 作用 |
-|------|------|
-| `/gsd-pause-work` | 暂停并生成交接上下文 |
-| `/gsd-resume-work` | 恢复上次会话 |
-| `/gsd-session-report` | 生成会话摘要 |
+
+| 命令                    | 作用         |
+| --------------------- | ---------- |
+| `/gsd-pause-work`     | 暂停并生成交接上下文 |
+| `/gsd-resume-work`    | 恢复上次会话     |
+| `/gsd-session-report` | 生成会话摘要     |
+
 
 #### 配置
 
-| 命令 | 作用 |
-|------|------|
-| `/gsd-settings` | 打开配置面板 |
+
+| 命令                           | 作用                                    |
+| ---------------------------- | ------------------------------------- |
+| `/gsd-settings`              | 打开配置面板                                |
 | `/gsd-set-profile <profile>` | 切换模型 profile（quality/balanced/budget） |
-| `/gsd-help` | 显示全部命令 |
+| `/gsd-help`                  | 显示全部命令                                |
+
 
 ### 4.5 配置详解
 
 #### 模型 Profile
 
-| Profile | Planning | Execution | Verification | 适用场景 |
-|---------|----------|-----------|--------------|----------|
-| `quality` | Opus | Opus | Sonnet | 最关键的功能 |
-| `balanced` | Opus | Sonnet | Sonnet | 默认，推荐 |
-| `budget` | Sonnet | Sonnet | Haiku | 实验/原型开发 |
+
+| Profile    | Planning | Execution | Verification | 适用场景    |
+| ---------- | -------- | --------- | ------------ | ------- |
+| `quality`  | Opus     | Opus      | Sonnet       | 最关键的功能  |
+| `balanced` | Opus     | Sonnet    | Sonnet       | 默认，推荐   |
+| `budget`   | Sonnet   | Sonnet    | Haiku        | 实验/原型开发 |
+
 
 ```bash
 /gsd-set-profile budget
@@ -546,32 +576,38 @@ Model    Model)          API     API)           UI)
 
 #### 工作流开关
 
-| 设置 | 默认 | 作用 |
-|------|------|------|
-| `workflow.research` | true | 规划前调研领域知识 |
-| `workflow.plan_check` | true | 执行前验证计划 |
-| `workflow.verifier` | true | 执行后验证交付 |
-| `workflow.auto_advance` | false | 自动串联各阶段 |
+
+| 设置                      | 默认    | 作用        |
+| ----------------------- | ----- | --------- |
+| `workflow.research`     | true  | 规划前调研领域知识 |
+| `workflow.plan_check`   | true  | 执行前验证计划   |
+| `workflow.verifier`     | true  | 执行后验证交付   |
+| `workflow.auto_advance` | false | 自动串联各阶段   |
+
 
 通过 `/gsd-settings` 修改。
 
 #### Git 分支策略
 
-| 策略 | 说明 |
-|------|------|
-| `none` | 直接提交当前分支（默认） |
-| `phase` | 每个阶段一个分支 |
-| `milestone` | 整个里程碑一个分支 |
+
+| 策略          | 说明           |
+| ----------- | ------------ |
+| `none`      | 直接提交当前分支（默认） |
+| `phase`     | 每个阶段一个分支     |
+| `milestone` | 整个里程碑一个分支    |
+
 
 ### 4.6 为什么 GSD 有效
 
-| 核心机制 | 说明 |
-|----------|------|
-| **上下文工程** | 每个文件严格控制大小，保证 Claude 在质量退化阈值内工作 |
-| **XML 提示格式** | 结构化的任务描述，精确到具体文件、操作和验证步骤 |
-| **多代理编排** | orchestrator 拉起专用研究/规划/执行/验证代理，主上下文保持清爽 |
-| **原子 Git 提交** | 每项任务独立提交，`git bisect` 可精确定位问题 |
-| **全新上下文每个计划** | 避免历史垃圾积累，每个计划使用干净的 20 万 token |
+
+| 核心机制          | 说明                                      |
+| ------------- | --------------------------------------- |
+| **上下文工程**     | 每个文件严格控制大小，保证 Claude 在质量退化阈值内工作         |
+| **XML 提示格式**  | 结构化的任务描述，精确到具体文件、操作和验证步骤                |
+| **多代理编排**     | orchestrator 拉起专用研究/规划/执行/验证代理，主上下文保持清爽 |
+| **原子 Git 提交** | 每项任务独立提交，`git bisect` 可精确定位问题           |
+| **全新上下文每个计划** | 避免历史垃圾积累，每个计划使用干净的 20 万 token           |
+
 
 ### 4.7 安全注意事项
 
@@ -593,23 +629,28 @@ Model    Model)          API     API)           UI)
 
 ### 4.8 故障排查
 
-| 问题 | 解决方法 |
-|------|----------|
-| 安装后找不到命令 | 重启运行时；检查 `~/.claude/commands/gsd/` 是否存在 |
-| 命令行为异常 | 运行 `/gsd-help` 确认安装；重装 `npx get-shit-done-cc@latest` |
-| 想更新 | `npx get-shit-done-cc@latest` |
+
+| 问题       | 解决方法                                                 |
+| -------- | ---------------------------------------------------- |
+| 安装后找不到命令 | 重启运行时；检查 `~/.claude/commands/gsd/` 是否存在              |
+| 命令行为异常   | 运行 `/gsd-help` 确认安装；重装 `npx get-shit-done-cc@latest` |
+| 想更新      | `npx get-shit-done-cc@latest`                        |
+
 
 ---
 
 ## 各工具插件体系对比
 
-| 维度 | Claude Code | Cursor | Codex CLI |
-|------|-------------|--------|-----------|
-| **插件类型** | Skills / Commands / Hooks / MCP | Marketplace 插件 / MCP | Skills 兼容 |
-| **扩展目录** | `~/.claude/skills/` | `~/.cursor/mcp.json` | `~/.codex/skills/` |
-| **命令前缀** | `/` | 自然语言 | `$` |
-| **GSD 命令前缀** | `/gsd-*` | `/gsd-*`（终端内） | `$gsd-*` |
-| **安装方式** | `/plugin install` / `npx` | 市场点选 / mcp.json | `npx` |
-| **Skill 标准** | OpenSkills 标准 | `.cursor/skills/` | OpenSkills 标准 |
-| **MCP 支持** | 原生 | 原生 | 有限 |
-| **Hooks 支持** | `.claude/hooks/` | `.cursor/hooks.json` | — |
+
+| 维度           | Claude Code                     | Cursor               | Codex CLI          |
+| ------------ | ------------------------------- | -------------------- | ------------------ |
+| **插件类型**     | Skills / Commands / Hooks / MCP | Marketplace 插件 / MCP | Skills 兼容          |
+| **扩展目录**     | `~/.claude/skills/`             | `~/.cursor/mcp.json` | `~/.codex/skills/` |
+| **命令前缀**     | `/`                             | 自然语言                 | `$`                |
+| **GSD 命令前缀** | `/gsd-`*                        | `/gsd-*`（终端内）        | `$gsd-*`           |
+| **安装方式**     | `/plugin install` / `npx`       | 市场点选 / mcp.json      | `npx`              |
+| **Skill 标准** | OpenSkills 标准                   | `.cursor/skills/`    | OpenSkills 标准      |
+| **MCP 支持**   | 原生                              | 原生                   | 有限                 |
+| **Hooks 支持** | `.claude/hooks/`                | `.cursor/hooks.json` | —                  |
+
+

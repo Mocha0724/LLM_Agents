@@ -4,16 +4,18 @@
 
 ## 1. 一句话区分
 
-| 概念 | 一句话 |
-|------|--------|
-| **Instruction** | 当前对话里给模型的临时指令 |
-| **Rule** | 持久、自动生效的行为约束 |
-| **Skill** | 按需加载的任务说明书 |
-| **Command** | 手动触发的固定工作流 |
-| **Hook** | 某个事件发生前后自动执行的脚本 |
-| **Tool / MCP Tool** | agent 可以调用的外部能力 |
+
+| 概念                   | 一句话                    |
+| -------------------- | ---------------------- |
+| **Instruction**      | 当前对话里给模型的临时指令          |
+| **Rule**             | 持久、自动生效的行为约束           |
+| **Skill**            | 按需加载的任务说明书             |
+| **Command**          | 手动触发的固定工作流             |
+| **Hook**             | 某个事件发生前后自动执行的脚本        |
+| **Tool / MCP Tool**  | agent 可以调用的外部能力        |
 | **Function Calling** | 模型调用工具的 JSON schema 协议 |
-| **Memory** | agent 记住的用户偏好或长期上下文 |
+| **Memory**           | agent 记住的用户偏好或长期上下文    |
+
 
 ## 2. 总览图
 
@@ -32,14 +34,18 @@ flowchart TB
     Tool --> External[外部系统 / 文件 / API]
 ```
 
+
+
 ## 3. Skill vs Rule
 
-| 维度 | Skill | Rule |
-|------|-------|------|
-| 触发方式 | 按 description / 场景匹配 | 持久生效或按文件规则生效 |
-| 适合内容 | 任务流程、模板、领域知识 | 代码风格、行为边界、长期约束 |
-| 例子 | `paper-polish`、`code-review` | “不要直接 push main” |
-| 风险 | 太长会占上下文 | 太多会污染所有任务 |
+
+| 维度   | Skill                        | Rule             |
+| ---- | ---------------------------- | ---------------- |
+| 触发方式 | 按 description / 场景匹配         | 持久生效或按文件规则生效     |
+| 适合内容 | 任务流程、模板、领域知识                 | 代码风格、行为边界、长期约束   |
+| 例子   | `paper-polish`、`code-review` | “不要直接 push main” |
+| 风险   | 太长会占上下文                      | 太多会污染所有任务        |
+
 
 ### 判断方法
 
@@ -54,12 +60,14 @@ flowchart TB
 
 ## 4. Skill vs Hook
 
-| 维度 | Skill | Hook |
-|------|-------|------|
-| 本质 | 文本说明 | 可执行脚本 |
-| 触发 | 语义匹配 / 手动指定 | 事件触发 |
-| 能否读写文件 | 本身不能 | 可以 |
-| 适合 | 指导 agent 如何做 | 自动检查、自动注入、自动验证 |
+
+| 维度     | Skill        | Hook           |
+| ------ | ------------ | -------------- |
+| 本质     | 文本说明         | 可执行脚本          |
+| 触发     | 语义匹配 / 手动指定  | 事件触发           |
+| 能否读写文件 | 本身不能         | 可以             |
+| 适合     | 指导 agent 如何做 | 自动检查、自动注入、自动验证 |
+
 
 ### 例子
 
@@ -96,11 +104,13 @@ ruff check .
 
 ## 5. Skill vs Command
 
-| 维度 | Skill | Command |
-|------|-------|---------|
-| 触发方式 | 自动匹配 | 用户手动触发 |
-| 适合 | 需要 agent 自主判断的场景 | 固定入口的流程 |
-| 例子 | “用户让我润色论文时自动用 paper-polish” | `/polish-paper intro.tex` |
+
+| 维度   | Skill                       | Command                   |
+| ---- | --------------------------- | ------------------------- |
+| 触发方式 | 自动匹配                        | 用户手动触发                    |
+| 适合   | 需要 agent 自主判断的场景            | 固定入口的流程                   |
+| 例子   | “用户让我润色论文时自动用 paper-polish” | `/polish-paper intro.tex` |
+
 
 Command 适合「强入口」流程，例如：
 
@@ -112,12 +122,14 @@ Skill 适合「自然语言就能触发」的流程。
 
 ## 6. Skill vs Tool / MCP Tool
 
-| 维度 | Skill | Tool / MCP Tool |
-|------|-------|-----------------|
-| 作用 | 提供知识和流程 | 执行动作并返回结果 |
-| 输入输出 | 文本 | JSON / 结构化数据 |
-| 是否有副作用 | 否 | 可能有 |
-| 安全风险 | 低 | 高 |
+
+| 维度     | Skill   | Tool / MCP Tool |
+| ------ | ------- | --------------- |
+| 作用     | 提供知识和流程 | 执行动作并返回结果       |
+| 输入输出   | 文本      | JSON / 结构化数据    |
+| 是否有副作用 | 否       | 可能有             |
+| 安全风险   | 低       | 高               |
+
 
 例子：
 
@@ -156,13 +168,17 @@ flowchart LR
     Server --> Tool[真实工具/API]
 ```
 
+
+
 ## 8. Memory 与 Skill 的区别
 
-| 维度 | Memory | Skill |
-|------|--------|-------|
-| 内容 | 用户偏好 / 历史上下文 | 通用任务知识 |
-| 更新 | 自动或手动积累 | 手动维护 |
-| 例子 | “用户喜欢中文回答” | “论文润色 checklist” |
+
+| 维度  | Memory       | Skill            |
+| --- | ------------ | ---------------- |
+| 内容  | 用户偏好 / 历史上下文 | 通用任务知识           |
+| 更新  | 自动或手动积累      | 手动维护             |
+| 例子  | “用户喜欢中文回答”   | “论文润色 checklist” |
+
 
 判断：
 
@@ -173,30 +189,36 @@ flowchart LR
 
 ### 9.1 代码审查
 
-| 组件 | 内容 |
-|------|------|
-| Rule | 不提交 secrets；不 force push main |
-| Skill | Code Review checklist |
-| Hook | pre-commit 跑 lint/test |
-| Tool | `git diff`、`pytest`、`ruff` |
+
+| 组件    | 内容                            |
+| ----- | ----------------------------- |
+| Rule  | 不提交 secrets；不 force push main |
+| Skill | Code Review checklist         |
+| Hook  | pre-commit 跑 lint/test        |
+| Tool  | `git diff`、`pytest`、`ruff`    |
+
 
 ### 9.2 论文修改
 
-| 组件 | 内容 |
-|------|------|
-| Skill | Paper polish / rebuttal 模板 |
+
+| 组件      | 内容                            |
+| ------- | ----------------------------- |
+| Skill   | Paper polish / rebuttal 模板    |
 | Command | `/polish-section section.tex` |
-| Tool | LaTeX 编译、PDF diff |
-| Memory | 作者偏好的术语、写作风格 |
+| Tool    | LaTeX 编译、PDF diff             |
+| Memory  | 作者偏好的术语、写作风格                  |
+
 
 ### 9.3 办公文件自动化
 
-| 组件 | 内容 |
-|------|------|
-| Skill | Word/Excel/PPT 操作指南 |
-| Tool | `python-docx`、`openpyxl`、`python-pptx` |
-| Hook | 输出后自动验证文件存在/可打开 |
-| Rule | 不覆盖原始文件 |
+
+| 组件    | 内容                                     |
+| ----- | -------------------------------------- |
+| Skill | Word/Excel/PPT 操作指南                    |
+| Tool  | `python-docx`、`openpyxl`、`python-pptx` |
+| Hook  | 输出后自动验证文件存在/可打开                        |
+| Rule  | 不覆盖原始文件                                |
+
 
 ## 10. 选择建议
 
@@ -212,6 +234,8 @@ flowchart TD
     Q3 -- 是 --> Skill[Skill]
     Q3 -- 否 --> Command[Command]
 ```
+
+
 
 ## 11. 常见误区
 
@@ -262,3 +286,4 @@ agent/
 ├── hooks/                # event hooks
 └── memory/               # long-term memory
 ```
+

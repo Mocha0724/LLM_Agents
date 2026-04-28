@@ -4,9 +4,9 @@
 
 ## 0. OpenSkills（CLI）安装与 `anthropics/skills` 各包说明
 
-若你要用 **`npx openskills install …` + `sync` 生成 `AGENTS.md`** 这一套跨工具工作流，请直接看专文（含 `install/sync/list/read` 与各 skill 速览表）：
+若你要用 `**npx openskills install …` + `sync` 生成 `AGENTS.md**` 这一套跨工具工作流，请直接看专文（含 `install/sync/list/read` 与各 skill 速览表）：
 
-- **[`openskills_install_and_usage.md`](./openskills_install_and_usage.md)**
+- `**[openskills_install_and_usage.md](./openskills_install_and_usage.md)**`
 
 下文仍保留 **手搓 `.cursor/skills`、在 Aider/Continue 中迁移** 的通用思路。
 
@@ -21,6 +21,8 @@ flowchart LR
     Context --> Agent[按 skill 指南执行]
 ```
 
+
+
 Skill 解决的是三个问题：
 
 1. **少说重复话**：不用每次都把团队规范、论文润色规则、Excel 格式要求重新告诉 agent。
@@ -29,13 +31,15 @@ Skill 解决的是三个问题：
 
 ## 2. Skill / OpenSkill / Rule / Hook 的位置关系
 
-| 概念 | 作用 | 是否可执行 | 典型位置 |
-|------|------|------------|----------|
-| **Skill** | 按需加载的任务说明书 | 否，本质是文本 | `.cursor/skills/<name>/SKILL.md` |
-| **OpenSkill** | 跨工具共享的开放 skill 规范/集合 | 通常否 | 各工具约定目录 |
-| **Rule** | 长期生效的行为规则 | 否 | `.cursor/rules/*.mdc` |
-| **Hook** | 事件前后自动执行脚本 | 是 | `.claude/hooks/` 或工具配置 |
-| **MCP Tool** | 外部可调用工具 | 是 | MCP server |
+
+| 概念            | 作用                   | 是否可执行   | 典型位置                             |
+| ------------- | -------------------- | ------- | -------------------------------- |
+| **Skill**     | 按需加载的任务说明书           | 否，本质是文本 | `.cursor/skills/<name>/SKILL.md` |
+| **OpenSkill** | 跨工具共享的开放 skill 规范/集合 | 通常否     | 各工具约定目录                          |
+| **Rule**      | 长期生效的行为规则            | 否       | `.cursor/rules/*.mdc`            |
+| **Hook**      | 事件前后自动执行脚本           | 是       | `.claude/hooks/` 或工具配置           |
+| **MCP Tool**  | 外部可调用工具              | 是       | MCP server                       |
+
 
 一句话：
 
@@ -205,12 +209,14 @@ description: >-
 
 ### 5.3 什么时候拆成多个文件
 
-| 情况 | 做法 |
-|------|------|
-| 主流程很短 | 全放 `SKILL.md` |
-| 有大量参考规范 | 放 `reference.md` |
-| 有多个输入/输出示例 | 放 `examples.md` |
-| 有固定脚本 | 放 `scripts/` |
+
+| 情况         | 做法               |
+| ---------- | ---------------- |
+| 主流程很短      | 全放 `SKILL.md`    |
+| 有大量参考规范    | 放 `reference.md` |
+| 有多个输入/输出示例 | 放 `examples.md`  |
+| 有固定脚本      | 放 `scripts/`     |
+
 
 目录示例：
 
@@ -331,13 +337,15 @@ description: Create or edit Word, Excel, PowerPoint, and PDF files using Python 
 
 ## 8. Skill 设计反模式
 
-| 反模式 | 问题 | 改法 |
-|--------|------|------|
-| 一个 skill 包含所有任务 | 难触发、难遵循 | 拆成多个小 skill |
-| description 太泛 | agent 不知道何时用 | 加具体触发词 |
-| 正文像教程书 | 占上下文 | 只留执行步骤 |
-| 没有输出格式 | 结果漂移 | 提供模板 |
-| 把 tool 当 skill | skill 不能执行 | 用 MCP/tool/hook |
+
+| 反模式             | 问题           | 改法              |
+| --------------- | ------------ | --------------- |
+| 一个 skill 包含所有任务 | 难触发、难遵循      | 拆成多个小 skill     |
+| description 太泛  | agent 不知道何时用 | 加具体触发词          |
+| 正文像教程书          | 占上下文         | 只留执行步骤          |
+| 没有输出格式          | 结果漂移         | 提供模板            |
+| 把 tool 当 skill  | skill 不能执行   | 用 MCP/tool/hook |
+
 
 ## 9. 推荐建设顺序
 
@@ -350,10 +358,10 @@ description: Create or edit Word, Excel, PowerPoint, and PDF files using Python 
 
 ## 10. 社区科研 Skill 参考
 
-更完整的社区科研 Skill 仓库列表（可直接通过 `npx openskills install` 安装使用）见同目录下的 **`openskills_install_and_usage.md` 附录 B**，包括：
+更完整的社区科研 Skill 仓库列表（可直接通过 `npx openskills install` 安装使用）见同目录下的 `**openskills_install_and_usage.md` 附录 B**，包括：
 
 - **综合型**：K-Dense-AI/scientific-agent-skills（133 科研 skill）、Orchestra-Research/AI-Research-SKILLs（87 个 AI 研究 skill）、LeonChaoX/qinyan-academic-skills（181 学术 skill）
 - **论文写作专项**：Imbad0202/academic-research-skills、Master-cai/Research-Paper-Writing-Skills、lishix520/academic-paper-skills
 - **实证研究**：brycewang-stanford/Awesome-Agent-Skills-for-Empirical-Research（23,000+ skills）
 
-详情点这里：[`openskills_install_and_usage.md`](./openskills_install_and_usage.md)
+详情点这里：`[openskills_install_and_usage.md](./openskills_install_and_usage.md)`
