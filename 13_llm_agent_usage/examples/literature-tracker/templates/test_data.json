@@ -1,0 +1,78 @@
+{
+  "topic": "世界模型",
+  "topic_en": "World Models",
+  "timeframe": "2026-04-21 ~ 2026-04-28",
+  "report_date": "2026-04-28",
+  "summary_zh": "本周世界模型领域共有4篇值得关注的新论文。研究热点集中在基于Transformer的动作条件世界模型、扩散模型用于视频预测、以及面向机器人操控的3D世界表征学习。整体趋势显示，业界正从单纯的感知预测向可交互、可规划的具身世界模型演进。多模态融合和长时域预测仍是主要技术挑战。",
+  "trends": {
+    "hot_directions": [
+      "动作条件Transformer世界模型：将Transformer架构引入世界模型，以自回归方式建模状态转移。",
+      "扩散世界模型：利用扩散模型的生成能力进行视频预测和未来状态想象。",
+      "3D/空间感知世界模型：在3D场景中构建结构化世界表征，服务于机器人操控和导航。",
+      "可规划世界模型：将世界模型与搜索/规划算法结合，实现目标驱动的决策。"
+    ],
+    "method_trends": [
+      "主流方法从RNN/ViT向Transformer/GPT风格的自回归架构迁移。",
+      "潜在空间建模（latent world models）逐渐取代像素空间建模，提升计算效率。",
+      "扩散模型作为世界模型的前向预测器成为新兴范式。"
+    ],
+    "key_breakthroughs": [
+      "Action-GPT：首次将大规模预训练语言模型架构直接迁移到世界模型中，展示了强大的泛化能力。",
+      "3D-DiffWorld：提出了在3D潜在空间中运行的扩散世界模型，在多个机器人操控基准上达到SOTA。",
+      "PlanNet-v2：实现了世界模型与Monte-Carlo Tree Search的深度集成，在长期规划任务上提升显著。"
+    ],
+    "open_questions": [
+      "如何有效处理世界模型中的组合爆炸问题（combinatorial explosion）？",
+      "世界模型训练所需的交互数据量仍然巨大，缺乏高效的数据利用策略。",
+      "世界模型在分布外场景下的泛化能力仍然有限。",
+      "如何将世界模型与语言模型深度融合，实现推理+规划的统一框架？"
+    ]
+  },
+  "papers": [
+    {
+      "id": 1,
+      "title": "Action-GPT: Learning Action-Conditioned World Models with Large Language Model Priors",
+      "authors": "Chen L, Zhang H, et al.",
+      "venue": "arXiv preprint arXiv:2604.xxxxx",
+      "date": "2026-04-22",
+      "abstract": "We propose Action-GPT, a novel framework that leverages pre-trained large language models as powerful priors for learning action-conditioned world models. By fine-tuning LLMs on sequential interaction data, our method captures long-range dependencies in environment dynamics without requiring massive task-specific training data. Experiments on DMControl and Atari benchmarks demonstrate that Action-GPT achieves superior prediction accuracy and generalization to unseen environments compared to prior world model approaches.",
+      "contribution_zh": "提出了将大规模预训练语言模型作为先验知识引入世界模型的新范式，大幅降低了对任务特定训练数据的需求。",
+      "method_zh": "在LLM基础上通过轻量级微调（LoRA）注入环境动态知识，使用因果注意力建模状态-动作序列的联合分布。",
+      "relevance_zh": "展示了LLM先验对世界模型泛化能力的显著提升，为语言模型与世界模型的融合提供了新思路。"
+    },
+    {
+      "id": 2,
+      "title": "3D-DiffWorld: Diffusion World Models for 3D Robotic Manipulation",
+      "authors": "Wang Y, Liu S, et al.",
+      "venue": "arXiv preprint arXiv:2604.xxxxx",
+      "date": "2026-04-24",
+      "abstract": "This paper introduces 3D-DiffWorld, a world model that operates directly in 3D latent space using denoising diffusion probabilistic models. Our approach encodes RGB-D observations into a compact 3D scene representation and learns the dynamics through a diffusion-based forward predictor. Extensive experiments on RLBench and ManiSkill2 show that 3D-DiffWorld outperforms prior 2D-based world models by a large margin, especially in tasks requiring precise spatial reasoning.",
+      "contribution_zh": "首次在3D潜在空间中构建扩散世界模型，解决了2D世界模型缺乏空间推理能力的问题。",
+      "method_zh": "使用3D U-Net作为去噪网络，在潜在体素特征空间中进行迭代去噪以实现未来状态预测。",
+      "relevance_zh": "推动了世界模型从2D感知向3D空间理解的演进，对机器人具身智能具有重要价值。"
+    },
+    {
+      "id": 3,
+      "title": "Temporal Hierarchical World Models for Long-Horizon Planning",
+      "authors": "Park J, Kim D, et al.",
+      "venue": "arXiv preprint arXiv:2604.xxxxx",
+      "date": "2026-04-25",
+      "abstract": "We present Temporal Hierarchical World Models (THWM), a framework that learns world dynamics at multiple temporal resolutions. A high-level model captures abstract state transitions over coarse time steps while a low-level model fills in fine-grained details. This hierarchical structure enables effective long-horizon planning by reducing error accumulation in recursive prediction. THWM achieves state-of-the-art performance on challenging long-horizon tasks in the Minecraft environment.",
+      "contribution_zh": "提出了时间层次化世界模型来解决长时域预测中的误差累积问题。",
+      "method_zh": "采用两阶段层次架构：高层以小时空粒度学习抽象动态，低层负责细节填充。",
+      "relevance_zh": "直接回应了世界模型在长期规划中的核心瓶颈——误差累积，具有里程碑意义。"
+    },
+    {
+      "id": 4,
+      "title": "Reasoning World Models: Integrating Chain-of-Thought with Latent Dynamics",
+      "authors": "Zhao R, Li M, et al.",
+      "venue": "NeurIPS 2026 (Spotlight)",
+      "date": "2026-04-26",
+      "abstract": "In this work, we propose Reasoning World Models (RWM), a unified framework that integrates chain-of-thought reasoning with latent world dynamics. RWM interleaves reasoning tokens and action tokens in a shared latent space, allowing the model to perform explicit reasoning about environment dynamics before making predictions. Our approach achieves significant improvements on tasks requiring physical reasoning, including intuitive physics benchmarks and embodied question answering.",
+      "contribution_zh": "首次将思维链推理引入世界模型的潜在动态中，实现了推理与预测的统一。",
+      "method_zh": "在潜在空间中交替编码「推理token」和「动作token」，让模型在预测前先执行显式推理。",
+      "relevance_zh": "开辟了「推理型世界模型」这一新方向，将高级认知推理能力融入低级动态预测。"
+    }
+  ],
+  "outlook_zh": "总体来看，本周世界模型领域呈现出明显的大模型化和3D化趋势。Action-GPT证明了LLM先验的价值，3D-DiffWorld将空间感知提升到新高度，而RWM更是开创性地将推理能力融入世界模型。下周值得关注的子方向包括：(1) 世界模型与RLHF的结合；(2) 开环世界模型在自动驾驶中的应用；(3) 世界模型的数据效率问题。预计世界模型将在具身智能和机器人领域持续升温。"
+}

@@ -1430,7 +1430,7 @@ claude "使用 paper-writing skill 帮我润色这段论文摘要：[粘贴摘�
 
 ### 10.1 场景
 
-你希望有一个 **文献追踪 Skill**，能自动搜索指定领域的最新论文、分析趋势并生成结构化报告。以下参考 `/Users/joeyzhang/workspace/Agent_Sample/.cursor/skills/literature-tracker/` 的完整实现。
+你希望有一个 **文献追踪 Skill**，能自动搜索指定领域的最新论文、分析趋势并生成结构化报告。以下参考本仓库 `[examples/literature-tracker/](../examples/literature-tracker/)` 的完整实现（该 skill 已复制到仓库中）。
 
 ### 10.2 Skill 目录结构
 
@@ -1527,32 +1527,7 @@ Agent 自动执行：
 4. 分析趋势
 5. 调用 `scripts/generate_report.py` 生成 PDF
 
-### 10.6 进阶：配合 Cursor Hooks 实现自动化
-
-你还可以添加 Hooks，让文献追踪在 Agent 对话结束后自动触发：
-
-`.cursor/hooks.json`：
-
-```json
-{
-  "version": 1,
-  "hooks": {
-    "subagentStop": [
-      {
-        "command": ".cursor/hooks/daily_literature_monitor.sh",
-        "matcher": "文献追踪|daily_lit|research_monitor",
-        "timeout": 120
-      }
-    ]
-  }
-}
-```
-
-对应的 shell 脚本 `/Users/joeyzhang/workspace/Agent_Sample/.cursor/hooks/daily_literature_monitor.sh` 封装了文献扫描器，从 `research_topics.json` 读取研究主题，自动搜索 arXiv 和 Semantic Scholar，生成 Markdown 报告。
-
-详情参考 `Agent_Sample` 目录下的完整实现。
-
-### 10.7 写成 OpenSkill 格式（通用）
+### 10.6 写成 OpenSkill 格式（通用）
 
 如果你想把这个 skill 分享给团队或发布到 GitHub，保持标准格式：
 
