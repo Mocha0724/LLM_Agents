@@ -10,6 +10,7 @@
 2. [Cursor 的 Marketplace 插件](#2-cursor-的-marketplace-插件)
 3. [Codex CLI 的插件与扩展](#3-codex-cli-的插件与扩展)
 4. [Get Shit Done（GSD） 详细使用说明](#4-get-shit-donegsd-详细使用说明)
+5. [VS Code 中 Claude Code 插件的 Agent 扩展能力](#5-vs-code-中-claude-code-插件的-agent-扩展能力)
 
 ---
 
@@ -639,6 +640,384 @@ Model    Model)          API     API)           UI)
 
 ---
 
+## 5. VS Code 中 Claude Code 插件的 Agent 扩展能力
+
+> VS Code 中的 Claude Code 插件（VSCode Extension）提供了**图形化的 Agent 插件管理界面**，结合了 CLI 的所有扩展能力（Skills、Commands、MCP、GSD 等），同时以可视化操作降低使用门槛。
+
+### 5.1 插件管理入口
+
+在 VS Code 插件界面的输入框中输入 `/plugins` 即可打开插件管理面板：
+
+```bash
+# 在 Claude Code 对话输入框输入
+/plugins
+```
+
+插件管理面板包含以下功能区：
+
+| 区域 | 说明 |
+|------|------|
+| **已安装插件列表** | 显示所有已安装的插件及其版本、来源、安装范围 |
+| **搜索 Marketplace** | 搜索社区和官方的可用插件 |
+| **管理插件源（Marketplaces）** | 添加 GitHub 仓库、URL、npm 包或本地路径作为安装来源 |
+| **安装范围选择** | 用户级（所有项目可用）、项目级（共享给团队）、本地（仅当前仓库） |
+
+### 5.2 安装 Agent 插件
+
+#### 方式 A：从插件市场安装（图形化）
+
+1. 在 Claude Code 面板输入 `/plugins` 打开管理界面
+2. 点击「搜索 Marketplace」
+3. 搜索插件名称（如 `get-shit-done-cc`、`anthropics/skills` 等）
+4. 点击「安装」，选择安装范围
+5. 安装后立即生效，无需重启 VS Code
+
+#### 方式 B：通过 Slash Command 安装
+
+直接在输入框中输入安装命令：
+
+```bash
+# 安装插件（终端模式下同）
+/plugin install <plugin-name>@<source>
+
+# 示例
+/plugin install get-shit-done-cc
+/plugin install Imbad0202/academic-research-skills
+/plugin install tasks
+```
+
+#### 方式 C：使用 npx 在终端中安装
+
+VS Code 插件的内置终端运行 `npx` 安装 Skills：
+
+```bash
+# 在 VS Code 终端（Terminal）中执行
+cd your-project
+npx openskills install anthropics/skills
+
+# 如果使用 cursor 作为运行时，skills 会自动同步
+npx openskills install anthropics/skills --cursor
+```
+
+#### 方式 D：通过 VS Code 扩展市场安装 Claude 配套扩展
+
+```bash
+# 安装后可以直接在 Claude Code 中使用
+# VS Code 扩展市场搜索：
+# - "Claude in Chrome" — Chrome 浏览器集成
+# - "GitHub Pull Requests" — PR 管理
+# - "GitLens" — Git 增强
+```
+
+### 5.3 管理 Agent Skills
+
+#### 安装范围选择
+
+| 范围 | 目录 | 适用场景 |
+|------|------|----------|
+| **用户级（User）** | `~/.claude/skills/` | 个人常用 skill，所有项目可见 |
+| **项目级（Project）** | `<project>/.claude/skills/` | 共享给团队成员 |
+| **本地（Local）** | `<project>/.claude/skills/`（独立副本） | 不共享，仅当前仓库 |
+
+#### 查看已安装的 Skills
+
+```bash
+# 在插件面板中查看已安装的 skill 列表
+# 或在输入框中输入以下命令查询
+```
+
+```bash
+# 终端中列出全局 skills
+ls ~/.claude/skills/
+# 或终端中列出项目 skills
+ls .claude/skills/
+```
+
+#### 启用/禁用 Skills
+
+VS Code 插件不支持单独开关某个 Skill，但可以通过以下方式控制：
+
+```bash
+# 移除不需要的 skill 目录
+rm -rf .claude/skills/pdf
+
+# 或重命名使其不生效
+mv .claude/skills/pdf .claude/skills/pdf.disabled
+```
+
+### 5.4 使用 Slash Commands
+
+VS Code Claude 插件**支持全部内置 Slash Commands**：
+
+```bash
+/help        # 显示帮助
+/clear       # 清除当前会话
+/cost        # 查看 token 用量
+/status      # 查看当前状态
+/review      # 代码审查
+/compress    # 压缩上下文
+/doctor      # 诊断配置问题
+/init        # 初始化 CLAUDE.md
+/add         # 添加文件到上下文
+/drop        # 从上下文移除文件
+/plan        # 规划模式
+/act         # 执行模式
+/branch      # 创建分支
+/rewind      # 回退对话状态
+/search      # 搜索代码库
+```
+
+#### 自定义 Commands
+
+在 `~/.claude/commands/` 中定义的 `.md` 文件同样在 VS Code 插件中生效：
+
+```bash
+# 创建自定义命令目录
+mkdir -p ~/.claude/commands
+```
+
+`~/.claude/commands/paper-polish.md`：
+```markdown
+对论文进行学术润色：逐段检查逻辑流和语法，修复不自然的表达，保持 LaTeX 命令和引用不变。
+输出格式：逐条列出修改位置、原句、修改建议。
+```
+
+之后在 VS Code 插件输入框中输入 `/paper-polish` 即可触发。
+
+### 5.5 配置 MCP 服务器
+
+VS Code 插件支持通过 MCP 协议连接外部工具。有两种配置方式：
+
+#### 方式 A：在插件面板中使用 `/mcp` 命令
+
+```bash
+# 在输入框中输入
+/mcp add my-service
+# 按提示填写命令、参数、环境变量
+```
+
+#### 方式 B：在 VS Code 设置中配置
+
+打开 VS Code 设置（`Cmd+,` / `Ctrl+,`），搜索 `Claude Code > MCP Servers`，在 `settings.json` 中配置：
+
+```json
+{
+  "claudeCode.mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_TOKEN": "your-token"
+      }
+    },
+    "linear": {
+      "command": "npx",
+      "args": ["@cursor/mcp-linear"],
+      "env": {
+        "LINEAR_API_KEY": "your-key"
+      }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-filesystem", "/path/to/allowed/dir"]
+    }
+  }
+}
+```
+
+> VS Code 插件的 MCP 管理界面不如 CLI 完整（不支持 `mcp.json` 文件自动扫描），推荐通过 VS Code 设置配置，配置后需重载窗口生效。
+
+#### 常用 MCP 服务器推荐
+
+| MCP 服务器 | 用途 | 安装命令 |
+|------------|------|----------|
+| `@modelcontextprotocol/server-github` | GitHub PR/Issue 管理 | `npx @modelcontextprotocol/server-github` |
+| `@modelcontextprotocol/server-filesystem` | 文件系统操作 | `npx @modelcontextprotocol/server-filesystem` |
+| `@modelcontextprotocol/server-postgres` | PostgreSQL 数据库查询 | `npx @modelcontextprotocol/server-postgres` |
+| `@modelcontextprotocol/server-sqlite` | SQLite 数据库查询 | `npx @modelcontextprotocol/server-sqlite` |
+
+### 5.6 安装和使用 GSD（Get Shit Done）
+
+GSD 在 VS Code 插件中的安装与 CLI 模式一致：
+
+```bash
+# 在 VS Code 的内置终端中执行
+npx get-shit-done-cc@latest
+```
+
+安装器会提示选择运行时。选择 **"Cursor"** 选项即可（VS Code 插件的 Claude Code 以 Cursor 运行方式兼容 GSD）。
+
+安装后，在 VS Code 插件的输入框中输入 `/gsd-help` 验证。GSD 所有命令均可在 VS Code 插件中使用：
+
+```bash
+/gsd-new-project       # 初始化新项目
+/gsd-map-codebase      # 分析代码库
+/gsd-discuss-phase 1   # 讨论阶段
+/gsd-plan-phase 1      # 规划阶段
+/gsd-execute-phase 1   # 执行阶段
+/gsd-verify-work 1     # 验证
+/gsd-ship 1            # 发布
+/gsd-quick "添加暗色模式" # 快速任务
+```
+
+### 5.7 在 VS Code 插件中使用 Skills
+
+Skills 的触发方式与 CLI 模式相同，但利用了 VS Code 的图形界面优势：
+
+#### 方式 A：AI 自动匹配（推荐）
+
+确保 SKILL.md 的 `description` 包含中英文关键词，agent 会自动加载：
+
+```yaml
+---
+name: pdf
+description: "Create, merge, extract text/tables from PDFs. Use when user asks: pdf 处理, 提取 PDF, merge pdf"
+---
+```
+
+在输入框中直接输入：
+```
+帮我提取这个 PDF 中的表格
+```
+
+#### 方式 B：手动引用文件
+
+利用 VS Code 插件的 `@` 引用机制：
+
+```bash
+# 在输入框中输入 @ 后选择文件
+@.claude/skills/pdf/SKILL.md 帮我处理这个 PDF
+```
+
+也可以 `@` 引用 `AGENTS.md` 让 agent 了解所有可用 skill：
+
+```bash
+@AGENTS.md 按照汇总的技能列表来处理这个 PDF
+```
+
+#### 方式 C：利用 Diff 视图审阅 Skill 执行结果
+
+这是 VS Code 插件独有的优势——Skill 执行生成代码后，插件会**自动显示 Diff 视图**，逐行展示修改前后对比，确认后一键接受或拒绝：
+
+```bash
+# Skill 执行后：
+# 1. 右下角会提示 "Changes ready for review"
+# 2. 点击查看 Diff，绿色=新增，红色=删除
+# 3. 逐块 Accept / Reject / Edit
+# 4. 全部确认后点击 "Apply"
+```
+
+### 5.8 使用 @ 引用增强 Skill 效果
+
+VS Code 插件支持丰富的 `@` 引用方式，可以与 Skills 配合使用：
+
+```bash
+# 引用当前文件
+@src/main.py 优化这个函数的性能
+
+# 引用多文件
+@src/api/*.ts 按照 pdf skill 流程处理
+
+# 引用文件夹
+@docs/ 按照这个目录的规则，给我做一个文档索引
+
+# 引用 GitHub Issue（需 GitHub MCP）
+@issues/42 按照 coding skill 修复这个 bug
+
+# 引用 Git 变更
+@changes 按照 code-review skill 审查我的变更
+```
+
+### 5.9 使用浏览器集成
+
+通过 Chrome 扩展「Claude in Chrome」与 Skills 配合：
+
+```bash
+# 在 VS Code 插件中输入
+@browser go to http://localhost:3000 and check if my change renders correctly
+
+# 或结合 testing skill
+@browser go to http://localhost:3000/login 按照 testing skill 检查表单验证
+```
+
+### 5.10 完整场景示例：在 VS Code 中安装并使用学术 Skill
+
+以下是从零开始在 VS Code Claude Code 插件中使用学术 Research Skill 的完整流程：
+
+**步骤 1：安装 Skill**
+
+```bash
+# 在 VS Code 内置终端执行
+cd your-project
+npx openskills install Imbad0202/academic-research-skills
+```
+
+或直接在 Claude Code 输入框：
+
+```bash
+/plugin install Imbad0202/academic-research-skills
+```
+
+**步骤 2：确保 AGENTS.md 已生成**
+
+```bash
+# 在内置终端执行
+npx openskills sync
+```
+
+**步骤 3：使用 Skill**
+
+在输入框中输入：
+
+```
+@AGENTS.md 使用 paper-writing skill 帮我润色这段论文摘要：[粘贴摘要]
+```
+
+**步骤 4：审阅修改**
+
+插件会自动显示 Diff 视图，逐段展示修改对比，你可以：
+
+- 点击 **Accept** 接受修改
+- 点击 **Reject** 拒绝
+- 点击 **Edit** 手动调整
+- 所有确认后点击 **Apply** 应用到文件
+
+**步骤 5：结合 MCP 增强**
+
+如果需要搜索参考论文，可以配置 Semantic Scholar MCP：
+
+```bash
+# 在 VS Code 设置中配置 MCP
+/mcp add semantic-scholar
+# command: npx, args: @mcp/semantic-scholar
+```
+
+然后在输入框中：
+
+```
+@AGENTS.md 使用 deep-research skill 调研世界模型的最新进展，搜索时用 Semantic Scholar MCP
+```
+
+### 5.11 VS Code 插件 vs CLI 模式的扩展能力对比
+
+| 扩展能力 | VS Code 插件（图形面板） | CLI 终端模式 |
+|----------|------------------------|-------------|
+| **Skills 安装** | ✅ 图形化 `/plugins` 面板 | ✅ `/plugin install` |
+| **Skills 自动匹配** | ✅ | ✅ |
+| **Skills 手动引用** | ✅ `@` 引用 | ✅ `-r AGENTS.md` |
+| **Slash Commands** | ✅ 全部内置命令 | ✅ 全部内置命令 |
+| **自定义 Commands** | ✅（共享 `~/.claude/commands/`） | ✅ |
+| **MCP 配置** | ⚠️ 需要通过 `settings.json` 或 `/mcp` | ✅ 支持 `mcp.json` 自动扫描 |
+| **GSD 兼容** | ✅（选 Cursor 运行时） | ✅（选对应运行时） |
+| **Diff 审阅** | ✅ 原生图形化 Diff 视图 | ❌ 需集成 IDE |
+| **@ 引用文件** | ✅ 图形化文件选择器 | ✅ 命令行参数 |
+| **@browser 集成** | ✅ Chrome 扩展 | ✅ Chrome 扩展 |
+| **插件管理界面** | ✅ 图形化面板 | ✅ `/plugin` 命令行 |
+| **多标签会话** | ✅ 同时开多个标签 | ❌ |
+| **`!` Bash 快捷执行** | ❌ | ✅ |
+
+---
+
 ## 各工具插件体系对比
 
 
@@ -647,7 +1026,7 @@ Model    Model)          API     API)           UI)
 | **插件类型**     | Skills / Commands / Hooks / MCP | Marketplace 插件 / MCP | Skills 兼容          |
 | **扩展目录**     | `~/.claude/skills/`             | `~/.cursor/mcp.json` | `~/.codex/skills/` |
 | **命令前缀**     | `/`                             | 自然语言                 | `$`                |
-| **GSD 命令前缀** | `/gsd-`*                        | `/gsd-*`（终端内）        | `$gsd-*`           |
+| **GSD 命令前缀** | `/gsd-`*                        | `/gsd-`*（终端内）        | `$gsd-*`           |
 | **安装方式**     | `/plugin install` / `npx`       | 市场点选 / mcp.json      | `npx`              |
 | **Skill 标准** | OpenSkills 标准                   | `.cursor/skills/`    | OpenSkills 标准      |
 | **MCP 支持**   | 原生                              | 原生                   | 有限                 |
