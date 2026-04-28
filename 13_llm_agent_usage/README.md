@@ -13,25 +13,28 @@
 
 ```mermaid
 flowchart TD
-    A[1. Coding Agent 选型] --> B[2. 工具里接中国 coding 模型]
-    B --> C[3. Skill / OpenSkill 编写与配置]
-    C --> D[4. Hook vs Skill vs Rule vs Tool]
-    D --> E[5. 实战模板与清单]
+    A[1. Coding Agent 选型] --> B[2. 工具安装配置与 API 替换]
+    B --> C[3. 工具里接中国 coding 模型]
+    C --> D[4. Skill / OpenSkill 编写与配置]
+    D --> E[5. Hook vs Skill vs Rule vs Tool]
+    E --> F[6. 实战案例：学术 Skill + 自定义 Skill]
 ```
 
 
 
 ## 3. 文件导览
 
-
 | 文件                                                                                   | 内容                                                                                        |
 | ------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- |
+| `[notes/complete_config_tutorial.md](./notes/complete_config_tutorial.md)`           | **📘 完整安装配置教程（本文）**：工具安装 → API 替换 → Skills 配置 → 案例，零基础到上手                     |
 | `[notes/coding_agent_selection.md](./notes/coding_agent_selection.md)`               | Coding Agent 选择指南：Cursor、Claude Code、Codex、Aider、OpenHands、Devin、国产工具等                    |
 | `[notes/domestic_coding_models_in_ide.md](./notes/domestic_coding_models_in_ide.md)` | **在 IDE / CLI 工具里**接入中国 coding 模型：Cursor / VS Code / Aider / 工具策略与排错                            |
 | `[notes/openskills_install_and_usage.md](./notes/openskills_install_and_usage.md)`   | **OpenSkills（npm CLI）**：`npx openskills install/sync`，及 `anthropics/skills` 各子 skill 功能速览 |
 | `[notes/skill_openskill_guide.md](./notes/skill_openskill_guide.md)`                 | Skill / OpenSkill 的原理、**手写/迁移** 编写、配置与工具差异                                                |
 | `[notes/hooks_vs_skills.md](./notes/hooks_vs_skills.md)`                             | Hook、Skill、Rule、Command、MCP Tool、Function Calling 的理解与比较                                  |
 | `[examples/](./examples/)`                                                           | 可复制的 Skill / Hook / 配置片段                                                                  |
+
+> **推荐阅读顺序**：先读 `complete_config_tutorial.md`（零基础到上手），按需查阅其他专项文档。
 
 
 ## 4. 快速结论
